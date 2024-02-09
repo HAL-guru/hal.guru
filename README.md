@@ -1,3 +1,5 @@
-# docs.hal.guru
+# hal.guru
 
-HAL.guru documentation
+At hal.guru, founded by technology enthusiasts Chris Prusik and Simon Drejewicz, we are driven by a singular vision: liberating humanity from the monotony of routine tasks. From our earliest days of coding to the present, our passion for technology has only grown, fuelled by the astonishing advancements in the field. Despite these changes, our core mission remains unchanged: to remove the 'robot' from human work, transforming technology into a source of joy and partnership. We are committed to harnessing the latest innovations to not only minimise tedious tasks but also to create delightful interactions with our robotic counterparts, making every collaboration a reason to smile. Join us in redefining the future of work, where technology and humanity collaborate in harmony.
+
+>NOTE: Feel free to submit **Pull Request**!

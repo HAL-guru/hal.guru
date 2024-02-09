@@ -1,19 +1,16 @@
-site_name: HAL.guru - Documentation
+site_name: hal.guru
 site_url: https://docs.hal.guru/
-site_author: HAL guru Sp. z o.o.
+site_author: hal.guru
 site_description: >-
   AI Robots thats works, for you
-
-repo_name: HAL-guru/docs.hal.guru
-repo_url: https://github.com/HAL-guru/docs.hal.guru.git
+repo_name: hal-guru/hal.guru
+repo_url: https://github.com/HAL-guru/hal.guru.git
 nav:
   - Home: 'index.md'
   - 'User Guide':
-    - 'Writing your docs': 'writing-your-docs.md'
-    - 'Styling your docs': 'styling-your-docs.md'
+    - 'AI robot tutorial': 'ai-robot-tutorial.md'
   - About:
     - 'License': 'license.md'
-    - 'Release Notes': 'release-notes.md'
 theme: material
 markdown_extensions:
   - toc:
