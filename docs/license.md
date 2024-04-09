@@ -2,7 +2,7 @@
 title: License
 description: License
 date: 2024-01-25
-author: hal guru sp. z o.o.
+author: Krzysztof Prusik
 ---
 
 ## Terms and Conditions
