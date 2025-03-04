@@ -58,7 +58,7 @@ jobs:
 
     steps:
       - name: Delay for artifact sync
-        run: sleep 10
+        run: sleep 30
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v2
