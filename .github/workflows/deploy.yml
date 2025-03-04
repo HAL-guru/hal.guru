@@ -39,20 +39,21 @@ jobs:
            mkdocs-material-
      - run: pip install mkdocs-material --no-cache-dir
      - run: mkdocs build
+     - name: Verify site directory
+       run: test -d site && echo "Site directory exists" || echo "Missing site directory"
      - name: Verify site build output
        run: ls -la site
      - name: Upload artifact
        uses: actions/upload-pages-artifact@v3
        with:
-         path: site
+         path: ./site
          name: github-pages
 
   deploy:
+    needs: build
     environment:
-      name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
     runs-on: ubuntu-latest
-    needs: build
     steps:
       - name: Delay for artifact sync
         run: sleep 10
