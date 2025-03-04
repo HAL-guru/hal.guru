@@ -7,8 +7,12 @@ repo_name: hal-guru/hal.guru
 repo_url: https://github.com/HAL-guru/hal.guru.git
 nav:
   - Home: 'index.md'
-  - 'User Guide':
-    - 'AI robot tutorial': 'ai-robot-tutorial.md'
+  - 'Getting Started':
+    - 'Install halguru CLI': 'getting-started/01-install-halguru-cli.md'
+  - 'halguru CLI':
+    - 'HAL.Guru API': 'halguru-cli/index.md'
+  - 'Configuring AI Agents':
+    - 'Introduction': 'configuring-ai-agents/index.md'
   - About:
     - 'License': 'license.md'
 theme: material
