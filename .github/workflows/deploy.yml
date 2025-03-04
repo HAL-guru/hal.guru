@@ -19,41 +19,43 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-     - name: Checkout
-       uses: actions/checkout@v4
-       with:
-         submodules: recursive
-         fetch-depth: 0
-     - name: Setup Pages
-       id: pages
-       uses: actions/configure-pages@v3
-     - uses: actions/setup-python@v4
-       with:
-         python-version: 3.x
-     - run: echo "cache_id=$(date --utc '+%V')" >> $GITHUB_ENV
-     - uses: actions/cache@v3
-       with:
-         key: mkdocs-material-${{ env.cache_id }}
-         path: .cache
-         restore-keys: |
-           mkdocs-material-
-     - run: pip install mkdocs-material --no-cache-dir
-     - run: mkdocs build
-     - name: Verify site directory
-       run: test -d site && echo "Site directory exists" || echo "Missing site directory"
-     - name: Verify site build output
-       run: ls -la site
-     - name: Upload artifact
-       uses: actions/upload-pages-artifact@v3
-       with:
-         path: ./site
-         name: github-pages
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          submodules: recursive
+          fetch-depth: 0
+      - name: Setup Pages
+        id: pages
+        uses: actions/configure-pages@v3
+      - uses: actions/setup-python@v4
+        with:
+          python-version: 3.x
+      - run: echo "cache_id=$(date --utc '+%V')" >> $GITHUB_ENV
+      - uses: actions/cache@v3
+        with:
+          key: mkdocs-material-${{ env.cache_id }}
+          path: .cache
+          restore-keys: |
+            mkdocs-material-
+      - run: pip install mkdocs-material --no-cache-dir
+      - run: mkdocs build
+      - name: Verify site directory
+        run: test -d site && echo "Site directory exists" || echo "Missing site directory"
+      - name: Verify site build output
+        run: ls -la site
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: ./site
+          name: github-pages
 
   deploy:
     needs: build
+    runs-on: ubuntu-latest
     environment:
       url: ${{ steps.deployment.outputs.page_url }}
-    runs-on: ubuntu-latest
+      name: github-pages
+
     steps:
       - name: Delay for artifact sync
         run: sleep 10
