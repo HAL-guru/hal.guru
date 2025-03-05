@@ -20,6 +20,9 @@ nav:
   - About:
     - 'License': 'license.md'
 
+extra_files:
+  - schemas/*.json
+
 markdown_extensions:
   - toc:
       permalink: "#"
