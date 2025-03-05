@@ -47,13 +47,12 @@ jobs:
         uses: actions/upload-pages-artifact@v3
         with:
           path: ./site
-          name: github-pages
 
   deploy:
     needs: build
     runs-on: ubuntu-latest
     environment:
-      url: ${{ steps.build.outputs.page_url }}
+      url: ${{ steps.deployment.outputs.page_url }}
       name: github-pages
 
     steps:
@@ -62,5 +61,3 @@ jobs:
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v2
-        with:
-          artifact_name: github-pages
