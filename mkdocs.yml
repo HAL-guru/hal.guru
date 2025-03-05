@@ -8,14 +8,16 @@ repo_url: https://github.com/HAL-guru/hal.guru.git
 
 theme:
   name: material
+  logo: logo.png
+  favicon: favicon.svg
   font:
     text: Roboto
     code: Roboto Mono
   palette:
     - media: "(prefers-color-scheme: light)"
       scheme: default
-      primary: indigo
-      accent: pink
+      #primary: indigo
+      #accent: pink
       toggle:
         icon: material/brightness-7
         name: Switch to dark mode
@@ -26,6 +28,11 @@ theme:
       toggle:
         icon: material/brightness-4
         name: Switch to light mode
+  features:
+    - navigation.instant
+    - navigation.tabs
+    - navigation.sections
+    - navigation.expand
 
 nav:
   - 'Welcome': 'index.md'
