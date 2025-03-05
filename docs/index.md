@@ -6,3 +6,5 @@ author: Chris Prusik
 ---
 
 halguru documentation
+
+![Logo](logo.png)

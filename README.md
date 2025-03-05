@@ -4,4 +4,11 @@
 
 # Links
 
-1. [mkdocs](https://www.mkdocs.org/getting-started/#other-commands-and-options)
+1. [mkdocs](https://www.mkdocs.org/getting-started/)
+
+# Getting started
+
+```bash
+mkdocs build
+mkdocs serve
+```
