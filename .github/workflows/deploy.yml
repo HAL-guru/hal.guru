@@ -70,6 +70,12 @@ jobs:
           name: github-pages
           path: ./artifact
 
+      - name: Extract artifact
+        run: |
+          cd ./artifact
+          tar xf artifact.tar
+          ls -la
+
       - name: Verify artifact
         run: |
           ls -la ./artifact
