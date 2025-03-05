@@ -1,4 +1,4 @@
-site_name: hal.guru docs
+site_name: docs.hal.guru
 site_url: https://docs.hal.guru/
 site_author: hal.guru
 site_description: >-
@@ -10,11 +10,11 @@ theme:
   name: material
 
 nav:
-  - Home: 'index.md'
+  - 'Welcome': 'index.md'
   - 'Getting Started':
     - 'Install halguru CLI': 'getting-started/01-install-halguru-cli.md'
   - 'halguru CLI':
-    - 'HAL.Guru API': 'halguru-cli/index.md'
+    - 'Introduction': 'halguru-cli/index.md'
   - 'Configuring AI Agents':
     - 'Introduction': 'configuring-ai-agents/index.md'
   - About:
