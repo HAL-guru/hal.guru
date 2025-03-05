@@ -1,10 +1,14 @@
-site_name: hal.guru
+site_name: hal.guru docs
 site_url: https://docs.hal.guru/
 site_author: hal.guru
 site_description: >-
-  AI Robots thats works, for you
+  AI Agents that works, for you
 repo_name: hal-guru/hal.guru
 repo_url: https://github.com/HAL-guru/hal.guru.git
+
+theme:
+  name: material
+
 nav:
   - Home: 'index.md'
   - 'Getting Started':
@@ -15,9 +19,11 @@ nav:
     - 'Introduction': 'configuring-ai-agents/index.md'
   - About:
     - 'License': 'license.md'
-theme: material
+
 markdown_extensions:
   - toc:
       permalink: "#"
       baselevel: 2
       separator: "_"
+plugins:
+  - search
