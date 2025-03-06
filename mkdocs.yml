@@ -3,36 +3,44 @@ site_url: https://docs.hal.guru/
 site_author: hal.guru
 site_description: >-
   AI Agents that works, for you
-repo_name: hal-guru/hal.guru
+repo_name: Download
 repo_url: https://github.com/HAL-guru/hal.guru.git
-
+copyright: Copyright &copy; 2025 hal.guru sp. z o.o.
+extra:
+  generator: false
+  social:
+    - icon: fontawesome/brands/github
+      link: https://github.com/HAL-guru
+      name: hal.guru on GitHub
 theme:
   name: material
-  logo: logo.png
+  logo: icon-white.png
   favicon: favicon.svg
+  icon:
+    repo: fontawesome/brands/github
   font:
     text: Roboto
     code: Roboto Mono
   palette:
     - media: "(prefers-color-scheme: light)"
       scheme: default
-      #primary: indigo
-      #accent: pink
+      primary: red
+      accent: pink
       toggle:
-        icon: material/brightness-7
+        icon: material/weather-sunny
         name: Switch to dark mode
     - media: "(prefers-color-scheme: dark)"
       scheme: slate
-      primary: blue
-      accent: amber
+      primary: red
+      accent: pink
       toggle:
-        icon: material/brightness-4
+        icon: material/weather-night
         name: Switch to light mode
   features:
     - navigation.instant
-    - navigation.tabs
-    - navigation.sections
-    - navigation.expand
+    #- navigation.tabs
+    #- navigation.sections
+    #- navigation.expand
 
 nav:
   - 'Welcome': 'index.md'
@@ -44,9 +52,6 @@ nav:
     - 'Introduction': 'configuring-ai-agents/index.md'
   - About:
     - 'License': 'license.md'
-
-extra_files:
-  - schemas/*.json
 
 markdown_extensions:
   - toc:
