@@ -44,6 +44,7 @@ theme:
 
 nav:
   - 'Welcome': 'index.md'
+  - 'Installation': 'installation/index.md'
   - 'Getting Started':
     - 'Install halguru CLI': 'getting-started/01-install-halguru-cli.md'
   - 'halguru CLI':

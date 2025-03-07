@@ -12,6 +12,7 @@ hal.guru installation is a straightforward process that can be completed in just
 1. Open PowerShell as a regular user
 
 2. Copy and paste the following command to download and run the installation script:
+
 ```powershell
 irm https://docs.hal.guru/installation/install.ps1 | iex
 ```
@@ -20,13 +21,14 @@ irm https://docs.hal.guru/installation/install.ps1 | iex
    - Open a new terminal window
    - Run the command: `halguru --install` to complete the setup and configure Visual Studio Code Editor for your AI Agents.
 
-> More details: [Windows installation tutorial](installation-widnows.md).
+> More details: [Windows installation tutorial](installation-windows.md).
 
 ## MacOS and Linux users
 
 1. Open your terminal
 
 2. Execute the following command to download and run the installation script:
+
 ```shell script
 curl -sSL https://docs.hal.guru/installation/install.sh | bash
 ```

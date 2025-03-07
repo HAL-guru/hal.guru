@@ -13,7 +13,7 @@ hal.guru installation is a straightforward process that can be completed in just
 - PowerShell
 - Internet connection
 
-> Linux and MacOS users should use [Linux and MacOS tutorial](installation-linux-and-mac.md)
+> Linux and MacOS users should use [MacOS and Linux tutorial](installation-macos-and-linux.md)
 
 ## Installation Steps
 
