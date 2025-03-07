@@ -29,7 +29,7 @@ irm https://docs.hal.guru/installation/install.ps1 | iex
 
 2. Execute the following command to download and run the installation script:
 
-```shell script
+```bash
 curl -sSL https://docs.hal.guru/installation/install.sh | bash
 ```
 
