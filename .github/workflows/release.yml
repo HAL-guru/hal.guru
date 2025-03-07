@@ -15,4 +15,7 @@ jobs:
       packages: read
 
     steps:
-      - name:
+      - name: halguru installation
+        run: curl -sSL https://docs.hal.guru/installation/install.sh | bash
+      - name: Determine version
+        run: halguru --version
