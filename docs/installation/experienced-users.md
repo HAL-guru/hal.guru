@@ -7,56 +7,62 @@ author: Chris Prusik
 
 We strongly recommend using the [default installer](install.md). The following guide is for advanced users who want to fully understand the installation process.
 
-1. **Visit GitHub Releases**
-   - Go to [https://github.com/HAL-guru/hal.guru/releases](https://github.com/HAL-guru/hal.guru/releases)
-   - Find the latest release version
+## Visit GitHub Releases
 
-2. **Choose Correct Package**
-   - Determine your system:
-     - Windows: `halguru-win-[arch]-[version].zip`
-     - macOS: `halguru-osx-[arch]-[version].zip`
-     - Linux: `halguru-linux-[arch]-[version].zip`
-   - Choose architecture (`[arch]`):
-     - For Intel/AMD processors: `x64`
-     - For Apple Silicon/ARM: `arm64`
+1. Go to [https://github.com/HAL-guru/hal.guru/releases](https://github.com/HAL-guru/hal.guru/releases)
+2. Find the latest release version
 
-3. **Download and Extract**
-   - Download the appropriate ZIP file
-   - Create directory:
-     - Windows: `%USERPROFILE%\.halguru`
-     - macOS/Linux: `~/.halguru`
-   - Extract ZIP contents to this directory
+## Choose Correct Package
 
-4. **Set Up System Access**
+1. Determine your system:
+   - Windows: `halguru-win-[arch]-[version].zip`
+   - macOS: `halguru-osx-[arch]-[version].zip`
+   - Linux: `halguru-linux-[arch]-[version].zip`
+2. Choose architecture (`[arch]`):
+   - For Intel/AMD processors: `x64`
+   - For Apple Silicon/ARM: `arm64`
 
-   For Windows:
-   - Open System Properties → Advanced → Environment Variables
-   - Edit User Variables → Path
-   - Add new entry: `%USERPROFILE%\.halguru`
-   - Click OK to save changes
-   - Close and reopen any command prompts
+## Download and Extract
 
-   For macOS/Linux:
-   - Make the binary executable:
+1. Download the appropriate ZIP file
+2. Create directory:
+   - Windows: `%USERPROFILE%\.halguru`
+   - macOS/Linux: `~/.halguru`
+3. Extract ZIP contents to this directory
+
+## Set Up System Access
+
+For Windows:
+
+1. Open System Properties → Advanced → Environment Variables
+2. Edit User Variables → Path
+3. Add new entry: `%USERPROFILE%\.halguru`
+4. Click OK to save changes
+5. Close and reopen any command prompts
+
+For macOS/Linux:
+
+1. Make the binary executable:
 
 ```bash
 chmod +x ~/.halguru/halguru
 ```
-   - Create symbolic link (requires sudo):
+2. Create symbolic link (requires sudo):
 
 ```bash
 sudo ln -sf ~/.halguru/halguru /usr/local/bin/halguru
 ```
 
-5. **Initial Configuration**
-   - Open new terminal/command prompt
-   - Run: `halguru --install`
-   - Wait for the initial setup to complete the setup and configure Visual Studio Code Editor for your AI Agents
+## Initial Configuration
+1. Open new terminal/command prompt
+2. Run: `halguru --install`
+3. Wait for the initial setup to complete the setup and configure Visual Studio Code Editor for your AI Agents
 
-6. **Verify Installation**
-   - In terminal/command prompt run:
-   - `halguru --version`
-   - Should display the version number
+## Verify Installation
+
+1. In terminal/command prompt run:
+2. `halguru --version`
+3. Should display the version number
 
 ## Troubleshooting
 
