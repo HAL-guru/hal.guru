@@ -24,7 +24,7 @@ We strongly recommend using the [default installer](install.md). The following g
    - Download the appropriate ZIP file
    - Create directory:
      - Windows: `%USERPROFILE%\.halguru`
-     - Unix: `~/.halguru`
+     - macOS/Linux: `~/.halguru`
    - Extract ZIP contents to this directory
 
 4. **Set Up System Access**
@@ -60,15 +60,15 @@ sudo ln -sf ~/.halguru/halguru /usr/local/bin/halguru
 
 ## Troubleshooting
 
-- If command not found:
-  - Windows: Verify Path environment variable
-  - macOS/Linux: Check symbolic link in `/usr/local/bin`
-- If permission denied:
-  - Windows: Run terminal as administrator
-  - macOS/Linux: Verify file permissions (`chmod +x`)
-- If binary won't start:
-  - Verify you downloaded correct architecture
-  - Check antivirus isn't blocking execution
+1. If command not found:
+   - Windows: Verify Path environment variable
+   - macOS/Linux: Check symbolic link in `/usr/local/bin`
+2. If permission denied:
+   - Windows: Run terminal as administrator
+   - macOS/Linux: Verify file permissions (`chmod +x`)
+3. If binary won't start:
+   - Verify you downloaded correct architecture
+   - Check antivirus isn't blocking execution
 
 ## Updating
 
