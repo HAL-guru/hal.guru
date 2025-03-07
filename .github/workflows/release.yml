@@ -1,0 +1,18 @@
+name: Release
+
+on:
+  push:
+    tags:
+      - '*'
+
+jobs:
+  version:
+    runs-on: ubuntu-latest
+
+    permissions:
+      repository-projects: read
+      contents: write
+      packages: read
+
+    steps:
+      - name:
