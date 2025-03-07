@@ -8,7 +8,7 @@ author: Chris Prusik
 We strongly recommend using the [default installer](install.md). The following guide is for advanced users who want to fully understand the installation process.
 
 1. **Visit GitHub Releases**
-   - Go to `https://github.com/HAL-guru/hal.guru/releases`
+   - Go to [https://github.com/HAL-guru/hal.guru/releases](https://github.com/HAL-guru/hal.guru/releases)
    - Find the latest release version
 
 2. **Choose Correct Package**
@@ -62,10 +62,10 @@ sudo ln -sf ~/.halguru/halguru /usr/local/bin/halguru
 
 - If command not found:
   - Windows: Verify Path environment variable
-  - Unix: Check symbolic link in `/usr/local/bin`
+  - macOS/Linux: Check symbolic link in `/usr/local/bin`
 - If permission denied:
   - Windows: Run terminal as administrator
-  - Unix: Verify file permissions (`chmod +x`)
+  - macOS/Linux: Verify file permissions (`chmod +x`)
 - If binary won't start:
   - Verify you downloaded correct architecture
   - Check antivirus isn't blocking execution
