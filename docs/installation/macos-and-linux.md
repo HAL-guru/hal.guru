@@ -15,7 +15,7 @@ halguru can be easily installed on macOS and Linux systems using a simple shell 
 - `sudo` privileges
 - Internet connection
 
-> Windows users should use [Windows tutorial](installation-windows.md)
+> Windows users should use [Windows tutorial](windows.md)
 
 ## Installation Steps
 

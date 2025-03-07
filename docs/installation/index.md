@@ -21,7 +21,7 @@ irm https://docs.hal.guru/installation/install.ps1 | iex
    - Open a new terminal window
    - Run the command: `halguru --install` to complete the setup and configure Visual Studio Code Editor for your AI Agents.
 
-> More details: [Windows installation tutorial](installation-windows.md).
+> More details: [Windows installation tutorial](windows.md).
 
 ## MacOS and Linux users
 
@@ -33,4 +33,8 @@ irm https://docs.hal.guru/installation/install.ps1 | iex
 curl -sSL https://docs.hal.guru/installation/install.sh | bash
 ```
 
-> More details: [MacOS and Linux installation tutorial](installation-macos-and-linux.md).
+> More details: [MacOS and Linux installation tutorial](macos-and-linux.md).
+
+## Experienced users
+
+For a deeper understanding of the installation process, refer to the [advanced users guide](experienced-users).
