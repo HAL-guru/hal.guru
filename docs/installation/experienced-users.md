@@ -47,6 +47,7 @@ For macOS/Linux:
 ```bash
 chmod +x ~/.halguru/halguru
 ```
+
 2. Create symbolic link (requires sudo):
 
 ```bash
