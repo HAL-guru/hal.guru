@@ -1,6 +1,6 @@
 ---
-title: How to Install halguru from GitHub Releases
-description: How to Install halguru from GitHub Releases
+title: Advanced installation guide
+description: Advanced installation guide
 date: 2025-03-07
 author: Chris Prusik
 ---
