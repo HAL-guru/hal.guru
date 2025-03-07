@@ -54,6 +54,7 @@ sudo ln -sf ~/.halguru/halguru /usr/local/bin/halguru
 ```
 
 ## Initial Configuration
+
 1. Open new terminal/command prompt
 2. Run: `halguru --install`
 3. Wait for the initial setup to complete the setup and configure Visual Studio Code Editor for your AI Agents
@@ -79,6 +80,7 @@ sudo ln -sf ~/.halguru/halguru /usr/local/bin/halguru
 ## Updating
 
 To update existing installation:
+
 1. Download new version
 2. Replace files in `.halguru` directory
 3. Run `halguru --install` again

@@ -22,7 +22,8 @@ halguru can be easily installed on macOS and Linux systems using a simple shell 
 1. Open your terminal
 
 2. Execute the following command to download and run the installation script:
-```shell script
+
+```bash
 curl -sSL https://docs.hal.guru/installation/install.sh | bash
 ```
 

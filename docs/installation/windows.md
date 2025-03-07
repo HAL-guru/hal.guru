@@ -5,7 +5,7 @@ date: 2025-03-07
 author: Chris Prusik
 ---
 
-hal.guru installation is a straightforward process that can be completed in just a few steps.
+halguru installation is a straightforward process that can be completed in just a few steps.
 
 ## System Requirements
 
@@ -20,6 +20,7 @@ hal.guru installation is a straightforward process that can be completed in just
 1. Open PowerShell as a regular user
 
 2. Copy and paste the following command to download and run the installation script:
+
 ```powershell
 irm https://docs.hal.guru/installation/install.ps1 | iex
 ```

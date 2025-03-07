@@ -5,7 +5,7 @@ date: 2025-03-07
 author: Chris Prusik
 ---
 
-hal.guru installation is a straightforward process that can be completed in just a few steps.
+halguru installation is a straightforward process that can be completed in just a few steps.
 
 ## Windows users
 
