@@ -2,55 +2,78 @@ $RepoOwner = "HAL-guru"
 $RepoName = "hal.guru"
 $InstallDir = "$env:USERPROFILE\.halguru"
 
+function Write-Error {
+    param([string]$Message)
+    Write-Host "ERROR: $Message" -ForegroundColor Red
+}
+
 function Get-LatestVersion {
-    $release = Invoke-RestMethod -Uri "https://api.github.com/repos/$RepoOwner/$RepoName/releases/latest"
-    return $release.tag_name
+    try {
+        $release = Invoke-RestMethod -Uri "https://api.github.com/repos/$RepoOwner/$RepoName/releases/latest" -ErrorAction Stop
+        return $release.tag_name
+    }
+    catch {
+        throw "Failed to get latest version. Check your internet connection and ensure the repository exists."
+    }
 }
 
 function Get-SystemArch {
-    if ([Environment]::Is64BitOperatingSystem) {
+    try {
+        if (-not [Environment]::Is64BitOperatingSystem) {
+            throw "Only 64-bit systems are supported"
+        }
+
         if ([System.Runtime.InteropServices.RuntimeInformation]::ProcessArchitecture -eq [System.Runtime.InteropServices.Architecture]::Arm64) {
             return "arm64"
         }
         return "x64"
     }
-    throw "Unknown architecture"
+    catch {
+        throw "Unable to determine system architecture: $_"
+    }
 }
 
 function Install-Halguru {
-    New-Item -ItemType Directory -Force -Path $InstallDir | Out-Null
+    try {
+        # Creating installation directory
+        New-Item -ItemType Directory -Force -Path $InstallDir -ErrorAction Stop | Out-Null
 
-    $arch = Get-SystemArch
-    $version = Get-LatestVersion
+        # Getting system info and version
+        $arch = Get-SystemArch
+        $version = Get-LatestVersion
 
-    $filename = "halguru-win-$arch-$version.zip"
-    $downloadUrl = "https://github.com/$RepoOwner/$RepoName/releases/download/$version/$filename"
+        $filename = "halguru-win-$arch-$version.zip"
+        $downloadUrl = "https://github.com/$RepoOwner/$RepoName/releases/download/$version/$filename"
+        $downloadPath = Join-Path $InstallDir $filename
 
-    Write-Host "Downloading $filename..."
+        Write-Host "Downloading $filename..." -ForegroundColor Cyan
 
-    $downloadPath = Join-Path $InstallDir $filename
-    Invoke-WebRequest -Uri $downloadUrl -OutFile $downloadPath
+        # Downloading file
+        Invoke-WebRequest -Uri $downloadUrl -OutFile $downloadPath -ErrorAction Stop
 
-    Expand-Archive -Path $downloadPath -DestinationPath $InstallDir -Force
-    Remove-Item $downloadPath
+        # Unpacking
+        Expand-Archive -Path $downloadPath -DestinationPath $InstallDir -Force -ErrorAction Stop
+        Remove-Item $downloadPath -ErrorAction SilentlyContinue
 
-    $userPath = [Environment]::GetEnvironmentVariable("Path", "User")
-    if ($userPath -notlike "*$InstallDir*") {
-        [Environment]::SetEnvironmentVariable(
-                "Path",
-                "$userPath;$InstallDir",
-                "User"
-        )
+        # Updating PATH
+        $userPath = [Environment]::GetEnvironmentVariable("Path", "User")
+        if ($userPath -notlike "*$InstallDir*") {
+            [Environment]::SetEnvironmentVariable("Path", "$userPath;$InstallDir", "User")
+        }
+
+        Write-Host "Installation of halguru v$version completed successfully!" -ForegroundColor Green
+        Write-Host "Open a new terminal window and execute the command: halguru --install" -ForegroundColor Yellow
     }
-
-    Write-Host "Unpacking of halguru v$version completed successfully!"
-    Write-Host "Please open a new terminal window and execute the command: halguru --install"
+    catch {
+        throw "Installation error: $_"
+    }
 }
 
+# Main script execution
 try {
     Install-Halguru
 }
 catch {
-    Write-Host "Error during installation: $_"
+    Write-Error $_.Exception.Message
     exit 1
 }
