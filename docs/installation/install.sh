@@ -49,7 +49,7 @@ get_latest_version() {
     if [ -z "$version" ]; then
         log_error "Received empty version value"
         exit 1
-    }
+    fi
 
     echo "$version"
 }
