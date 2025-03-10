@@ -146,17 +146,17 @@ main() {
     if ! chmod +x halguru; then
         log_error "Cannot set execution permissions"
         exit 1
-    }
+    fi
 
     if ! sudo ln -sf "$INSTALL_DIR/halguru" /usr/local/bin/halguru; then
         log_error "Failed to create symbolic link"
         exit 1
-    }
+    fi
 
     if ! halguru --install; then
         log_error "Failed to configure halguru"
         exit 1
-    }
+    fi
 
     log_success "Installation of halguru v$VERSION completed successfully!"
     log_info "You can now use the command: halguru"
