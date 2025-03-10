@@ -6,7 +6,7 @@ on:
       - main
 
 jobs:
-  version:
+  release:
     runs-on: ubuntu-latest
 
     permissions:
@@ -20,13 +20,15 @@ jobs:
 
       - name: Read version
         id: version
-        run: echo "version=$(cat docs/version.txt)" >> $GITHUB_OUTPUT
+        run: |
+          echo "version=$(cat docs/version.txt)" >> $GITHUB_OUTPUT
+          echo ${{ steps.release.outputs.version }}
 
       - name: Create/Update Release
         uses: softprops/action-gh-release@v1
         with:
-          name: Release ${{ steps.version.outputs.version }}
-          tag_name: ${{ steps.version.outputs.version }}
+          name: Release ${{ steps.release.outputs.version }}
+          tag_name: ${{ steps.release.outputs.version }}
           draft: false
           prerelease: false
         env:
