@@ -45,3 +45,5 @@ curl -sSL https://docs.hal.guru/installation/install.sh | bash
 - Primary installation location is in the `.halguru` directory in your home folder
 
 If any errors occur during installation, the script will display appropriate error messages and exit.
+
+See the [Experienced Users Guide](experiences-users.md) for more details.

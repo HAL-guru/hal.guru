@@ -42,3 +42,5 @@ irm https://docs.hal.guru/installation/install.ps1 | iex
 - All files are installed in the `.halguru` directory in your user profile
 
 If you encounter any problems during installation, the script will display an error message explaining what went wrong.
+
+More details at [Experienced users guide](experiences-users.md)
