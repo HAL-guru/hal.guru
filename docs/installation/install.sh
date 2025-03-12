@@ -57,10 +57,10 @@ get_latest_version() {
 get_arch() {
     local arch
     arch=$(uname -m)
-    echo arch
     case $arch in
         x86_64)  echo "x64" ;;
-        arch64) echo "arm64" ;;
+        arm64)   echo "arm64" ;;
+        aarch64) echo "arm64" ;;
         *)
             log_error "Unsupported architecture: $arch"
             exit 1
@@ -89,11 +89,24 @@ download_file() {
 
     while [ $attempt -le $max_attempts ]; do
         log_info "Download attempt ($attempt/$max_attempts)..."
-        if curl -L --fail "$url" -o "$output"; then
-            return 0
+        curl -I -L "$url"
+
+        if curl -v -L --fail -H "Accept: application/octet-stream" -A "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36" "$url" -o "$output"; then
+            local filesize=$(wc -c < "$output")
+            log_info "Downloaded file: $filesize bytes"
+            if [ "$filesize" -gt 1000 ]; then
+                return 0
+            else
+                log_error "The downloaded file is too small ($filesize bytes)"
+                #log_info "Contents:"
+                #cat "$output"
+            fi
+        else
+            log_error "The file could not be downloaded. Curl error code: $?"
         fi
+
         attempt=$((attempt + 1))
-        [ $attempt -le $max_attempts ] && sleep 2
+        [ $attempt -le $max_attempts ] && sleep 5
     done
 
     log_error "Failed to download file after $max_attempts attempts"
@@ -110,34 +123,32 @@ cleanup() {
 main() {
     trap 'cleanup "$INSTALL_DIR/$FILENAME"' EXIT
 
-    # Create installation directory and log file
-    mkdir -p "$INSTALL_DIR"
-    touch "$LOG_FILE"
-
     log_info "Starting installation..."
 
-    # Check required tools
     check_prerequisites
 
-    # Get system information
     OS=$(get_os)
     ARCH=$(get_arch)
     VERSION=$(get_latest_version)
 
-    FILENAME="halguru-$OS-$ARCH-$VERSION.zip"
-    DOWNLOAD_URL="https://github.com/$REPO_OWNER/$REPO_NAME/releases/download/$VERSION/$FILENAME"
+    log_info "Creating directory $INSTALL_DIR..."
 
-    log_info "Downloading $FILENAME..."
+    mkdir -p "$INSTALL_DIR"
+    touch "$LOG_FILE"
 
-    if ! download_file "$DOWNLOAD_URL" "$INSTALL_DIR/$FILENAME"; then
-        exit 1
-    fi
-
-    # Extract and install
     cd "$INSTALL_DIR" || {
         log_error "Cannot change directory to $INSTALL_DIR"
         exit 1
     }
+
+    FILENAME="halguru-$OS-$ARCH-$VERSION.zip"
+    DOWNLOAD_URL="https://github.com/$REPO_OWNER/$REPO_NAME/releases/download/$VERSION/$FILENAME"
+
+    log_info "Downloading $DOWNLOAD_URL..."
+
+    if ! download_file "$DOWNLOAD_URL" "$FILENAME"; then
+        exit 1
+    fi
 
     if ! unzip -o "$FILENAME"; then
         log_error "Failed to extract archive"
