@@ -3,7 +3,7 @@ name: Release
 on:
   push:
     tags:
-      - '*'
+      - 'v*'
 
 jobs:
   release:
@@ -21,20 +21,61 @@ jobs:
       - name: Read version
         id: version
         run: |
-          echo "version=$(cat docs/version.txt)" >> $GITHUB_OUTPUT
-          echo ${{ steps.release.outputs.version }}
+          echo "Tag name: ${{ github.ref_name }}"
+          TAG_NAME="${{ github.ref_name }}"
+          VERSION=$(echo "$TAG_NAME" | sed 's/^v//')
+          echo "version=$VERSION" >> $GITHUB_OUTPUT
+          echo "Tag version: $VERSION"
+
+      - name: Checkout source repository
+        uses: actions/checkout@v4
+        with:
+          repository: HAL-guru/hal.guru-robots-core
+          path: source-repo
+          token: ${{ secrets.PAT_TOKEN }}
+          fetch-depth: 0
+
+      - name: Download source release assets
+        id: download-assets
+        run: |
+          TAG_NAME="${{ github.ref_name }}"
+          mkdir -p assets
+          cd source-repo
+          if git ls-remote --tags origin $TAG_NAME | grep -q $TAG_NAME; then
+            echo "Tag $TAG_NAME found in source repo"
+            SOURCE_RELEASE_URL=$(curl -s -H "Authorization: token ${{ secrets.PAT_TOKEN }}" \
+              "https://api.github.com/repos/HAL-guru/hal.guru-robots-core/releases/tags/$TAG_NAME" | \
+              jq -r '.assets_url')
+          
+            if [ "$SOURCE_RELEASE_URL" != "null" ] && [ ! -z "$SOURCE_RELEASE_URL" ]; then
+              ASSETS=$(curl -s -H "Authorization: token ${{ secrets.PAT_TOKEN }}" \
+                "$SOURCE_RELEASE_URL" | jq -r '.[] | .browser_download_url')
+          
+              cd ../assets
+              for asset in $ASSETS; do
+                echo "Downloading $asset"
+                curl -s -L -H "Authorization: token ${{ secrets.PAT_TOKEN }}" \
+                  -H "Accept: application/octet-stream" \
+                  "$asset" -o "$(basename "$asset")"
+              done
+              echo "::set-output name=has_assets::true"
+            else
+              echo "No assets found for release $TAG_NAME"
+              echo "::set-output name=has_assets::false"
+            fi
+          else
+            echo "Tag $TAG_NAME not found in source repository"
+            echo "::set-output name=has_assets::false"
+          fi
 
       - name: Create/Update Release
+        id: create_release
         uses: softprops/action-gh-release@v1
         with:
-          name: Release ${{ steps.release.outputs.version }}
-          tag_name: ${{ steps.release.outputs.version }}
+          name: Release ${{ steps.version.outputs.version }}
+          tag_name: ${{ github.ref_name }}
           draft: false
           prerelease: false
+          files: assets/*
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-
-      - name: halguru installation
-        run: curl -sSL https://docs.hal.guru/installation/install.sh | bash
-      - name: Determine version
-        run: halguru --version
