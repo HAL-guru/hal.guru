@@ -43,20 +43,38 @@ jobs:
           cd source-repo
           if git ls-remote --tags origin $TAG_NAME | grep -q $TAG_NAME; then
             echo "Tag $TAG_NAME found in source repo"
-            SOURCE_RELEASE_URL=$(curl -s -H "Authorization: token ${{ secrets.PAT_TOKEN }}" \
-              "https://api.github.com/repos/HAL-guru/hal.guru-robots-core/releases/tags/$TAG_NAME" | \
-              jq -r '.assets_url')
           
-            if [ "$SOURCE_RELEASE_URL" != "null" ] && [ ! -z "$SOURCE_RELEASE_URL" ]; then
-              ASSETS=$(curl -s -H "Authorization: token ${{ secrets.PAT_TOKEN }}" \
-                "$SOURCE_RELEASE_URL" | jq -r '.[] | .browser_download_url')
+            RELEASE_INFO=$(curl -s -H "Authorization: token ${{ secrets.PAT_TOKEN }}" \
+              "https://api.github.com/repos/HAL-guru/hal.guru-robots-core/releases/tags/$TAG_NAME")
           
+            if [ "$(echo "$RELEASE_INFO" | jq -r '.message')" == "Not Found" ]; then
+              echo "Release not found for tag $TAG_NAME"
+              echo "::set-output name=has_assets::false"
+              exit 0
+            fi
+          
+            ASSETS_LIST=$(echo "$RELEASE_INFO" | jq -r '.assets[] | {name: .name, id: .id}')
+            if [ -n "$ASSETS_LIST" ]; then
               cd ../assets
-              for asset in $ASSETS; do
-                echo "Downloading $asset"
+              echo "$ASSETS_LIST" | jq -c '.' | while read -r asset; do
+                ASSET_ID=$(echo "$asset" | jq -r '.id')
+                ASSET_NAME=$(echo "$asset" | jq -r '.name')
+                echo "Downloading $ASSET_NAME (ID: $ASSET_ID)"
+          
                 curl -s -L -H "Authorization: token ${{ secrets.PAT_TOKEN }}" \
                   -H "Accept: application/octet-stream" \
-                  "$asset" -o "$(basename "$asset")"
+                  "https://api.github.com/repos/HAL-guru/hal.guru-robots-core/releases/assets/$ASSET_ID" \
+                  --output "$ASSET_NAME"
+          
+                if [ -f "$ASSET_NAME" ]; then 
+                  if grep -q "Not Found" "$ASSET_NAME"; then
+                    echo "::error::Failed to download $ASSET_NAME (received 'Not Found' response)"
+                  else
+                    echo "Successfully downloaded $ASSET_NAME"
+                  fi
+                else
+                  echo "::error::Failed to download $ASSET_NAME"
+                fi
               done
               echo "::set-output name=has_assets::true"
             else
@@ -79,7 +97,7 @@ jobs:
     
           SMALL_FILES=$(find assets -type f -printf "%s %p\n" | awk '$1 < 1024 {print}' | wc -l)
           if [ "$SMALL_FILES" -gt 0 ]; then
-            echo "::error::Znaleziono pliki mniejsze niż 1KB:"
+            echo "::error::Founds found less than 1KB:"
             find assets -type f -printf "%s %p\n" | awk '$1 < 1024 {print $2}' | xargs ls -lh
             exit 1
           fi
