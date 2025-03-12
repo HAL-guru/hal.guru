@@ -76,14 +76,15 @@ jobs:
             echo "::error::Empty directory."
             exit 1
           fi
-
-          SMALL_FILES=$(find assets -type f -size -1k | wc -l)
+    
+          SMALL_FILES=$(find assets -type f -printf "%s %p\n" | awk '$1 < 1024 {print}' | wc -l)
           if [ "$SMALL_FILES" -gt 0 ]; then
-            echo "::error::Founds found less than 1KB:"
-            find assets -type f -size -1k -exec ls -lh {} \;
+            echo "::error::Znaleziono pliki mniejsze niż 1KB:"
+            find assets -type f -printf "%s %p\n" | awk '$1 < 1024 {print $2}' | xargs ls -lh
             exit 1
           fi
           echo "Success! All downloaded files are larger than 1KB."
+
 
       - name: Create/Update Release
         id: create_release
