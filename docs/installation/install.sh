@@ -8,8 +8,9 @@ INSTALL_DIR="$HOME/.halguru"
 LOG_FILE="$INSTALL_DIR/install.log"
 
 log_error() {
-    local message="$1"
-    echo "Error: $message" | tee -a "$LOG_FILE" >&2
+    local code="$1"
+    local message="$2"
+    echo "Error $code: $message" | tee -a "$LOG_FILE" >&2
 }
 
 log_info() {
@@ -32,7 +33,7 @@ check_prerequisites() {
     done
 
     if [ ${#missing_tools[@]} -ne 0 ]; then
-        log_error "Missing required tools: ${missing_tools[*]}"
+        log_error 1 "Missing required tools: ${missing_tools[*]}"
         exit 1
     fi
 }
@@ -42,13 +43,13 @@ get_latest_version() {
     version=$(curl -s "https://api.github.com/repos/$REPO_OWNER/$REPO_NAME/releases/latest" |
              grep '"tag_name":' |
              sed -E 's/.*"([^"]+)".*/\1/') || {
-        log_error "Failed to fetch latest version"
-        exit 1
+        log_error 2 "Failed to fetch latest version"
+        exit 2
     }
 
     if [ -z "$version" ]; then
-        log_error "Received empty version value"
-        exit 1
+        log_error 3 "Received empty version value"
+        exit 3
     fi
 
     echo "$version"
@@ -62,8 +63,8 @@ get_arch() {
         arm64)   echo "arm64" ;;
         aarch64) echo "arm64" ;;
         *)
-            log_error "Unsupported architecture: $arch"
-            exit 1
+            log_error 4 "Unsupported architecture: $arch"
+            exit 4
             ;;
     esac
 }
@@ -75,8 +76,8 @@ get_os() {
         Linux*)  echo "linux" ;;
         Darwin*) echo "osx" ;;
         *)
-            log_error "Unsupported operating system: $os"
-            exit 1
+            log_error 5 "Unsupported operating system: $os"
+            exit 5
             ;;
     esac
 }
@@ -88,29 +89,31 @@ download_file() {
     local attempt=1
 
     while [ $attempt -le $max_attempts ]; do
-        log_info "Download attempt ($attempt/$max_attempts)..."
-        curl -I -L "$url"
+        if [ $attempt -gt 1 ]; then
+          log_info "Download attempt ($attempt/$max_attempts)..."
+        fi
+        curl -I -L "$url" > /dev/null 2>&1
 
-        if curl -v -L --fail -H "Accept: application/octet-stream" -A "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36" "$url" -o "$output"; then
+        if curl -L --fail -H "Accept: application/octet-stream" \
+            -A "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36" \
+            "$url" -o "$output" 2>/dev/null; then
             local filesize=$(wc -c < "$output")
             log_info "Downloaded file: $filesize bytes"
             if [ "$filesize" -gt 1000 ]; then
                 return 0
             else
-                log_error "The downloaded file is too small ($filesize bytes)"
-                #log_info "Contents:"
-                #cat "$output"
+                log_error 6 "The downloaded file is too small ($filesize bytes)"
             fi
         else
-            log_error "The file could not be downloaded. Curl error code: $?"
+            log_error 7 "The file could not be downloaded. Curl error code: $?"
         fi
 
         attempt=$((attempt + 1))
         [ $attempt -le $max_attempts ] && sleep 5
     done
 
-    log_error "Failed to download file after $max_attempts attempts"
-    return 1
+    log_error 8 "Failed to download file after $max_attempts attempts"
+    exit 8
 }
 
 cleanup() {
@@ -137,40 +140,45 @@ main() {
     touch "$LOG_FILE"
 
     cd "$INSTALL_DIR" || {
-        log_error "Cannot change directory to $INSTALL_DIR"
-        exit 1
+        log_error 9 "Cannot change directory to $INSTALL_DIR"
+        exit 9
     }
 
     FILENAME="halguru-$OS-$ARCH-$VERSION.zip"
+    UNPACK_DIR="$INSTALL_DIR/halguru-$OS-$ARCH-$VERSION"
     DOWNLOAD_URL="https://github.com/$REPO_OWNER/$REPO_NAME/releases/download/$VERSION/$FILENAME"
 
     log_info "Downloading $DOWNLOAD_URL..."
 
-    if ! download_file "$DOWNLOAD_URL" "$FILENAME"; then
-        exit 1
-    fi
+    download_file "$DOWNLOAD_URL" "$FILENAME"
 
     if ! unzip -o "$FILENAME"; then
-        log_error "Failed to extract archive"
-        exit 1
+        log_error 11 "Failed to extract archive"
+        exit 11
     fi
 
+    if ! mv $UNPACK_DIR/* $INSTALL_DIR; then
+        log_error 12 "It was not possible to move the unpacked files to the directory: $INSTALL_DIR"
+        exit 12
+    fi
+    rm -rf "$UNPACK_DIR"
+
     if ! chmod +x halguru; then
-        log_error "Cannot set execution permissions"
-        exit 1
+        log_error 13 "Cannot set execution permissions"
+        exit 13
     fi
 
     if ! sudo ln -sf "$INSTALL_DIR/halguru" /usr/local/bin/halguru; then
-        log_error "Failed to create symbolic link"
-        exit 1
+        log_error 14 "Failed to create symbolic link"
+        exit 14
     fi
 
-    if ! halguru --install; then
-        log_error "Failed to configure halguru"
-        exit 1
+    if ! halguru install; then
+        log_error 15 "Failed to configure halguru"
+        exit 15
     fi
 
-    log_success "Installation of halguru v$VERSION completed successfully!"
+    log_success "Installation of halguru $VERSION completed successfully!"
     log_info "You can now use the command: halguru"
 }
 
