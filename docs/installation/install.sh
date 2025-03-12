@@ -126,7 +126,7 @@ cleanup() {
 main() {
     trap 'cleanup "$INSTALL_DIR/$FILENAME"' EXIT
 
-    log_info "Starting installation..."
+    log_info "Starting installation halguru"
 
     check_prerequisites
 
@@ -134,7 +134,7 @@ main() {
     ARCH=$(get_arch)
     VERSION=$(get_latest_version)
 
-    log_info "Creating directory $INSTALL_DIR..."
+    log_info "Creating directory $INSTALL_DIR"
 
     mkdir -p "$INSTALL_DIR"
     touch "$LOG_FILE"
@@ -148,7 +148,7 @@ main() {
     UNPACK_DIR="$INSTALL_DIR/halguru-$OS-$ARCH-$VERSION"
     DOWNLOAD_URL="https://github.com/$REPO_OWNER/$REPO_NAME/releases/download/$VERSION/$FILENAME"
 
-    log_info "Downloading $DOWNLOAD_URL..."
+    log_info "Downloading $DOWNLOAD_URL"
 
     download_file "$DOWNLOAD_URL" "$FILENAME"
 
@@ -157,7 +157,7 @@ main() {
         exit 11
     fi
 
-    if ! mv $UNPACK_DIR/* $INSTALL_DIR; then
+    if ! mv -f $UNPACK_DIR/* $INSTALL_DIR; then
         log_error 12 "It was not possible to move the unpacked files to the directory: $INSTALL_DIR"
         exit 12
     fi
@@ -179,7 +179,7 @@ main() {
     fi
 
     log_success "Installation of halguru $VERSION completed successfully!"
-    log_info "You can now use the command: halguru"
+    log_info "You can run the command: halguru --version"
 }
 
 main

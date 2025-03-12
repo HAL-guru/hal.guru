@@ -27,7 +27,7 @@ Next, you need to install the halguru application along with its extension for t
 2. Execute the following command to download and run the installation script:
 
 ```bash
-curl -sSL https://docs.hal.guru/installation/install.sh | bash
+sudo curl -sSL https://docs.hal.guru/installation/install.sh | bash
 ```
 
 3. The script will automatically:
