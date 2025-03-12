@@ -72,6 +72,10 @@ jobs:
         run: |
           cd ./artifact
           tar xf artifact.tar
+          ls -la
+
+      - name: Verify artifact
+        run: |
           ls -la ./artifact
 
       - name: Deploy to GitHub Pages
