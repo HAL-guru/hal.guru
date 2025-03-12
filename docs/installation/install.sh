@@ -9,17 +9,17 @@ LOG_FILE="$INSTALL_DIR/install.log"
 
 log_error() {
     local message="$1"
-    echo "❌ Error: $message" | tee -a "$LOG_FILE" >&2
+    echo "Error: $message" | tee -a "$LOG_FILE" >&2
 }
 
 log_info() {
     local message="$1"
-    echo "ℹ️ $message" | tee -a "$LOG_FILE"
+    echo "$message" | tee -a "$LOG_FILE"
 }
 
 log_success() {
     local message="$1"
-    echo "✅ $message" | tee -a "$LOG_FILE"
+    echo "$message" | tee -a "$LOG_FILE"
 }
 
 check_prerequisites() {
@@ -57,9 +57,10 @@ get_latest_version() {
 get_arch() {
     local arch
     arch=$(uname -m)
+    echo arch
     case $arch in
         x86_64)  echo "x64" ;;
-        aarch64) echo "arm64" ;;
+        arch64) echo "arm64" ;;
         *)
             log_error "Unsupported architecture: $arch"
             exit 1
