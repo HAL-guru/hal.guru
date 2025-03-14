@@ -91,36 +91,50 @@
     "Agent": {
       "type": "object",
       "additionalProperties": false,
+      "required": [
+        "Name",
+        "Type",
+        "Version"
+      ],
       "properties": {
         "Id": {
           "type": "string",
           "format": "guid"
         },
         "Name": {
+          "title": "Agent Name",
           "type": "string",
           "maxLength": 50,
           "minLength": 6
         },
         "Type": {
+          "title": "Type of the Agent",
           "$ref": "#/definitions/AgentType"
         },
         "Version": {
+          "title": "Version of the Agent",
           "type": "string",
+          "default": "1.0.0",
+          "minLength": 1,
           "pattern": "v?\\d+\\.\\d+(\\.\\d+)?(-[a-zA-Z0-9\\.]+)?(\\+[a-zA-Z0-9\\.]+)?"
         },
         "Description": {
+          "title": "Description of the Agent",
           "type": [
             "null",
             "string"
           ]
         },
         "Author": {
+          "title": "Author of the Agent",
           "$ref": "#/definitions/Author"
         },
         "Start": {
+          "title": "Start configuration for the Agent",
           "$ref": "#/definitions/Start"
         },
         "Themes": {
+          "title": "Themes for the Agent",
           "type": "object",
           "x-dictionaryKey": {
             "$ref": "#/definitions/Theme"
@@ -130,10 +144,12 @@
           }
         },
         "UserInterface": {
+          "title": "User Interface Design for the Agent",
           "$ref": "#/definitions/AgentUIDesign"
         },
-        "Behavior": {
-          "$ref": "#/definitions/AgentBehavior"
+        "Features": {
+          "title": "Features of the Agent",
+          "$ref": "#/definitions/AgentFeatures"
         }
       }
     },
@@ -186,23 +202,32 @@
     "Start": {
       "type": "object",
       "additionalProperties": false,
+      "required": [
+        "LlmConnectorId"
+      ],
       "properties": {
-        "LlmConnector": {
+        "LlmConnectorId": {
+          "title": "Id of the LLM connector",
           "type": "string",
+          "description": "Identifier of the LLM connector to be used from the LlmConnectors list.",
+          "default": "",
           "maxLength": 50,
           "minLength": 6
         },
-        "Prompt": {
+        "PromptId": {
           "type": [
             "null",
             "string"
-          ]
+          ],
+          "description": "Identifier of the prompt to be used during the agent's initialization process."
         },
         "Url": {
           "type": [
             "null",
             "string"
-          ]
+          ],
+          "description": "URL associated with the start configuration of the agent.",
+          "format": "uri"
         }
       }
     },
@@ -304,7 +329,7 @@
         }
       }
     },
-    "AgentBehavior": {
+    "AgentFeatures": {
       "type": "object",
       "additionalProperties": false,
       "properties": {
