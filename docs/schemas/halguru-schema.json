@@ -11,27 +11,27 @@
       "$ref": "#/definitions/Agent"
     },
     "Messages": {
-      "type": "object",
-      "additionalProperties": {
-        "type": "string"
+      "type": "array",
+      "items": {
+        "$ref": "#/definitions/AgentStaticMessage"
       }
     },
     "Prompts": {
-      "type": "object",
-      "additionalProperties": {
-        "type": "string"
+      "type": "array",
+      "items": {
+        "$ref": "#/definitions/AgentPrompt"
       }
     },
     "LlmConnectors": {
-      "type": "object",
-      "additionalProperties": {
+      "type": "array",
+      "items": {
         "$ref": "#/definitions/LlmConnector"
       }
     },
     "Secrets": {
-      "type": "object",
-      "additionalProperties": {
-        "type": "string"
+      "type": "array",
+      "items": {
+        "$ref": "#/definitions/AgentSecret"
       }
     },
     "Session": {
@@ -44,15 +44,9 @@
         }
       ]
     },
-    "Variables": {
-      "type": "object",
-      "additionalProperties": {
-        "type": "string"
-      }
-    },
     "Tests": {
-      "type": "object",
-      "additionalProperties": {
+      "type": "array",
+      "items": {
         "$ref": "#/definitions/AgentTest"
       }
     }
@@ -94,7 +88,11 @@
       "required": [
         "Name",
         "Type",
-        "Version"
+        "Version",
+        "Start",
+        "Themes",
+        "UserInterface",
+        "Features"
       ],
       "properties": {
         "Id": {
@@ -127,28 +125,29 @@
         },
         "Author": {
           "title": "Author of the Agent",
-          "$ref": "#/definitions/Author"
+          "$ref": "#/definitions/AgentAuthor"
         },
         "Start": {
-          "title": "Start configuration for the Agent",
-          "$ref": "#/definitions/Start"
+          "title": "Agent Start Configuration",
+          "description": "The starting configuration for the agent.",
+          "$ref": "#/definitions/AgentStart"
         },
         "Themes": {
-          "title": "Themes for the Agent",
-          "type": "object",
-          "x-dictionaryKey": {
-            "$ref": "#/definitions/Theme"
-          },
-          "additionalProperties": {
+          "title": "Agent Themes",
+          "type": "array",
+          "description": "The collection of themes and their associated designs for the agent.",
+          "items": {
             "$ref": "#/definitions/ThemeDesign"
           }
         },
         "UserInterface": {
-          "title": "User Interface Design for the Agent",
+          "title": "Agent User Interface",
+          "description": "The user interface design configuration for the agent.",
           "$ref": "#/definitions/AgentUIDesign"
         },
         "Features": {
-          "title": "Features of the Agent",
+          "title": "Agent Features",
+          "description": "The features and capabilities of the agent.",
           "$ref": "#/definitions/AgentFeatures"
         }
       }
@@ -163,7 +162,7 @@
         0
       ]
     },
-    "Author": {
+    "AgentAuthor": {
       "type": "object",
       "additionalProperties": false,
       "properties": {
@@ -199,27 +198,27 @@
         }
       }
     },
-    "Start": {
+    "AgentStart": {
       "type": "object",
       "additionalProperties": false,
       "required": [
-        "LlmConnectorId"
+        "LlmConnector"
       ],
       "properties": {
-        "LlmConnectorId": {
-          "title": "Id of the LLM connector",
+        "LlmConnector": {
+          "title": "LLM Connector Name",
           "type": "string",
-          "description": "Identifier of the LLM connector to be used from the LlmConnectors list.",
+          "description": "Name of the LLM connector to be used from the LlmConnectors list.",
           "default": "",
           "maxLength": 50,
           "minLength": 6
         },
-        "PromptId": {
+        "Prompt": {
           "type": [
             "null",
             "string"
           ],
-          "description": "Identifier of the prompt to be used during the agent's initialization process."
+          "description": "Name of the prompt to be used during the agent's initialization process."
         },
         "Url": {
           "type": [
@@ -228,6 +227,30 @@
           ],
           "description": "URL associated with the start configuration of the agent.",
           "format": "uri"
+        }
+      }
+    },
+    "ThemeDesign": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "Theme",
+        "Messages"
+      ],
+      "properties": {
+        "Theme": {
+          "title": "Theme",
+          "description": "The visual theme for the design configuration - Light or Dark.",
+          "default": 0,
+          "$ref": "#/definitions/Theme"
+        },
+        "Messages": {
+          "title": "Messages (Theme Design)",
+          "type": "array",
+          "description": "Chat message themes associated with the theme design.",
+          "items": {
+            "$ref": "#/definitions/ChatMessageTheme"
+          }
         }
       }
     },
@@ -243,48 +266,13 @@
         1
       ]
     },
-    "ThemeDesign": {
-      "type": "object",
-      "additionalProperties": false,
-      "properties": {
-        "Messages": {
-          "type": [
-            "null",
-            "object"
-          ],
-          "x-dictionaryKey": {
-            "$ref": "#/definitions/ChatMessageType"
-          },
-          "additionalProperties": {
-            "$ref": "#/definitions/ChatMessageTheme"
-          }
-        }
-      }
-    },
-    "ChatMessageType": {
-      "type": "integer",
-      "description": "",
-      "x-enumNames": [
-        "User",
-        "Agent",
-        "System",
-        "Busy",
-        "Error",
-        "Owner"
-      ],
-      "enum": [
-        0,
-        1,
-        2,
-        3,
-        4,
-        5
-      ]
-    },
     "ChatMessageTheme": {
       "type": "object",
       "additionalProperties": false,
       "properties": {
+        "MessageType": {
+          "$ref": "#/definitions/ChatMessageType"
+        },
         "IconCssClass": {
           "type": [
             "null",
@@ -316,6 +304,26 @@
           ]
         }
       }
+    },
+    "ChatMessageType": {
+      "type": "integer",
+      "description": "",
+      "x-enumNames": [
+        "User",
+        "Agent",
+        "System",
+        "Busy",
+        "Error",
+        "Owner"
+      ],
+      "enum": [
+        0,
+        1,
+        2,
+        3,
+        4,
+        5
+      ]
     },
     "AgentUIDesign": {
       "type": "object",
@@ -372,10 +380,56 @@
         }
       }
     },
+    "AgentStaticMessage": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "Name",
+        "Message"
+      ],
+      "properties": {
+        "Name": {
+          "title": "Name",
+          "type": "string",
+          "description": "The name of the static message for the agent.",
+          "minLength": 1
+        },
+        "Message": {
+          "title": "Message",
+          "type": "string",
+          "description": "Content of the static message for the agent.",
+          "minLength": 1
+        }
+      }
+    },
+    "AgentPrompt": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "Name",
+        "Prompt"
+      ],
+      "properties": {
+        "Name": {
+          "type": "string",
+          "description": "The name of the prompt.",
+          "maxLength": 20,
+          "minLength": 6
+        },
+        "Prompt": {
+          "type": "string",
+          "description": "The text content of the prompt.",
+          "minLength": 1
+        }
+      }
+    },
     "LlmConnector": {
       "type": "object",
       "additionalProperties": false,
       "properties": {
+        "Name": {
+          "type": "string"
+        },
         "LlmProvider": {
           "$ref": "#/definitions/LlmProvider"
         },
@@ -452,6 +506,29 @@
         7
       ]
     },
+    "AgentSecret": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "Key",
+        "Secret"
+      ],
+      "properties": {
+        "Key": {
+          "title": "Secret Key",
+          "type": "string",
+          "description": "The name of the secret key.",
+          "minLength": 1,
+          "pattern": "^[a-zA-Z0-9_\\-]+$"
+        },
+        "Secret": {
+          "title": "Secret Value",
+          "type": "string",
+          "description": "The value of the secret key.",
+          "minLength": 1
+        }
+      }
+    },
     "AgentSession": {
       "type": "object",
       "additionalProperties": false,
@@ -526,24 +603,41 @@
     "AgentTest": {
       "type": "object",
       "additionalProperties": false,
+      "required": [
+        "Name",
+        "QuestionMessage"
+      ],
       "properties": {
+        "Name": {
+          "title": "Test Name",
+          "type": "string",
+          "description": "The name of the test case.",
+          "minLength": 1
+        },
         "QuestionMessage": {
-          "type": "string"
+          "title": "Question Message",
+          "type": "string",
+          "description": "The question or input message directed to the agent.",
+          "minLength": 1
         },
         "AnswerMessageContains": {
+          "title": "Answer Message Contains",
           "type": [
             "array",
             "null"
           ],
+          "description": "A list of substrings that the output message is expected to contain.",
           "items": {
             "type": "string"
           }
         },
         "AnswerMessageRegex": {
+          "title": "Answer Message Regex",
           "type": [
             "null",
             "string"
-          ]
+          ],
+          "description": "A regular expression pattern that the agent's response should conform to."
         }
       }
     }
