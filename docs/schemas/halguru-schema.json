@@ -8,6 +8,7 @@
     "HalGuru": {
       "type": "object",
       "description": "Header information for the hal.guru platform. Don't change this.",
+      "markdownDescription": "Markdown: Header information for the hal.guru platform. Don't change this.",
       "additionalProperties": false,
       "properties": {
         "FilePurpose": {
@@ -16,7 +17,8 @@
             "null",
             "string"
           ],
-          "description": "The purpose of the file."
+          "description": "The purpose of the file.",
+          "markdownDescription": "Markdown: The purpose of the file."
         },
         "PlatformVersion": {
           "title": "Platform Version",
