@@ -1,0 +1,32 @@
+HalGuru:
+  FilePurpose: the AI agent configuration for the hal.guru platform
+  PlatformVersion: 1.0.0
+Agent:
+  Type: Basic
+  Name: My OpenAI Assistant Agent
+  Version: 1.0.0
+  Description: >-
+    This agent utilizes OpenAI's 'gpt-4o' assistant model
+    with an integrated internal knowledge base
+    to deliver accurate, contextually relevant, and highly personalized support.
+    A low-temperature setting (0.1), promoting responses that are precise,
+    focused, and deterministic. It has a maximum token limit of 2000,
+    allowing for detailed and comprehensive conversations.
+  Start:
+    Prompt: my-prompt
+    LlmConnector: my-connector
+    Url:
+Prompts:
+  - Name: system-prompt
+    Prompt: >-
+      Answer in two sentences.
+  - Name: my-prompt
+    Prompt: >-
+      You're the personal assistant. Your job is to help in any task.
+LlmConnectors:
+  - Name: my-connector
+    LlmProvider: OpenAIAssistant
+    Model: gpt-4o
+    Temperature: 0.1
+    MaxTokens: 2000
+    InstructionsPrompt: system-prompt
