@@ -5,46 +5,66 @@
   "additionalProperties": false,
   "properties": {
     "Started": {
-      "type": "string",
-      "format": "date-time",
-      "x-nullable": true
+      "type": [
+        "null",
+        "string"
+      ],
+      "format": "date-time"
     },
     "LastAccess": {
-      "type": "string",
-      "format": "date-time",
-      "x-nullable": true
+      "type": [
+        "null",
+        "string"
+      ],
+      "format": "date-time"
     },
     "IsStarted": {
-      "type": "boolean",
-      "x-nullable": true
+      "type": [
+        "boolean",
+        "null"
+      ]
     },
     "ThreadId": {
-      "type": "string",
-      "x-nullable": true
+      "type": [
+        "null",
+        "string"
+      ]
     },
     "LlmConnector": {
-      "type": "string",
-      "x-nullable": true
+      "type": [
+        "null",
+        "string"
+      ]
     },
     "Prompt": {
-      "type": "string",
-      "x-nullable": true
+      "type": [
+        "null",
+        "string"
+      ]
     },
     "Url": {
-      "type": "string",
-      "x-nullable": true
+      "type": [
+        "null",
+        "string"
+      ]
     },
     "Language": {
-      "type": "string",
-      "x-nullable": true
+      "type": [
+        "null",
+        "string"
+      ]
     },
     "Description": {
-      "type": "string",
-      "x-nullable": true
+      "type": [
+        "null",
+        "string"
+      ]
     },
     "Variables": {
-      "type": "object",
-      "x-nullable": true,
+      "type": [
+        "null",
+        "object"
+      ],
       "additionalProperties": {
         "type": "string"
       }

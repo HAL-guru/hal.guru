@@ -5,88 +5,140 @@
   "additionalProperties": false,
   "properties": {
     "Command": {
-      "type": "string",
-      "x-nullable": true
+      "type": [
+        "null",
+        "string"
+      ]
     },
     "SqlSelect": {
-      "type": "object",
-      "x-nullable": true,
-      "additionalProperties": false,
-      "properties": {
-        "DatabaseProvider": {
-          "type": "string",
-          "x-nullable": true
+      "oneOf": [
+        {
+          "type": "null"
         },
-        "ConnectionString": {
-          "type": "string",
-          "x-nullable": true
-        },
-        "SqlQuery": {
-          "type": "string",
-          "x-nullable": true
-        },
-        "Explanation": {
-          "type": "string",
-          "x-nullable": true
+        {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "DatabaseProvider": {
+              "type": [
+                "null",
+                "string"
+              ]
+            },
+            "ConnectionString": {
+              "type": [
+                "null",
+                "string"
+              ]
+            },
+            "SqlQuery": {
+              "type": [
+                "null",
+                "string"
+              ]
+            },
+            "Explanation": {
+              "type": [
+                "null",
+                "string"
+              ]
+            }
+          }
         }
-      }
+      ]
     },
     "SendToPipedrive": {
-      "type": "object",
-      "x-nullable": true,
-      "additionalProperties": false,
-      "properties": {
-        "Language": {
-          "type": "string",
-          "x-nullable": true
+      "oneOf": [
+        {
+          "type": "null"
         },
-        "DealTitle": {
-          "type": "string",
-          "x-nullable": true
-        },
-        "UserName": {
-          "type": "string",
-          "x-nullable": true
-        },
-        "UserOrganisation": {
-          "type": "string",
-          "x-nullable": true
-        },
-        "UserEmail": {
-          "type": "string",
-          "x-nullable": true
-        },
-        "UserPhone": {
-          "type": "string",
-          "x-nullable": true
-        },
-        "Description": {
-          "type": "string",
-          "x-nullable": true
+        {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "Language": {
+              "type": [
+                "null",
+                "string"
+              ]
+            },
+            "DealTitle": {
+              "type": [
+                "null",
+                "string"
+              ]
+            },
+            "UserName": {
+              "type": [
+                "null",
+                "string"
+              ]
+            },
+            "UserOrganisation": {
+              "type": [
+                "null",
+                "string"
+              ]
+            },
+            "UserEmail": {
+              "type": [
+                "null",
+                "string"
+              ]
+            },
+            "UserPhone": {
+              "type": [
+                "null",
+                "string"
+              ]
+            },
+            "Description": {
+              "type": [
+                "null",
+                "string"
+              ]
+            }
+          }
         }
-      }
+      ]
     },
     "SetPrompt": {
-      "type": "object",
-      "x-nullable": true,
-      "additionalProperties": false,
-      "properties": {
-        "Name": {
-          "type": "string",
-          "x-nullable": true
+      "oneOf": [
+        {
+          "type": "null"
+        },
+        {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "Name": {
+              "type": [
+                "null",
+                "string"
+              ]
+            }
+          }
         }
-      }
+      ]
     },
     "SetLlmConnector": {
-      "type": "object",
-      "x-nullable": true,
-      "additionalProperties": false,
-      "properties": {
-        "Name": {
-          "type": "string",
-          "x-nullable": true
+      "oneOf": [
+        {
+          "type": "null"
+        },
+        {
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "Name": {
+              "type": [
+                "null",
+                "string"
+              ]
+            }
+          }
         }
-      }
+      ]
     }
   }
 }

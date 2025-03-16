@@ -46,20 +46,28 @@
             "type": "boolean"
           },
           "UrlContains": {
-            "type": "string",
-            "x-nullable": true
+            "type": [
+              "null",
+              "string"
+            ]
           },
           "ContainsText": {
-            "type": "string",
-            "x-nullable": true
+            "type": [
+              "null",
+              "string"
+            ]
           },
           "ContainsXpath": {
-            "type": "string",
-            "x-nullable": true
+            "type": [
+              "null",
+              "string"
+            ]
           },
           "ContentXPath": {
-            "type": "string",
-            "x-nullable": true
+            "type": [
+              "null",
+              "string"
+            ]
           },
           "DisabledTags": {
             "type": "array",
@@ -80,20 +88,28 @@
                   "type": "string"
                 },
                 "NameRegex": {
-                  "type": "string",
-                  "x-nullable": true
+                  "type": [
+                    "null",
+                    "string"
+                  ]
                 },
                 "ValueRegex": {
-                  "type": "string",
-                  "x-nullable": true
+                  "type": [
+                    "null",
+                    "string"
+                  ]
                 },
                 "NameXpath": {
-                  "type": "string",
-                  "x-nullable": true
+                  "type": [
+                    "null",
+                    "string"
+                  ]
                 },
                 "ValueXpath": {
-                  "type": "string",
-                  "x-nullable": true
+                  "type": [
+                    "null",
+                    "string"
+                  ]
                 },
                 "IncludeHtml": {
                   "type": "boolean"
