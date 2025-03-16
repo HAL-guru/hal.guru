@@ -9,100 +9,84 @@
       "x-nullable": true
     },
     "SqlSelect": {
+      "type": "object",
       "x-nullable": true,
-      "oneOf": [
-        {
-          "type": "object",
-          "additionalProperties": false,
-          "properties": {
-            "DatabaseProvider": {
-              "type": "string",
-              "x-nullable": true
-            },
-            "ConnectionString": {
-              "type": "string",
-              "x-nullable": true
-            },
-            "SqlQuery": {
-              "type": "string",
-              "x-nullable": true
-            },
-            "Explanation": {
-              "type": "string",
-              "x-nullable": true
-            }
-          }
+      "additionalProperties": false,
+      "properties": {
+        "DatabaseProvider": {
+          "type": "string",
+          "x-nullable": true
+        },
+        "ConnectionString": {
+          "type": "string",
+          "x-nullable": true
+        },
+        "SqlQuery": {
+          "type": "string",
+          "x-nullable": true
+        },
+        "Explanation": {
+          "type": "string",
+          "x-nullable": true
         }
-      ]
+      }
     },
     "SendToPipedrive": {
+      "type": "object",
       "x-nullable": true,
-      "oneOf": [
-        {
-          "type": "object",
-          "additionalProperties": false,
-          "properties": {
-            "Language": {
-              "type": "string",
-              "x-nullable": true
-            },
-            "DealTitle": {
-              "type": "string",
-              "x-nullable": true
-            },
-            "UserName": {
-              "type": "string",
-              "x-nullable": true
-            },
-            "UserOrganisation": {
-              "type": "string",
-              "x-nullable": true
-            },
-            "UserEmail": {
-              "type": "string",
-              "x-nullable": true
-            },
-            "UserPhone": {
-              "type": "string",
-              "x-nullable": true
-            },
-            "Description": {
-              "type": "string",
-              "x-nullable": true
-            }
-          }
+      "additionalProperties": false,
+      "properties": {
+        "Language": {
+          "type": "string",
+          "x-nullable": true
+        },
+        "DealTitle": {
+          "type": "string",
+          "x-nullable": true
+        },
+        "UserName": {
+          "type": "string",
+          "x-nullable": true
+        },
+        "UserOrganisation": {
+          "type": "string",
+          "x-nullable": true
+        },
+        "UserEmail": {
+          "type": "string",
+          "x-nullable": true
+        },
+        "UserPhone": {
+          "type": "string",
+          "x-nullable": true
+        },
+        "Description": {
+          "type": "string",
+          "x-nullable": true
         }
-      ]
+      }
     },
     "SetPrompt": {
+      "type": "object",
       "x-nullable": true,
-      "oneOf": [
-        {
-          "type": "object",
-          "additionalProperties": false,
-          "properties": {
-            "Name": {
-              "type": "string",
-              "x-nullable": true
-            }
-          }
+      "additionalProperties": false,
+      "properties": {
+        "Name": {
+          "type": "string",
+          "x-nullable": true
         }
-      ]
+      }
     },
     "SetLlmConnector": {
+      "type": "object",
       "x-nullable": true,
-      "oneOf": [
-        {
-          "type": "object",
-          "additionalProperties": false,
-          "properties": {
-            "Name": {
-              "type": "string",
-              "x-nullable": true
-            }
-          }
+      "additionalProperties": false,
+      "properties": {
+        "Name": {
+          "type": "string",
+          "x-nullable": true
         }
-      ]
+      }
     }
   }
 }
