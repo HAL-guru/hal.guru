@@ -5,154 +5,104 @@
   "additionalProperties": false,
   "properties": {
     "Command": {
-      "type": [
-        "null",
-        "string"
-      ]
+      "type": "string",
+      "x-nullable": true
     },
     "SqlSelect": {
+      "x-nullable": true,
       "oneOf": [
         {
-          "type": "null"
-        },
-        {
-          "$ref": "#/definitions/SqlSelectAction"
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "DatabaseProvider": {
+              "type": "string",
+              "x-nullable": true
+            },
+            "ConnectionString": {
+              "type": "string",
+              "x-nullable": true
+            },
+            "SqlQuery": {
+              "type": "string",
+              "x-nullable": true
+            },
+            "Explanation": {
+              "type": "string",
+              "x-nullable": true
+            }
+          }
         }
       ]
     },
     "SendToPipedrive": {
+      "x-nullable": true,
       "oneOf": [
         {
-          "type": "null"
-        },
-        {
-          "$ref": "#/definitions/SendToPipedriveAction"
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "Language": {
+              "type": "string",
+              "x-nullable": true
+            },
+            "DealTitle": {
+              "type": "string",
+              "x-nullable": true
+            },
+            "UserName": {
+              "type": "string",
+              "x-nullable": true
+            },
+            "UserOrganisation": {
+              "type": "string",
+              "x-nullable": true
+            },
+            "UserEmail": {
+              "type": "string",
+              "x-nullable": true
+            },
+            "UserPhone": {
+              "type": "string",
+              "x-nullable": true
+            },
+            "Description": {
+              "type": "string",
+              "x-nullable": true
+            }
+          }
         }
       ]
     },
     "SetPrompt": {
+      "x-nullable": true,
       "oneOf": [
         {
-          "type": "null"
-        },
-        {
-          "$ref": "#/definitions/SetPromptAction"
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "Name": {
+              "type": "string",
+              "x-nullable": true
+            }
+          }
         }
       ]
     },
     "SetLlmConnector": {
+      "x-nullable": true,
       "oneOf": [
         {
-          "type": "null"
-        },
-        {
-          "$ref": "#/definitions/SetLlmConnectorAction"
+          "type": "object",
+          "additionalProperties": false,
+          "properties": {
+            "Name": {
+              "type": "string",
+              "x-nullable": true
+            }
+          }
         }
       ]
-    }
-  },
-  "definitions": {
-    "SqlSelectAction": {
-      "type": "object",
-      "additionalProperties": false,
-      "properties": {
-        "DatabaseProvider": {
-          "type": [
-            "null",
-            "string"
-          ]
-        },
-        "ConnectionString": {
-          "type": [
-            "null",
-            "string"
-          ]
-        },
-        "SqlQuery": {
-          "type": [
-            "null",
-            "string"
-          ]
-        },
-        "Explanation": {
-          "type": [
-            "null",
-            "string"
-          ]
-        }
-      }
-    },
-    "SendToPipedriveAction": {
-      "type": "object",
-      "additionalProperties": false,
-      "properties": {
-        "Language": {
-          "type": [
-            "null",
-            "string"
-          ]
-        },
-        "DealTitle": {
-          "type": [
-            "null",
-            "string"
-          ]
-        },
-        "UserName": {
-          "type": [
-            "null",
-            "string"
-          ]
-        },
-        "UserOrganisation": {
-          "type": [
-            "null",
-            "string"
-          ]
-        },
-        "UserEmail": {
-          "type": [
-            "null",
-            "string"
-          ]
-        },
-        "UserPhone": {
-          "type": [
-            "null",
-            "string"
-          ]
-        },
-        "Description": {
-          "type": [
-            "null",
-            "string"
-          ]
-        }
-      }
-    },
-    "SetPromptAction": {
-      "type": "object",
-      "additionalProperties": false,
-      "properties": {
-        "Name": {
-          "type": [
-            "null",
-            "string"
-          ]
-        }
-      }
-    },
-    "SetLlmConnectorAction": {
-      "type": "object",
-      "additionalProperties": false,
-      "properties": {
-        "Name": {
-          "type": [
-            "null",
-            "string"
-          ]
-        }
-      }
     }
   }
 }

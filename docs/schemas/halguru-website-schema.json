@@ -18,7 +18,109 @@
     "Pages": {
       "type": "array",
       "items": {
-        "$ref": "#/definitions/WebsitePage"
+        "type": "object",
+        "additionalProperties": false,
+        "properties": {
+          "Name": {
+            "type": "string"
+          },
+          "TagName": {
+            "type": "string"
+          },
+          "Description": {
+            "type": "string"
+          },
+          "IncludeHtml": {
+            "type": "boolean"
+          },
+          "IncludeText": {
+            "type": "boolean"
+          },
+          "NormalizeWhitespaces": {
+            "type": "boolean"
+          },
+          "RemoveHtmlTags": {
+            "type": "boolean"
+          },
+          "RemoveHtmlAttributes": {
+            "type": "boolean"
+          },
+          "UrlContains": {
+            "type": "string",
+            "x-nullable": true
+          },
+          "ContainsText": {
+            "type": "string",
+            "x-nullable": true
+          },
+          "ContainsXpath": {
+            "type": "string",
+            "x-nullable": true
+          },
+          "ContentXPath": {
+            "type": "string",
+            "x-nullable": true
+          },
+          "DisabledTags": {
+            "type": "array",
+            "items": {
+              "type": "string"
+            }
+          },
+          "Features": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "additionalProperties": false,
+              "properties": {
+                "Name": {
+                  "type": "string"
+                },
+                "TagName": {
+                  "type": "string"
+                },
+                "NameRegex": {
+                  "type": "string",
+                  "x-nullable": true
+                },
+                "ValueRegex": {
+                  "type": "string",
+                  "x-nullable": true
+                },
+                "NameXpath": {
+                  "type": "string",
+                  "x-nullable": true
+                },
+                "ValueXpath": {
+                  "type": "string",
+                  "x-nullable": true
+                },
+                "IncludeHtml": {
+                  "type": "boolean"
+                },
+                "IncludeText": {
+                  "type": "boolean"
+                },
+                "NormalizeWhitespaces": {
+                  "type": "boolean"
+                },
+                "RemoveHtmlTags": {
+                  "type": "boolean"
+                },
+                "RemoveHtmlAttributes": {
+                  "type": "boolean"
+                }
+              }
+            }
+          },
+          "Files": {
+            "type": "array",
+            "items": {
+              "type": "object",
+              "additionalProperties": false
+            }
+          }
+        }
       }
     },
     "UrlsStartWith": {
@@ -26,135 +128,6 @@
       "items": {
         "type": "string"
       }
-    }
-  },
-  "definitions": {
-    "WebsitePage": {
-      "type": "object",
-      "additionalProperties": false,
-      "properties": {
-        "Name": {
-          "type": "string"
-        },
-        "TagName": {
-          "type": "string"
-        },
-        "Description": {
-          "type": "string"
-        },
-        "IncludeHtml": {
-          "type": "boolean"
-        },
-        "IncludeText": {
-          "type": "boolean"
-        },
-        "NormalizeWhitespaces": {
-          "type": "boolean"
-        },
-        "RemoveHtmlTags": {
-          "type": "boolean"
-        },
-        "RemoveHtmlAttributes": {
-          "type": "boolean"
-        },
-        "UrlContains": {
-          "type": [
-            "null",
-            "string"
-          ]
-        },
-        "ContainsText": {
-          "type": [
-            "null",
-            "string"
-          ]
-        },
-        "ContainsXpath": {
-          "type": [
-            "null",
-            "string"
-          ]
-        },
-        "ContentXPath": {
-          "type": [
-            "null",
-            "string"
-          ]
-        },
-        "DisabledTags": {
-          "type": "array",
-          "items": {
-            "type": "string"
-          }
-        },
-        "Features": {
-          "type": "array",
-          "items": {
-            "$ref": "#/definitions/WebsiteFeature"
-          }
-        },
-        "Files": {
-          "type": "array",
-          "items": {
-            "$ref": "#/definitions/WebsiteFile"
-          }
-        }
-      }
-    },
-    "WebsiteFeature": {
-      "type": "object",
-      "additionalProperties": false,
-      "properties": {
-        "Name": {
-          "type": "string"
-        },
-        "TagName": {
-          "type": "string"
-        },
-        "NameRegex": {
-          "type": [
-            "null",
-            "string"
-          ]
-        },
-        "ValueRegex": {
-          "type": [
-            "null",
-            "string"
-          ]
-        },
-        "NameXpath": {
-          "type": [
-            "null",
-            "string"
-          ]
-        },
-        "ValueXpath": {
-          "type": [
-            "null",
-            "string"
-          ]
-        },
-        "IncludeHtml": {
-          "type": "boolean"
-        },
-        "IncludeText": {
-          "type": "boolean"
-        },
-        "NormalizeWhitespaces": {
-          "type": "boolean"
-        },
-        "RemoveHtmlTags": {
-          "type": "boolean"
-        },
-        "RemoveHtmlAttributes": {
-          "type": "boolean"
-        }
-      }
-    },
-    "WebsiteFile": {
-      "type": "object",
-      "additionalProperties": false
     }
   }
 }
