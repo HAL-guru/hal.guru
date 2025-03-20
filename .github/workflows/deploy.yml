@@ -93,4 +93,4 @@ jobs:
         with:
           token: ${{ secrets.GITHUB_TOKEN }}
           path: ./artifact
-        timeout-minutes: 10
+        timeout-minutes: 30
