@@ -2,138 +2,192 @@
   "$schema": "http://json-schema.org/draft-04/schema#",
   "title": "WebsiteConfiguration",
   "type": "object",
-  "additionalProperties": false,
+  "description": "Represents the configuration settings for a website crawler or scraper.\nDefines parameters such as the name of the website, the starting URL,\nmaximum allowed levels and pages, specific URL patterns to process,\nand connectors required for linking external components like LLMs and file systems.",
   "properties": {
     "StartUrl": {
-      "type": "string"
+      "type": "string",
+      "description": "Gets or sets the starting URL for the website."
     },
     "MaxLevel": {
       "type": "integer",
+      "description": "Gets or sets the maximum level allowed for processing or operations in the website.",
       "format": "int32"
     },
     "MaxPages": {
       "type": "integer",
+      "description": "Gets or sets the maximum number of pages to process for the website.",
       "format": "int32"
     },
     "Pages": {
       "type": "array",
+      "description": "Gets or sets the collection of website pages configuration.",
+      "xml": {
+        "wrapped": true
+      },
       "items": {
         "type": "object",
-        "additionalProperties": false,
+        "description": "Represents a configuration for a web page that can be scraped. Provides various properties\nto define the inclusion or exclusion of HTML and text content, as well as ways to filter\nor process the extracted data.",
+        "x-example": "A WebsitePage may represent an individual section of a website, configured to extract specific\nfeatures or files based on its properties.",
+        "xml": {
+          "name": "WebsitePage"
+        },
         "properties": {
           "Name": {
-            "type": "string"
+            "type": "string",
+            "description": "Represents the name of the web page or a specific element within the web page."
           },
           "TagName": {
-            "type": "string"
+            "type": "string",
+            "description": "Represents the tag name of an HTML element or feature within a website page."
           },
           "Description": {
-            "type": "string"
+            "type": "string",
+            "description": "Provides details or information about the web page or a specific element within the web page."
           },
           "IncludeHtml": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "Indicates whether the HTML content of the web page should be included in the output during the web scraping process."
           },
           "IncludeText": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "Determines whether the textual content of a web page should be included during the web scraping process."
           },
           "NormalizeWhitespaces": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "Indicates whether whitespaces should be normalized in the text content extracted from an HTML node.\nWhen enabled, consecutive whitespace characters are replaced with a single space."
           },
           "RemoveHtmlTags": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "Indicates whether HTML tags should be removed from the content of a web page during processing."
           },
           "RemoveHtmlAttributes": {
-            "type": "boolean"
+            "type": "boolean",
+            "description": "Indicates whether HTML attributes should be removed during the web scraping process."
           },
           "UrlContains": {
             "type": [
               "null",
               "string"
-            ]
+            ],
+            "description": "Filter to process only web pages whose URL contains the specified substring.\n            "
           },
           "ContainsText": {
             "type": [
               "null",
               "string"
-            ]
+            ],
+            "description": "Only wepage contains text will be processed.\n            "
           },
           "ContainsXpath": {
             "type": [
               "null",
               "string"
-            ]
+            ],
+            "description": "If defined, ContainsText will be checked only in the xpath.\n            "
           },
           "ContentXPath": {
             "type": [
               "null",
               "string"
-            ]
+            ],
+            "description": "Only html tags from this xpath. If not empty.\n            "
           },
           "DisabledTags": {
             "type": "array",
+            "description": "List of HTML tags that should be disabled or ignored during processing.\n            ",
+            "xml": {
+              "wrapped": true
+            },
             "items": {
-              "type": "string"
+              "type": "string",
+              "xml": {
+                "name": "string"
+              }
             }
           },
           "Features": {
             "type": "array",
+            "description": "Represents a collection of features extracted or associated with a specific web page,\ndefining key elements or properties of interest within the page.",
+            "xml": {
+              "wrapped": true
+            },
             "items": {
               "type": "object",
-              "additionalProperties": false,
+              "description": "Represents a specific feature of a website that can be targeted during web scraping.\nThis includes the ability to identify and extract corresponding data by configuring properties such as tag names,\nregex patterns, XPath expressions, and HTML-processing parameters.",
+              "xml": {
+                "name": "WebsiteFeature"
+              },
               "properties": {
                 "Name": {
-                  "type": "string"
+                  "type": "string",
+                  "description": "Gets or sets the name of the website feature.\nRepresents a descriptive identifier for a given feature within the website scraping process."
                 },
                 "TagName": {
-                  "type": "string"
+                  "type": "string",
+                  "description": "Gets or sets the tag name used to identify or categorize the website feature.\nRepresents an attribute or element type within the website structure, providing context for feature extraction or manipulation."
                 },
                 "NameRegex": {
                   "type": [
                     "null",
                     "string"
-                  ]
+                  ],
+                  "description": "Gets or sets the regular expression pattern to identify the name component of a website feature.\nThis property allows for custom matching and extraction of specific name segments\nfrom a website's content during the scraping process."
                 },
                 "ValueRegex": {
                   "type": [
                     "null",
                     "string"
-                  ]
+                  ],
+                  "description": "Gets or sets the regular expression used to extract specific value matches from the HTML content of a website.\nThis property allows for precise targeting of text or patterns within the scraped HTML data."
                 },
                 "NameXpath": {
                   "type": [
                     "null",
                     "string"
-                  ]
+                  ],
+                  "description": "Gets or sets the XPath expression used to locate the name of a specific feature within the website content.\nRepresents a structured query for extracting the name's specific location in the HTML document."
                 },
                 "ValueXpath": {
                   "type": [
                     "null",
                     "string"
-                  ]
+                  ],
+                  "description": "Gets or sets the XPath expression used to locate and extract the value of a specific feature within a website's HTML content.\nRepresents the path to the element containing the desired data."
                 },
                 "IncludeHtml": {
-                  "type": "boolean"
+                  "type": "boolean",
+                  "description": "Gets or sets a value indicating whether the HTML content of the feature should be included in the output.\nDetermines if the raw HTML representation of a specific web feature is extracted and added to the feature's output during processing."
                 },
                 "IncludeText": {
-                  "type": "boolean"
+                  "type": "boolean",
+                  "description": "Determines whether the text content of the website feature should be included in the output.\nControls whether the extracted plain text, processed via relevant scraping logic,\nis added to the resulting feature output."
                 },
                 "NormalizeWhitespaces": {
-                  "type": "boolean"
+                  "type": "boolean",
+                  "description": "Gets or sets a value indicating whether whitespaces in the extracted content should be normalized.\nWhen enabled, consecutive whitespace characters are collapsed into a single space,\nfacilitating cleaner and more standardized output after web scraping."
                 },
                 "RemoveHtmlTags": {
-                  "type": "boolean"
+                  "type": "boolean",
+                  "description": "Gets or sets a value indicating whether HTML tags should be removed from the content.\nDetermines if the raw HTML content will have tags stripped for plain text processing."
                 },
                 "RemoveHtmlAttributes": {
-                  "type": "boolean"
+                  "type": "boolean",
+                  "description": "Gets or sets a value indicating whether HTML attributes should be removed during web scraping.\nThis property is primarily used to strip unnecessary attributes from HTML elements for cleaner and more optimized data extraction."
                 }
               }
             }
           },
           "Files": {
             "type": "array",
+            "description": "Represents a collection of files associated with the webpage for processing or extraction.",
+            "xml": {
+              "wrapped": true
+            },
             "items": {
               "type": "object",
-              "additionalProperties": false
+              "xml": {
+                "name": "WebsiteFile"
+              }
             }
           }
         }
@@ -141,8 +195,15 @@
     },
     "UrlsStartWith": {
       "type": "array",
+      "description": "Gets or sets the collection of URL prefixes used to filter and process relevant URLs.",
+      "xml": {
+        "wrapped": true
+      },
       "items": {
-        "type": "string"
+        "type": "string",
+        "xml": {
+          "name": "string"
+        }
       }
     }
   }

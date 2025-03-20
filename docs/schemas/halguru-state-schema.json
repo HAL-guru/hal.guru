@@ -1,0 +1,141 @@
+{
+  "$schema": "http://json-schema.org/draft-04/schema#",
+  "title": "AgentState",
+  "type": "object",
+  "description": "Defines the operational state and associated metadata for a session of an agent.",
+  "properties": {
+    "Started": {
+      "title": "Started",
+      "type": [
+        "null",
+        "string"
+      ],
+      "description": "The moment when the agent AI is initiated.",
+      "format": "date-time"
+    },
+    "LastAccess": {
+      "title": "Last Access",
+      "type": [
+        "null",
+        "string"
+      ],
+      "description": "Last access to the agent.",
+      "format": "date-time"
+    },
+    "IsStarted": {
+      "title": "Is Started",
+      "type": [
+        "boolean",
+        "null"
+      ],
+      "description": "Indicates whether the agent has been started."
+    },
+    "ThreadId": {
+      "title": "Thread Id",
+      "type": [
+        "null",
+        "string"
+      ],
+      "description": "The identifier of the thread associated with the agent."
+    },
+    "LlmConnectorName": {
+      "title": "LLM Connector Name",
+      "type": [
+        "null",
+        "string"
+      ],
+      "description": "The name of the LLM connector associated with the agent."
+    },
+    "PromptName": {
+      "title": "Prompt Name",
+      "type": [
+        "null",
+        "string"
+      ],
+      "description": "The name of the currently active prompt associated with the agent."
+    },
+    "Url": {
+      "title": "Url",
+      "type": [
+        "null",
+        "string"
+      ],
+      "description": "The URL associated with the agent session."
+    },
+    "Language": {
+      "title": "Language",
+      "type": [
+        "null",
+        "string"
+      ],
+      "description": "The language associated with the agent session."
+    },
+    "Description": {
+      "type": [
+        "null",
+        "string"
+      ],
+      "description": "A brief description or details regarding the agent session."
+    },
+    "Variables": {
+      "type": [
+        "array",
+        "null"
+      ],
+      "description": "Represents a collection of variables associated with the agent session.",
+      "xml": {
+        "wrapped": true
+      },
+      "items": {
+        "type": "object",
+        "xml": {
+          "name": "Variable"
+        },
+        "required": [
+          "Name",
+          "Type"
+        ],
+        "properties": {
+          "Name": {
+            "title": "Variable Name",
+            "type": "string",
+            "description": "The name of the variable.",
+            "maxLength": 100,
+            "minLength": 1
+          },
+          "Type": {
+            "type": "string",
+            "description": "",
+            "default": 7,
+            "enum": [
+              "Custom",
+              "DateTime",
+              "Date",
+              "Time",
+              "Duration",
+              "PhoneNumber",
+              "Currency",
+              "Text",
+              "Html",
+              "MultilineText",
+              "EmailAddress",
+              "Password",
+              "Url",
+              "ImageUrl",
+              "CreditCard",
+              "PostalCode",
+              "Upload"
+            ]
+          },
+          "Value": {
+            "type": [
+              "null",
+              "string"
+            ],
+            "description": "The value of the variable."
+          }
+        }
+      }
+    }
+  }
+}

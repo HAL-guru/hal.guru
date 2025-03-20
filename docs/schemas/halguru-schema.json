@@ -3,12 +3,10 @@
   "title": "AgentConfiguration",
   "type": "object",
   "description": "The full configuration of an agent.",
-  "additionalProperties": false,
   "properties": {
     "HalGuru": {
       "type": "object",
-      "description": "Header information for the hal.guru platform. Don't change this.",
-      "additionalProperties": false,
+      "description": "The header metadata used in the hal.guru agentic process automation platform.",
       "properties": {
         "FilePurpose": {
           "title": "File Purpose",
@@ -46,8 +44,7 @@
     },
     "Agent": {
       "type": "object",
-      "description": "The agent configuration.",
-      "additionalProperties": false,
+      "description": "The AI Agent configuration.",
       "required": [
         "Name",
         "Type",
@@ -56,19 +53,22 @@
       ],
       "properties": {
         "Id": {
+          "title": "Agent ID",
           "type": "string",
+          "description": "The unique identifier for the agent (GUID ex. 12345678-1234-1234-1234-123456789012).",
           "format": "guid"
         },
         "Name": {
           "title": "Agent Name",
           "type": "string",
+          "description": "The name of the agent.",
           "maxLength": 50,
           "minLength": 6
         },
         "Type": {
           "title": "Type of the Agent",
           "type": "string",
-          "description": "",
+          "description": "Represents a basic agent type within the system. This type is generally used for the default or simplest form of agent functionality.",
           "enum": [
             "Basic"
           ]
@@ -76,6 +76,7 @@
         "Version": {
           "title": "Version of the Agent",
           "type": "string",
+          "description": "The version of the agent.",
           "default": "1.0.0",
           "minLength": 1,
           "pattern": "v?\\d+\\.\\d+(\\.\\d+)?(-[a-zA-Z0-9\\.]+)?(\\+[a-zA-Z0-9\\.]+)?"
@@ -85,68 +86,80 @@
           "type": [
             "null",
             "string"
-          ]
+          ],
+          "description": "The description of the agent."
         },
         "Author": {
           "title": "Author of the Agent",
           "type": "object",
-          "additionalProperties": false,
+          "description": "Represents an author entity with metadata about an individual or organization.",
           "properties": {
             "Name": {
+              "title": "Author Name",
               "type": [
                 "null",
                 "string"
-              ]
+              ],
+              "description": "The name of the author."
             },
             "Email": {
+              "title": "Contact Email",
               "type": [
                 "null",
                 "string"
-              ]
+              ],
+              "description": "The email address of the author."
             },
             "Url": {
+              "title": "URL",
               "type": [
                 "null",
                 "string"
-              ]
+              ],
+              "description": "The URL associated with the author."
             },
             "Company": {
+              "title": "Company",
               "type": [
                 "null",
                 "string"
-              ]
+              ],
+              "description": "The company associated with the author."
             },
             "Copyright": {
+              "title": "Copyright",
               "type": [
                 "null",
                 "string"
-              ]
+              ],
+              "description": "The copyright information associated with the author or their works."
             }
           }
         },
         "Start": {
           "title": "Agent Start Configuration",
           "type": "object",
-          "description": "The starting configuration for the agent.",
-          "additionalProperties": false,
+          "description": "Represents the start configuration for a robot.\nThis class defines the initial setup or parameters required when the robot is initiated.",
           "required": [
-            "LlmConnector"
+            "LlmConnectorName"
           ],
           "properties": {
-            "LlmConnector": {
+            "LlmConnectorName": {
               "title": "LLM Connector Name",
               "type": "string",
               "description": "Name of the LLM connector to be used from the LlmConnectors list.",
               "default": "",
               "maxLength": 50,
-              "minLength": 6
+              "minLength": 5
             },
-            "Prompt": {
+            "PromptName": {
               "type": [
                 "null",
                 "string"
               ],
-              "description": "Name of the prompt to be used during the agent's initialization process."
+              "description": "Name of the prompt to be used during the agent's initialization process.",
+              "maxLength": 50,
+              "minLength": 5
             },
             "Url": {
               "type": [
@@ -162,9 +175,15 @@
           "title": "Agent Themes",
           "type": "array",
           "description": "The collection of themes and their associated designs for the agent.",
+          "xml": {
+            "wrapped": true
+          },
           "items": {
             "type": "object",
-            "additionalProperties": false,
+            "description": "Represents a design configuration for a specific theme,\nwhich may include settings related to chat appearance or other customizable elements.",
+            "xml": {
+              "name": "ThemeDesign"
+            },
             "required": [
               "Theme",
               "Messages"
@@ -173,7 +192,7 @@
               "Theme": {
                 "title": "Theme",
                 "type": "string",
-                "description": "",
+                "description": "Represents the theme options available for a robot's display or functionality settings.\nProvides a selection of predefined appearance modes, designed to meet various\nuser preferences and environment requirements.",
                 "default": 0,
                 "enum": [
                   "Light",
@@ -184,13 +203,23 @@
                 "title": "Messages (Theme Design)",
                 "type": "array",
                 "description": "Chat message themes associated with the theme design.",
+                "xml": {
+                  "wrapped": true
+                },
                 "items": {
                   "type": "object",
-                  "additionalProperties": false,
+                  "description": "Represents the visual theme for a chat message, including settings for icon appearance\nand text or background colors. This class defines customization properties that control\nthe overall design of individual chat messages.",
+                  "xml": {
+                    "name": "ChatMessageTheme"
+                  },
+                  "required": [
+                    "MessageType"
+                  ],
                   "properties": {
                     "MessageType": {
+                      "title": "Message Type",
                       "type": "string",
-                      "description": "",
+                      "description": "Represents the type of a chat message in the system.\nUsed to categorize messages based on their source or purpose.",
                       "enum": [
                         "User",
                         "Agent",
@@ -201,34 +230,44 @@
                       ]
                     },
                     "IconCssClass": {
+                      "title": "Icon CSS Class",
                       "type": [
                         "null",
                         "string"
-                      ]
+                      ],
+                      "description": "The CSS class for the icon displayed in the user interface."
                     },
                     "IconColor": {
+                      "title": "Icon Color",
                       "type": [
                         "null",
                         "string"
-                      ]
+                      ],
+                      "description": "The color for the icon displayed in the user interface."
                     },
                     "IconUrl": {
+                      "title": "Icon URL",
                       "type": [
                         "null",
                         "string"
-                      ]
+                      ],
+                      "description": "The URL for the icon displayed in the user interface."
                     },
                     "BackgroundColor": {
+                      "title": "Background Color",
                       "type": [
                         "null",
                         "string"
-                      ]
+                      ],
+                      "description": "The background color for the user interface."
                     },
                     "TextColor": {
+                      "title": "Text Color",
                       "type": [
                         "null",
                         "string"
-                      ]
+                      ],
+                      "description": "The text color displayed in the user interface."
                     }
                   }
                 }
@@ -239,58 +278,70 @@
         "UserInterface": {
           "title": "Agent User Interface",
           "type": "object",
-          "description": "The user interface design configuration for the agent.",
-          "additionalProperties": false,
+          "description": "Represents the design configuration for an agent's user interface.",
           "properties": {
             "DisableCloseButton": {
+              "title": "Disable Close Button",
               "type": [
                 "boolean",
                 "null"
-              ]
+              ],
+              "description": "Indicates whether the close button should be disabled."
             }
           }
         },
         "Features": {
           "title": "Agent Features",
           "type": "object",
-          "description": "The features and capabilities of the agent.",
-          "additionalProperties": false,
+          "description": "Represents the behavior settings for an agent. This class defines the configurable\nproperties that determine how an agent operates during its execution.",
           "properties": {
             "CheckAllUrls": {
+              "title": "Check all URLs",
               "type": [
                 "boolean",
                 "null"
-              ]
+              ],
+              "description": "Determines whether all URLs exist and are valid in the generated answer."
             },
             "CheckIsAnswerCorrect": {
+              "title": "Check answer",
               "type": [
                 "boolean",
                 "null"
-              ]
+              ],
+              "description": "Determines whether the answer provided is evaluated as correct."
             },
             "CheckIsLastUrlCorrectAnswer": {
+              "title": "Check last URL",
               "type": [
                 "boolean",
                 "null"
-              ]
+              ],
+              "description": "Determines whether the last URL in the provided collection is the correct answer."
             },
             "CommentCurrentUrl": {
+              "title": "Comment current URL",
               "type": [
                 "boolean",
                 "null"
-              ]
+              ],
+              "description": "Determines whether the robot should comment the current URL."
             },
             "PerChannelThreading": {
+              "title": "Per channel threading",
               "type": [
                 "boolean",
                 "null"
-              ]
+              ],
+              "description": "Determines whether a separate thread is created for each channel."
             },
             "MaxRetryAttempts": {
+              "title": "Retry on failure",
               "type": [
                 "integer",
                 "null"
               ],
+              "description": "Determines whether the robot should retry the check fails.",
               "format": "int32"
             }
           }
@@ -299,9 +350,16 @@
     },
     "Messages": {
       "type": "array",
+      "description": "Static messages used for quick access within the system.",
+      "xml": {
+        "wrapped": true
+      },
       "items": {
         "type": "object",
-        "additionalProperties": false,
+        "description": "Represents a static message associated with an agent.",
+        "xml": {
+          "name": "AgentStaticMessage"
+        },
         "required": [
           "Name",
           "Message"
@@ -324,9 +382,16 @@
     },
     "Prompts": {
       "type": "array",
+      "description": "Prompts available within the agent's configuration.",
+      "xml": {
+        "wrapped": true
+      },
       "items": {
         "type": "object",
-        "additionalProperties": false,
+        "description": "Represents a prompt model with properties for displaying a name and associated text.",
+        "xml": {
+          "name": "AgentPrompt"
+        },
         "required": [
           "Name",
           "Prompt"
@@ -348,16 +413,24 @@
     },
     "LlmConnectors": {
       "type": "array",
+      "description": "LLM connector configurations.",
+      "xml": {
+        "wrapped": true
+      },
       "items": {
         "type": "object",
-        "additionalProperties": false,
+        "description": "Represents a configuration object for connecting to a Large Language Model (LLM) provider.",
+        "xml": {
+          "name": "LlmConnector"
+        },
         "properties": {
           "Name": {
-            "type": "string"
+            "type": "string",
+            "description": "Represents the name assigned to the LLM Connector configuration."
           },
           "LlmProvider": {
             "type": "string",
-            "description": "",
+            "description": "Represents an enum value for the DeepSeek provider in the LlmProvider enumeration.",
             "enum": [
               "Echo",
               "OpenAIChat",
@@ -370,60 +443,81 @@
             ]
           },
           "Model": {
-            "type": "string"
+            "type": "string",
+            "description": "Specifies the model identifier to use within the LLM Connector instance."
           },
           "Temperature": {
             "type": "number",
+            "description": "Specifies the randomness of responses generated by the language model,\nwith lower values resulting in less random outputs and higher\nvalues increasing creativity and variability.",
             "format": "double"
           },
           "MaxTokens": {
             "type": "integer",
+            "description": "Specifies the maximum number of tokens the model will generate in its response.",
             "format": "int32"
           },
           "AssistantId": {
             "type": [
               "null",
               "string"
-            ]
+            ],
+            "description": "Identifies the specific assistant model or instance used within the LLM connection."
           },
           "VectorStoreId": {
             "type": [
               "null",
               "string"
-            ]
+            ],
+            "description": "Identifier for the associated vector store."
           },
           "ApiKey": {
             "type": [
               "null",
               "string"
-            ]
+            ],
+            "description": "Represents the API key used to authenticate with the LLM provider."
           },
           "InstructionsPrompt": {
             "type": [
               "null",
               "string"
-            ]
+            ],
+            "description": "Specifies the custom instructions or contextual guidance provided to the LLM for tailoring its responses."
           },
           "Tools": {
             "type": "array",
+            "description": "Represents a collection of tools or additional functionalities associated with the LLM connection.",
+            "xml": {
+              "wrapped": true
+            },
             "items": {
-              "type": "string"
+              "type": "string",
+              "xml": {
+                "name": "string"
+              }
             }
           },
           "ApiUrl": {
             "type": [
               "null",
               "string"
-            ]
+            ],
+            "description": "Represents the base URL of the API used to connect to the Large Language Model (LLM) provider."
           }
         }
       }
     },
     "Secrets": {
       "type": "array",
+      "description": "Key-value pairs used to store sensitive information.",
+      "xml": {
+        "wrapped": true
+      },
       "items": {
         "type": "object",
-        "additionalProperties": false,
+        "xml": {
+          "name": "AgentSecret"
+        },
         "required": [
           "Key",
           "Secret"
@@ -445,78 +539,147 @@
         }
       }
     },
-    "Session": {
+    "State": {
+      "description": "The state of the agent.",
       "oneOf": [
         {
           "type": "null"
         },
         {
           "type": "object",
-          "additionalProperties": false,
+          "description": "Defines the operational state and associated metadata for a session of an agent.",
           "properties": {
             "Started": {
+              "title": "Started",
               "type": [
                 "null",
                 "string"
               ],
+              "description": "The moment when the agent AI is initiated.",
               "format": "date-time"
             },
             "LastAccess": {
+              "title": "Last Access",
               "type": [
                 "null",
                 "string"
               ],
+              "description": "Last access to the agent.",
               "format": "date-time"
             },
             "IsStarted": {
+              "title": "Is Started",
               "type": [
                 "boolean",
                 "null"
-              ]
+              ],
+              "description": "Indicates whether the agent has been started."
             },
             "ThreadId": {
+              "title": "Thread Id",
               "type": [
                 "null",
                 "string"
-              ]
+              ],
+              "description": "The identifier of the thread associated with the agent."
             },
-            "LlmConnector": {
+            "LlmConnectorName": {
+              "title": "LLM Connector Name",
               "type": [
                 "null",
                 "string"
-              ]
+              ],
+              "description": "The name of the LLM connector associated with the agent."
             },
-            "Prompt": {
+            "PromptName": {
+              "title": "Prompt Name",
               "type": [
                 "null",
                 "string"
-              ]
+              ],
+              "description": "The name of the currently active prompt associated with the agent."
             },
             "Url": {
+              "title": "Url",
               "type": [
                 "null",
                 "string"
-              ]
+              ],
+              "description": "The URL associated with the agent session."
             },
             "Language": {
+              "title": "Language",
               "type": [
                 "null",
                 "string"
-              ]
+              ],
+              "description": "The language associated with the agent session."
             },
             "Description": {
               "type": [
                 "null",
                 "string"
-              ]
+              ],
+              "description": "A brief description or details regarding the agent session."
             },
             "Variables": {
               "type": [
-                "null",
-                "object"
+                "array",
+                "null"
               ],
-              "additionalProperties": {
-                "type": "string"
+              "description": "Represents a collection of variables associated with the agent session.",
+              "xml": {
+                "wrapped": true
+              },
+              "items": {
+                "type": "object",
+                "xml": {
+                  "name": "Variable"
+                },
+                "required": [
+                  "Name",
+                  "Type"
+                ],
+                "properties": {
+                  "Name": {
+                    "title": "Variable Name",
+                    "type": "string",
+                    "description": "The name of the variable.",
+                    "maxLength": 100,
+                    "minLength": 1
+                  },
+                  "Type": {
+                    "type": "string",
+                    "description": "",
+                    "default": 7,
+                    "enum": [
+                      "Custom",
+                      "DateTime",
+                      "Date",
+                      "Time",
+                      "Duration",
+                      "PhoneNumber",
+                      "Currency",
+                      "Text",
+                      "Html",
+                      "MultilineText",
+                      "EmailAddress",
+                      "Password",
+                      "Url",
+                      "ImageUrl",
+                      "CreditCard",
+                      "PostalCode",
+                      "Upload"
+                    ]
+                  },
+                  "Value": {
+                    "type": [
+                      "null",
+                      "string"
+                    ],
+                    "description": "The value of the variable."
+                  }
+                }
               }
             }
           }
@@ -525,9 +688,16 @@
     },
     "Tests": {
       "type": "array",
+      "description": "Test cases for validating the behavior of an agent.",
+      "xml": {
+        "wrapped": true
+      },
       "items": {
         "type": "object",
-        "additionalProperties": false,
+        "description": "Represents a test case for validating an agent's response to a given input.",
+        "xml": {
+          "name": "AgentTest"
+        },
         "required": [
           "Name",
           "QuestionMessage"
@@ -552,8 +722,14 @@
               "null"
             ],
             "description": "A list of substrings that the output message is expected to contain.",
+            "xml": {
+              "wrapped": true
+            },
             "items": {
-              "type": "string"
+              "type": "string",
+              "xml": {
+                "name": "string"
+              }
             }
           },
           "AnswerMessageRegex": {

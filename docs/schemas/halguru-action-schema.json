@@ -2,139 +2,157 @@
   "$schema": "http://json-schema.org/draft-04/schema#",
   "title": "AgentAction",
   "type": "object",
-  "additionalProperties": false,
+  "description": "Represents an action executed by an agent in the system.\nThis class is used to encapsulate various types of specialized actions\nthat an agent can perform, such as executing SQL queries, sending data\nto external systems, or configuring the agent's behavior dynamically.",
   "properties": {
     "Command": {
       "type": [
         "null",
         "string"
-      ]
+      ],
+      "description": "Gets or sets the command associated with the agent's action.\nThis property is used to define the specific operation or instruction\nthat the agent should execute. It can be used in scenarios where\nexecution logic is determined dynamically based on the command string.\nWhen this property is set, it represents a direct command\nto the agent."
     },
     "SqlSelect": {
+      "description": "Gets or sets the SQL SELECT action executed by the agent.\nThis property is used to define an action where the agent\ninteracts with a database by executing a SQL SELECT query.\nIt contains the details for performing the database operation,\nsuch as the provider, connection string, query, and explanation.\nThe result of the query can also be stored and accessed through\nthe corresponding SqlSelectAction.",
       "oneOf": [
         {
           "type": "null"
         },
         {
           "type": "object",
-          "additionalProperties": false,
+          "description": "Represents an action for executing a SQL SELECT query against a database.\nThis class encapsulates the necessary details to execute the query and\nhandle the results, such as the database provider, connection information,\nthe SQL query itself, and an explanation of the action.",
           "properties": {
             "DatabaseProvider": {
               "type": [
                 "null",
                 "string"
-              ]
+              ],
+              "description": "Specifies the database provider to be used for executing the SQL query.\nThis property should align with a recognized database provider name, such as \"SqlServer\", \"MySql\", etc.\nIt is a critical parameter for connecting to the database and must be set before executing a SQL SELECT action."
             },
             "ConnectionString": {
               "type": [
                 "null",
                 "string"
-              ]
+              ],
+              "description": "Contains the connection details required to establish communication with the target database.\nThis property is critical for successful query execution and should include parameters such as\nserver address, database name, authentication credentials, and other necessary configurations."
             },
             "SqlQuery": {
               "type": [
                 "null",
                 "string"
-              ]
+              ],
+              "description": "Represents the SQL SELECT query that will be executed against the database.\nThis property contains the actual SQL statement, which must be written\nin a format supported by the specified database provider. It should be\nset to a valid and properly constructed query string before execution."
             },
             "Explanation": {
               "type": [
                 "null",
                 "string"
-              ]
+              ],
+              "description": "Provides a descriptive explanation of the SQL SELECT action.\nThis property is intended to describe the purpose or context of the query,\nhelping to document its intended usage or reasoning."
             }
           }
         }
       ]
     },
     "SendToPipedrive": {
+      "description": "Gets or sets the action to send data to Pipedrive.\nThis property represents an operation that allows an agent\nto send specific information, such as user details and deal data,\nto the Pipedrive system. It encapsulates the parameters required\nfor the integration with Pipedrive, ensuring proper data handling\nand execution of the associated action.",
       "oneOf": [
         {
           "type": "null"
         },
         {
           "type": "object",
-          "additionalProperties": false,
+          "description": "Represents an action for sending data to Pipedrive.\nThis action contains information required to create a deal in the Pipedrive system,\nsuch as language context, deal title, user details (name, organization, email, phone),\nand a description of the deal.",
           "properties": {
             "Language": {
               "type": [
                 "null",
                 "string"
-              ]
+              ],
+              "description": "Gets or sets the language context for the action.\nSpecifies the language associated with the deal or communication,\nwhich can be used for localization or other context-sensitive operations."
             },
             "DealTitle": {
               "type": [
                 "null",
                 "string"
-              ]
+              ],
+              "description": "Gets or sets the title of the deal to be created in Pipedrive.\nSpecifies a brief and descriptive title for the deal, which helps in identifying\nand managing the deal effectively within the Pipedrive system."
             },
             "UserName": {
               "type": [
                 "null",
                 "string"
-              ]
+              ],
+              "description": "Gets or sets the name of the user associated with the action.\nThis property specifies the user's name, which can be used to identify\nwho the deal or action is associated with in the Pipedrive system."
             },
             "UserOrganisation": {
               "type": [
                 "null",
                 "string"
-              ]
+              ],
+              "description": "Gets or sets the organization associated with the user.\nThis information is utilized when creating a deal in Pipedrive, identifying the user's organizational affiliation."
             },
             "UserEmail": {
               "type": [
                 "null",
                 "string"
-              ]
+              ],
+              "description": "Gets or sets the user's email address associated with the action.\nThis property holds the email address details required for creating a deal\nin the Pipedrive system."
             },
             "UserPhone": {
               "type": [
                 "null",
                 "string"
-              ]
+              ],
+              "description": "Gets or sets the phone number of the user associated with the action.\nThe phone number is included in the details provided for creating a deal\nin the Pipedrive system."
             },
             "Description": {
               "type": [
                 "null",
                 "string"
-              ]
+              ],
+              "description": "Gets or sets the description for the deal.\nProvides additional details or context about the deal\nto be created in the Pipedrive system."
             }
           }
         }
       ]
     },
     "SetPrompt": {
+      "description": "Gets or sets the action responsible for defining or updating the agent's prompt.\nThis property is used to dynamically configure the prompt that guides\nthe agent's behavior or responses during execution. When provided, it alters\nthe agent's contextual or operational behavior by modifying its prompt settings.",
       "oneOf": [
         {
           "type": "null"
         },
         {
           "type": "object",
-          "additionalProperties": false,
+          "description": "Represents an action to set or change the current active prompt for an agent.\nThis action specifies a prompt by name, which the agent uses for subsequent operations.",
           "properties": {
             "Name": {
               "type": [
                 "null",
                 "string"
-              ]
+              ],
+              "description": "Gets or sets the name of the prompt to be set or activated for the agent.\nThis property specifies the identifier of the prompt that is used by the agent\nduring subsequent operations."
             }
           }
         }
       ]
     },
     "SetLlmConnector": {
+      "description": "Gets or sets the action responsible for configuring the LLM (Large Language Model) connector associated with the agent.\nThis property is used to dynamically update or select the LLM connector\nthat the agent relies on for language processing capabilities.\nWhen set, it represents the agent's intent to modify its connector configuration.",
       "oneOf": [
         {
           "type": "null"
         },
         {
           "type": "object",
-          "additionalProperties": false,
+          "description": "Represents an action for setting the LLM (Large Language Model) connector\nassociated with an agent. This action allows dynamic configuration of\nthe LLM connector by specifying the connector name.",
           "properties": {
             "Name": {
               "type": [
                 "null",
                 "string"
-              ]
+              ],
+              "description": "Gets or sets the name of the LLM (Large Language Model) connector to be used.\nThis property represents the identifier of the specific LLM connector\nthat will be dynamically configured or set for the associated agent."
             }
           }
         }

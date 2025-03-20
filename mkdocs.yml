@@ -50,7 +50,7 @@ nav:
   - 'halguru CLI':
     - 'Introduction': 'halguru-cli/index.md'
   - 'Configuring AI Agents':
-    - 'Introduction': 'configuring-ai-agents/index.md'
+    - '*.halguru-agent.yaml': 'models/index.md'
   - About:
     - 'License': 'license.md'
 
