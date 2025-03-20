@@ -85,6 +85,7 @@ jobs:
       - name: Verify artifact
         run: |
           ls -la ./artifact
+          du -sh ./artifact
 
       - name: Deploy to GitHub Pages
         id: deployment
