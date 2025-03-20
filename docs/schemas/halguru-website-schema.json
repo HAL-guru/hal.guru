@@ -185,8 +185,47 @@
             },
             "items": {
               "type": "object",
+              "description": "Represents a file associated with a website page.\nThis class is annotated with the HalGuruPathAttribute attribute, indicating its relationship within the hierarchical structure\nof website configurations and pages.",
               "xml": {
                 "name": "WebsiteFile"
+              },
+              "properties": {
+                "Name": {
+                  "type": "string",
+                  "description": "Gets or sets the name of the website feature.\nRepresents a descriptive identifier for a given feature within the website scraping process."
+                },
+                "TagName": {
+                  "type": "string",
+                  "description": "Gets or sets the tag name used to identify or categorize the website feature.\nRepresents an attribute or element type within the website structure, providing context for feature extraction or manipulation."
+                },
+                "NameRegex": {
+                  "type": [
+                    "null",
+                    "string"
+                  ],
+                  "description": "Gets or sets the regular expression pattern to identify the name component of a website feature.\nThis property allows for custom matching and extraction of specific name segments\nfrom a website's content during the scraping process."
+                },
+                "UrlRegex": {
+                  "type": [
+                    "null",
+                    "string"
+                  ],
+                  "description": "Gets or sets the regular expression pattern for matching URLs associated with the website file.\nEnables filtering or identification of specific URLs based on defined patterns within the file context."
+                },
+                "NameXpath": {
+                  "type": [
+                    "null",
+                    "string"
+                  ],
+                  "description": "Gets or sets the XPath expression used to locate the name of a specific feature within the website content.\nRepresents a structured query for extracting the name's specific location in the HTML document."
+                },
+                "UrlXpath": {
+                  "type": [
+                    "null",
+                    "string"
+                  ],
+                  "description": "Gets or sets the XPath expression used to extract the URL from a website file's content.\nSpecifies the selector for identifying the relevant URL within the HTML structure of a page."
+                }
               }
             }
           }

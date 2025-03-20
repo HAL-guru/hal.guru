@@ -293,7 +293,7 @@
         "Features": {
           "title": "Agent Features",
           "type": "object",
-          "description": "Represents the behavior settings for an agent. This class defines the configurable\nproperties that determine how an agent operates during its execution.",
+          "description": "Defines the configurable properties that determine how an agent operates during its execution.",
           "properties": {
             "CheckAllUrls": {
               "title": "Check all URLs",
@@ -356,7 +356,7 @@
       },
       "items": {
         "type": "object",
-        "description": "Represents a static message associated with an agent.",
+        "description": "Defines a static message and its associated metadata for an agent.",
         "xml": {
           "name": "AgentStaticMessage"
         },
@@ -388,7 +388,7 @@
       },
       "items": {
         "type": "object",
-        "description": "Represents a prompt model with properties for displaying a name and associated text.",
+        "description": "Represents a prompt model containing a name and the associated prompt text.",
         "xml": {
           "name": "AgentPrompt"
         },
@@ -515,6 +515,7 @@
       },
       "items": {
         "type": "object",
+        "description": "Represents a key-value pair used for storing sensitive information in an agent's configuration.",
         "xml": {
           "name": "AgentSecret"
         },
