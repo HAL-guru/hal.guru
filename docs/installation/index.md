@@ -12,25 +12,21 @@ Next, you need to install the halguru application along with its extension for t
 
 ## Windows users
 
-1. Open PowerShell as a regular user
-
-2. Copy and paste the following command to download and run the installation script:
+Open PowerShell as a regular user. Copy and paste the following command to download and run the installation script:
 
 ```powershell
 irm https://docs.hal.guru/installation/install.ps1 | iex
 ```
 
-3. After installation, you'll need to:
-   - Open a new terminal window
-   - Run the command: `halguru --install` to complete the setup and configure Visual Studio Code Editor for your AI Agents.
+After the installation, open a new terminal window and run the command `halguru --install` 
+to complete the setup and configure the Visual Studio Code editor for your AI agents.
+
 
 > More details: [Windows installation tutorial](windows.md).
 
 ## MacOS and Linux users
 
-1. Open your terminal
-
-2. Execute the following command to download and run the installation script:
+Open your terminal and execute the following command to download and run the installation script:
 
 ```bash
 sudo curl -sSL https://docs.hal.guru/installation/install.sh | bash

@@ -18,19 +18,19 @@ Next, you need to install the halguru application along with its extension for t
 ## Choose Correct Package
 
 1. Determine your system:
-   - Windows: `halguru-win-[arch]-[version].zip`
-   - macOS: `halguru-osx-[arch]-[version].zip`
-   - Linux: `halguru-linux-[arch]-[version].zip`
+    * Windows: `halguru-win-[arch]-[version].zip`
+    * macOS: `halguru-osx-[arch]-[version].zip`
+    * Linux: `halguru-linux-[arch]-[version].zip`
 2. Choose architecture (`[arch]`):
-   - For Intel/AMD processors: `x64`
-   - For Apple Silicon/ARM: `arm64`
+    * For Intel/AMD processors: `x64`
+    * For Apple Silicon/ARM: `arm64`
 
 ## Download and Extract
 
 1. Download the appropriate ZIP file
 2. Create directory:
-   - Windows: `%USERPROFILE%\.halguru`
-   - macOS/Linux: `~/.halguru`
+    * Windows: `%USERPROFILE%\.halguru`
+    * macOS/Linux: `~/.halguru`
 3. Extract ZIP contents to this directory
 
 ## Set Up System Access
@@ -60,7 +60,7 @@ sudo ln -sf ~/.halguru/halguru /usr/local/bin/halguru
 ## Initial Configuration
 
 1. Open new terminal/command prompt
-2. Run: `halguru --install`
+2. Run: `halguru install`
 3. Wait for the initial setup to complete the setup and configure Visual Studio Code Editor for your AI Agents
 
 ## Verify Installation
@@ -72,14 +72,14 @@ sudo ln -sf ~/.halguru/halguru /usr/local/bin/halguru
 ## Troubleshooting
 
 1. If command not found:
-   - Windows: Verify Path environment variable
-   - macOS/Linux: Check symbolic link in `/usr/local/bin`
+    * Windows: Verify Path environment variable
+    * macOS/Linux: Check symbolic link in `/usr/local/bin`
 2. If permission denied:
-   - Windows: Run terminal as administrator
-   - macOS/Linux: Verify file permissions (`chmod +x`)
+    * Windows: Run terminal as administrator
+    * macOS/Linux: Verify file permissions (`chmod +x`)
 3. If binary won't start:
-   - Verify you downloaded correct architecture
-   - Check antivirus isn't blocking execution
+    * Verify you downloaded correct architecture
+    * Check antivirus isn't blocking execution
 
 ## Updating
 

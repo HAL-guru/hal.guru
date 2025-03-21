@@ -44,13 +44,20 @@ theme:
 
 nav:
   - 'Welcome': 'index.md'
-  - 'Installation': 'installation/index.md'
+  - 'Installation':
+      - 'Installation': 'installation/index.md'
+      - 'MacOS and Linux': 'installation/macos-and-linux.md'
+      - 'Windows': 'installation/windows.md'
+      - 'Experienced users': 'installation/experienced-users.md'
   - 'Getting Started':
-    - 'Install halguru CLI': 'getting-started/01-install-halguru-cli.md'
+    - 'My first agent AI': 'getting-started/01-install-halguru-cli.md'
+  - 'Configuration files':
+      - '*.halguru.yaml': 'models/halguru.md'
+      - '*.halguru-state.yaml': 'models/halguru-state.md'
+      - '*.halguru-action.yaml': 'models/halguru-action.md'
+      - '*.halguru-website.yaml': 'models/halguru-website.md'
   - 'halguru CLI':
     - 'Introduction': 'halguru-cli/index.md'
-  - 'Configuring AI Agents':
-    - '*.halguru-agent.yaml': 'models/index.md'
   - About:
     - 'License': 'license.md'
 

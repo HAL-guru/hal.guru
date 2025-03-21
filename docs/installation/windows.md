@@ -20,29 +20,28 @@ Next, you need to install the halguru application along with its extension for t
 
 ## Installation Steps
 
-1. Open PowerShell as a regular user
-
-2. Copy and paste the following command to download and run the installation script:
+Open PowerShell as a regular user. Copy and paste the following command to download and run the installation script:
 
 ```powershell
 irm https://docs.hal.guru/installation/install.ps1 | iex
 ```
 
-3. The script will automatically:
-   - Download the latest version of halguru
-   - Install it in your user profile directory
-   - Add the installation directory to your PATH
-   - Display a success message upon completion
+The script will automatically:
 
-4. After installation, you'll need to:
-   - Open a new terminal window
-   - Run the command: `halguru --install` to complete the setup and configure Visual Studio Code Editor for your AI Agents.
+1. Download the latest version of halguru
+2. Install it in your user profile directory
+3. Add the installation directory to your PATH
+4. Display a success message upon completion
+
+After installation, you'll need to open a new terminal window and run the command: 
+`halguru install` to complete the setup and configure Visual Studio Code Editor for your AI Agents.
 
 ## Notes
 
-- The installer automatically detects your system architecture (x64 or arm64)
-- The installation is performed on a per-user basis, no administrator privileges required
-- All files are installed in the `.halguru` directory in your user profile
+1. The installer automatically detects your system architecture (x64 or arm64)
+2. The installation is performed on a per-user basis, no administrator privileges required
+3. All files are installed in the `.halguru` directory in your user profile
+4. Complete [install.ps1](https://docs.hal.guru/installation/install.ps1) script file.
 
 If you encounter any problems during installation, the script will display an error message explaining what went wrong.
 
