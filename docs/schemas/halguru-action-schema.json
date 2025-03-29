@@ -11,7 +11,7 @@
       ],
       "description": "The command associated with the agent's action."
     },
-    "SqlSelect": {
+    "RunSqlSelect": {
       "description": "The SQL SELECT action executed by the agent.",
       "oneOf": [
         {
@@ -20,27 +20,27 @@
         {
           "type": "object",
           "description": "Executes a SQL SELECT query against a database.",
+          "required": [
+            "DatabaseProvider",
+            "ConnectionString",
+            "SqlQuery"
+          ],
           "properties": {
             "DatabaseProvider": {
-              "type": [
-                "null",
-                "string"
-              ],
-              "description": "Specifies the database provider to be used for executing the SQL query."
+              "type": "string",
+              "description": "Specifies the database provider to be used for executing the SQL query.",
+              "default": "SqlServer",
+              "minLength": 1
             },
             "ConnectionString": {
-              "type": [
-                "null",
-                "string"
-              ],
-              "description": "Contains the connection details required to establish communication with the target database."
+              "type": "string",
+              "description": "Contains the connection details required to establish communication with the target database.",
+              "minLength": 1
             },
             "SqlQuery": {
-              "type": [
-                "null",
-                "string"
-              ],
-              "description": "Represents the SQL SELECT query that will be executed against the database."
+              "type": "string",
+              "description": "Represents the SQL SELECT query that will be executed against the database.",
+              "minLength": 1
             },
             "Explanation": {
               "type": [
@@ -116,7 +116,7 @@
         }
       ]
     },
-    "SetPrompt": {
+    "ChangePrompt": {
       "description": "The action responsible for changing the agent's prompt.",
       "oneOf": [
         {
@@ -125,19 +125,20 @@
         {
           "type": "object",
           "description": "Sets the prompt to be used by the agent for subsequent operations.",
+          "required": [
+            "Name"
+          ],
           "properties": {
             "Name": {
-              "type": [
-                "null",
-                "string"
-              ],
-              "description": "The name of the prompt to be set or activated for the agent."
+              "type": "string",
+              "description": "The name of the prompt to be set or activated for the agent.",
+              "minLength": 1
             }
           }
         }
       ]
     },
-    "SetLlmConnector": {
+    "ChangetLlmConnector": {
       "description": "The action responsible for configuring the LLM connector associated with the agent.",
       "oneOf": [
         {
@@ -146,13 +147,14 @@
         {
           "type": "object",
           "description": "Sets the LLM connector to be used by the agent.",
+          "required": [
+            "Name"
+          ],
           "properties": {
             "Name": {
-              "type": [
-                "null",
-                "string"
-              ],
-              "description": "The name of the LLM connector to be used."
+              "type": "string",
+              "description": "The name of the LLM connector to be used.",
+              "minLength": 1
             }
           }
         }

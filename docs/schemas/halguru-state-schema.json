@@ -60,7 +60,7 @@
         "null",
         "string"
       ],
-      "description": "The URL associated with the agent session."
+      "description": "The URL associated with the agent state."
     },
     "Language": {
       "title": "Language",
@@ -68,21 +68,21 @@
         "null",
         "string"
       ],
-      "description": "The language associated with the agent session."
+      "description": "The language associated with the agent state."
     },
     "Description": {
       "type": [
         "null",
         "string"
       ],
-      "description": "A brief description or details regarding the agent session."
+      "description": "A brief description or details regarding the agent state."
     },
     "Variables": {
       "type": [
         "array",
         "null"
       ],
-      "description": "Represents a collection of variables associated with the agent session.",
+      "description": "A collection of variables associated with the agent state.",
       "xml": {
         "wrapped": true
       },
