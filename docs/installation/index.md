@@ -12,7 +12,7 @@ Next, you need to install the halguru application along with its extension for t
 
 ## Windows users
 
-Open PowerShell as a regular user. Copy and paste the following command to download and run the installation script:
+Open PowerShell as a regular user. Copy and paste the following command to download and run the [installation script](https://docs.hal.guru/installation/install.ps1):
 
 ```powershell
 irm https://docs.hal.guru/installation/install.ps1 | iex
@@ -26,10 +26,10 @@ to complete the setup and configure the Visual Studio Code editor for your AI ag
 
 ## MacOS and Linux users
 
-Open your terminal and execute the following command to download and run the installation script:
+Open your terminal and execute the following command to download and run the [installation script](https://docs.hal.guru/installation/install.ps1):
 
 ```bash
-sudo curl -sSL https://docs.hal.guru/installation/install.sh | bash
+sudo curl -sSL https://docs.hal.guru/installation/install.ps1 | bash
 ```
 
 > More details: [MacOS and Linux installation tutorial](macos-and-linux.md).

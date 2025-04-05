@@ -2,7 +2,7 @@
   "$schema": "http://json-schema.org/draft-04/schema#",
   "title": "StateConfiguration",
   "type": "object",
-  "description": "Defines the operational state and associated metadata for a session of an agent.",
+  "description": "Defines the operational state and associated metadata for a session of an agent.\n\nHelpUrl: https://docs.hal.guru/models/",
   "properties": {
     "Started": {
       "title": "Started",

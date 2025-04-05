@@ -2,7 +2,7 @@
   "$schema": "http://json-schema.org/draft-04/schema#",
   "title": "WebsiteConfiguration",
   "type": "object",
-  "description": "Represents the configuration settings for a website crawler or scraper.\nDefines parameters such as the name of the website, the starting URL,\nmaximum allowed levels and pages, specific URL patterns to process,\nand connectors required for linking external components like LLMs and file systems.",
+  "description": "Represents the configuration settings for a website crawler or scraper.\nDefines parameters such as the name of the website, the starting URL,\nmaximum allowed levels and pages, specific URL patterns to process,\nand connectors required for linking external components like LLMs and file systems.\n\nHelpUrl: https://docs.hal.guru/models/",
   "properties": {
     "StartUrl": {
       "type": "string",

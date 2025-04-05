@@ -2,7 +2,7 @@
   "$schema": "http://json-schema.org/draft-04/schema#",
   "title": "ActionConfiguration",
   "type": "object",
-  "description": "Represents an action executed by an agent in the system.",
+  "description": "Represents an action executed by an agent in the system.\n\nHelpUrl: https://docs.hal.guru/models/",
   "properties": {
     "Command": {
       "type": [

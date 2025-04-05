@@ -2,7 +2,7 @@
   "$schema": "http://json-schema.org/draft-04/schema#",
   "title": "AgentConfiguration",
   "type": "object",
-  "description": "The full configuration of an agent.",
+  "description": "The full configuration of an agent.\n\nHelpUrl: https://docs.hal.guru/models/",
   "properties": {
     "HalGuru": {
       "type": "object",
