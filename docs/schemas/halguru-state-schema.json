@@ -2,7 +2,7 @@
   "$schema": "http://json-schema.org/draft-04/schema#",
   "title": "StateConfiguration",
   "type": "object",
-  "description": "Defines the operational state and associated metadata for a session of an agent.\n\nHelpUrl: https://docs.hal.guru/models/",
+  "description": "Defines the operational state and associated metadata for a session of an agent.\n\nManual: https://docs.hal.guru/models/",
   "properties": {
     "Started": {
       "title": "Started",
@@ -10,7 +10,7 @@
         "null",
         "string"
       ],
-      "description": "The moment when the agent AI is initiated.\n\nHelpUrl: https://docs.hal.guru/models/",
+      "description": "The moment when the agent AI is initiated.\n\nManual: https://docs.hal.guru/models/",
       "format": "date-time"
     },
     "LastAccess": {
@@ -19,7 +19,7 @@
         "null",
         "string"
       ],
-      "description": "Last access to the agent.\n\nHelpUrl: https://docs.hal.guru/models/",
+      "description": "Last access to the agent.\n\nManual: https://docs.hal.guru/models/",
       "format": "date-time"
     },
     "IsStarted": {
@@ -28,7 +28,7 @@
         "boolean",
         "null"
       ],
-      "description": "Indicates whether the agent has been started.\n\nHelpUrl: https://docs.hal.guru/models/"
+      "description": "Indicates whether the agent has been started.\n\nManual: https://docs.hal.guru/models/"
     },
     "ThreadId": {
       "title": "Thread Id",
@@ -36,7 +36,7 @@
         "null",
         "string"
       ],
-      "description": "The identifier of the thread associated with the agent.\n\nHelpUrl: https://docs.hal.guru/models/"
+      "description": "The identifier of the thread associated with the agent.\n\nManual: https://docs.hal.guru/models/"
     },
     "LlmConnectorName": {
       "title": "LLM Connector Name",
@@ -44,7 +44,7 @@
         "null",
         "string"
       ],
-      "description": "The name of the LLM connector associated with the agent.\n\nHelpUrl: https://docs.hal.guru/models/"
+      "description": "The name of the LLM connector associated with the agent.\n\nManual: https://docs.hal.guru/models/"
     },
     "PromptName": {
       "title": "Prompt Name",
@@ -52,7 +52,7 @@
         "null",
         "string"
       ],
-      "description": "The name of the currently active prompt associated with the agent.\n\nHelpUrl: https://docs.hal.guru/models/"
+      "description": "The name of the currently active prompt associated with the agent.\n\nManual: https://docs.hal.guru/models/"
     },
     "Url": {
       "title": "Url",
@@ -60,7 +60,7 @@
         "null",
         "string"
       ],
-      "description": "The URL associated with the agent state.\n\nHelpUrl: https://docs.hal.guru/models/"
+      "description": "The URL associated with the agent state.\n\nManual: https://docs.hal.guru/models/"
     },
     "Language": {
       "title": "Language",
@@ -68,21 +68,21 @@
         "null",
         "string"
       ],
-      "description": "The language associated with the agent state.\n\nHelpUrl: https://docs.hal.guru/models/"
+      "description": "The language associated with the agent state.\n\nManual: https://docs.hal.guru/models/"
     },
     "Description": {
       "type": [
         "null",
         "string"
       ],
-      "description": "A brief description or details regarding the agent state.\n\nHelpUrl: https://docs.hal.guru/models/"
+      "description": "A brief description or details regarding the agent state.\n\nManual: https://docs.hal.guru/models/"
     },
     "Variables": {
       "type": [
         "array",
         "null"
       ],
-      "description": "A collection of variables associated with the agent state.\n\nHelpUrl: https://docs.hal.guru/models/",
+      "description": "A collection of variables associated with the agent state.\n\nManual: https://docs.hal.guru/models/",
       "xml": {
         "wrapped": true
       },
@@ -99,7 +99,7 @@
           "Name": {
             "title": "Variable Name",
             "type": "string",
-            "description": "The name of the variable.\n\nHelpUrl: https://docs.hal.guru/models/",
+            "description": "The name of the variable.\n\nManual: https://docs.hal.guru/models/",
             "maxLength": 100,
             "minLength": 1
           },
@@ -132,7 +132,7 @@
               "null",
               "string"
             ],
-            "description": "The value of the variable.\n\nHelpUrl: https://docs.hal.guru/models/"
+            "description": "The value of the variable.\n\nManual: https://docs.hal.guru/models/"
           }
         }
       }

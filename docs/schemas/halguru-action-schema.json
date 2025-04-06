@@ -2,24 +2,24 @@
   "$schema": "http://json-schema.org/draft-04/schema#",
   "title": "ActionConfiguration",
   "type": "object",
-  "description": "Represents an action executed by an agent in the system.\n\nHelpUrl: https://docs.hal.guru/models/",
+  "description": "Represents an action executed by an agent in the system.\n\nManual: https://docs.hal.guru/models/",
   "properties": {
     "Command": {
       "type": [
         "null",
         "string"
       ],
-      "description": "The command associated with the agent's action.\n\nHelpUrl: https://docs.hal.guru/models/"
+      "description": "The command associated with the agent's action.\n\nManual: https://docs.hal.guru/models/"
     },
     "RunSqlSelect": {
-      "description": "The SQL SELECT action executed by the agent.\n\nHelpUrl: https://docs.hal.guru/models/",
+      "description": "The SQL SELECT action executed by the agent.\n\nManual: https://docs.hal.guru/models/",
       "oneOf": [
         {
           "type": "null"
         },
         {
           "type": "object",
-          "description": "Executes a SQL SELECT query against a database.\n\nHelpUrl: https://docs.hal.guru/models/",
+          "description": "Executes a SQL SELECT query against a database.\n\nManual: https://docs.hal.guru/models/",
           "required": [
             "DatabaseProvider",
             "ConnectionString",
@@ -28,18 +28,18 @@
           "properties": {
             "DatabaseProvider": {
               "type": "string",
-              "description": "Specifies the database provider to be used for executing the SQL query.\n\nHelpUrl: https://docs.hal.guru/models/",
+              "description": "Specifies the database provider to be used for executing the SQL query.\n\nManual: https://docs.hal.guru/models/",
               "default": "SqlServer",
               "minLength": 1
             },
             "ConnectionString": {
               "type": "string",
-              "description": "Contains the connection details required to establish communication with the target database.\n\nHelpUrl: https://docs.hal.guru/models/",
+              "description": "Contains the connection details required to establish communication with the target database.\n\nManual: https://docs.hal.guru/models/",
               "minLength": 1
             },
             "SqlQuery": {
               "type": "string",
-              "description": "Represents the SQL SELECT query that will be executed against the database.\n\nHelpUrl: https://docs.hal.guru/models/",
+              "description": "Represents the SQL SELECT query that will be executed against the database.\n\nManual: https://docs.hal.guru/models/",
               "minLength": 1
             },
             "Explanation": {
@@ -47,91 +47,91 @@
                 "null",
                 "string"
               ],
-              "description": "Provides a descriptive explanation of the SQL SELECT action.\n\nHelpUrl: https://docs.hal.guru/models/"
+              "description": "Provides a descriptive explanation of the SQL SELECT action.\n\nManual: https://docs.hal.guru/models/"
             }
           }
         }
       ]
     },
     "SendToPipedrive": {
-      "description": "The action to send data to Pipedrive.\n\nHelpUrl: https://docs.hal.guru/models/",
+      "description": "The action to send data to Pipedrive.\n\nManual: https://docs.hal.guru/models/",
       "oneOf": [
         {
           "type": "null"
         },
         {
           "type": "object",
-          "description": "Send to Pipedrive action\n\nHelpUrl: https://docs.hal.guru/models/",
+          "description": "Send to Pipedrive action\n\nManual: https://docs.hal.guru/models/",
           "properties": {
             "Language": {
               "type": [
                 "null",
                 "string"
               ],
-              "description": "Language context for the action\n\nHelpUrl: https://docs.hal.guru/models/"
+              "description": "Language context for the action\n\nManual: https://docs.hal.guru/models/"
             },
             "DealTitle": {
               "type": [
                 "null",
                 "string"
               ],
-              "description": "Deal title\n\nHelpUrl: https://docs.hal.guru/models/"
+              "description": "Deal title\n\nManual: https://docs.hal.guru/models/"
             },
             "UserName": {
               "type": [
                 "null",
                 "string"
               ],
-              "description": "User name\n\nHelpUrl: https://docs.hal.guru/models/"
+              "description": "User name\n\nManual: https://docs.hal.guru/models/"
             },
             "UserOrganisation": {
               "type": [
                 "null",
                 "string"
               ],
-              "description": "User organization\n\nHelpUrl: https://docs.hal.guru/models/"
+              "description": "User organization\n\nManual: https://docs.hal.guru/models/"
             },
             "UserEmail": {
               "type": [
                 "null",
                 "string"
               ],
-              "description": "User email address\n\nHelpUrl: https://docs.hal.guru/models/"
+              "description": "User email address\n\nManual: https://docs.hal.guru/models/"
             },
             "UserPhone": {
               "type": [
                 "null",
                 "string"
               ],
-              "description": "User phone number\n\nHelpUrl: https://docs.hal.guru/models/"
+              "description": "User phone number\n\nManual: https://docs.hal.guru/models/"
             },
             "Description": {
               "type": [
                 "null",
                 "string"
               ],
-              "description": "Deal description\n\nHelpUrl: https://docs.hal.guru/models/"
+              "description": "Deal description\n\nManual: https://docs.hal.guru/models/"
             }
           }
         }
       ]
     },
     "ChangePrompt": {
-      "description": "The action responsible for changing the agent's prompt.\n\nHelpUrl: https://docs.hal.guru/models/",
+      "description": "The action responsible for changing the agent's prompt.\n\nManual: https://docs.hal.guru/models/",
       "oneOf": [
         {
           "type": "null"
         },
         {
           "type": "object",
-          "description": "Sets the prompt to be used by the agent for subsequent operations.\n\nHelpUrl: https://docs.hal.guru/models/",
+          "description": "Sets the prompt to be used by the agent for subsequent operations.\n\nManual: https://docs.hal.guru/models/",
           "required": [
             "Name"
           ],
           "properties": {
             "Name": {
               "type": "string",
-              "description": "The name of the prompt to be set or activated for the agent.\n\nHelpUrl: https://docs.hal.guru/models/",
+              "description": "The name of the prompt to be set or activated for the agent.\n\nManual: https://docs.hal.guru/models/",
               "minLength": 1
             }
           }
@@ -139,21 +139,21 @@
       ]
     },
     "ChangetLlmConnector": {
-      "description": "The action responsible for configuring the LLM connector associated with the agent.\n\nHelpUrl: https://docs.hal.guru/models/",
+      "description": "The action responsible for configuring the LLM connector associated with the agent.\n\nManual: https://docs.hal.guru/models/",
       "oneOf": [
         {
           "type": "null"
         },
         {
           "type": "object",
-          "description": "Sets the LLM connector to be used by the agent.\n\nHelpUrl: https://docs.hal.guru/models/",
+          "description": "Sets the LLM connector to be used by the agent.\n\nManual: https://docs.hal.guru/models/",
           "required": [
             "Name"
           ],
           "properties": {
             "Name": {
               "type": "string",
-              "description": "The name of the LLM connector to be used.\n\nHelpUrl: https://docs.hal.guru/models/",
+              "description": "The name of the LLM connector to be used.\n\nManual: https://docs.hal.guru/models/",
               "minLength": 1
             }
           }
