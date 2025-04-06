@@ -4,7 +4,8 @@ set -e  # Stop script on first error
 
 REPO_OWNER="HAL-guru"
 REPO_NAME="hal.guru"
-INSTALL_DIR="$HOME/.halguru"
+INSTALL_DIR_NAME=".halguru"
+INSTALL_DIR="$HOME/$INSTALL_DIR_NAME"
 LOG_FILE="$INSTALL_DIR/install.log"
 
 log_error() {
@@ -136,8 +137,18 @@ main() {
 
     log_info "Creating directory $INSTALL_DIR"
 
-    mkdir -p "$INSTALL_DIR"
-    touch "$LOG_FILE"
+    cd "$HOME" || {
+        log_error 9 "Cannot change directory to $HOME"
+        exit 9
+    }
+    mkdir -p "$INSTALL_DIR_NAME" || {
+      log_error 16 "Cannot create directory $INSTALL_DIR_NAME"
+      exit 16
+    }
+    touch "$LOG_FILE" || {
+      log_error 17 "Cannot create log file $LOG_FILE"
+      exit 17
+    }
 
     cd "$INSTALL_DIR" || {
         log_error 9 "Cannot change directory to $INSTALL_DIR"

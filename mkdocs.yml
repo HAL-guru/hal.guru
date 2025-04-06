@@ -47,7 +47,7 @@ nav:
   - 'Welcome': 'index.md'
   - 'Installation':
       - 'Installation': 'installation/index.md'
-      - '&nbsp;&nbsp;&nbsp;Details':
+      - '&nbsp;&nbsp;&nbsp;Expert Guides':
         - 'MacOS and Linux': 'installation/macos-and-linux.md'
         - 'Windows': 'installation/windows.md'
         - 'Experienced users': 'installation/experienced-users.md'

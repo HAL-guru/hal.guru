@@ -44,7 +44,7 @@
     },
     "Agent": {
       "type": "object",
-      "description": "The AI Agent configuration.\n\n\r\nThe class captures essential attributes such as the agent's unique identifier, name, type, version,\r\nauthor details, and description. It also includes configurations for its behavior, startup logic, user-interface design, and themes.\r\nThis class facilitates general customization and configuration of robot agents for specific use cases.\r\n\n\nManual: https://docs.hal.guru/models/(halguru)-agent",
+      "description": "The AI Agent configuration.\n\nThe class captures essential attributes such as the agent's unique identifier, name, type, version, author details, and description. It also includes configurations for its behavior, startup logic, user-interface design, and themes. This class facilitates general customization and configuration of robot agents for specific use cases.\n\nManual: https://docs.hal.guru/models/(halguru)-agent",
       "required": [
         "Name",
         "Type",
@@ -55,20 +55,20 @@
         "Id": {
           "title": "Agent ID",
           "type": "string",
-          "description": "The unique identifier for the agent (GUID ex. 12345678-1234-1234-1234-123456789012).\n\n\r\nThe Id property represents a globally unique identifier (GUID) assigned to the agent.\r\nIt is used to uniquely identify the agent within the system and across configurations.\r\n\n\nManual: https://docs.hal.guru/models/(halguru)-agent-id",
+          "description": "The unique identifier for the agent (GUID ex. 12345678-1234-1234-1234-123456789012).\n\nThe Id property represents a globally unique identifier (GUID) assigned to the agent. It is used to uniquely identify the agent within the system and across configurations.\n\nManual: https://docs.hal.guru/models/(halguru)-agent-id",
           "format": "guid"
         },
         "Name": {
           "title": "Agent Name",
           "type": "string",
-          "description": "The name of the agent.\n\n\r\nThe Name property specifies the assigned name for the robot in the configuration.\r\nIt is used to distinguish the robot in various operational contexts and configurations.\r\n\n\nManual: https://docs.hal.guru/models/(halguru)-agent-name",
+          "description": "The name of the agent.\n\nThe Name property specifies the assigned name for the robot in the configuration. It is used to distinguish the robot in various operational contexts and configurations.\n\nManual: https://docs.hal.guru/models/(halguru)-agent-name",
           "maxLength": 50,
           "minLength": 6
         },
         "Type": {
           "title": "Type of the Agent",
           "type": "string",
-          "description": "Represents a basic agent type within the system. This type is generally used for the default or simplest form of agent functionality.\n\n\r\nThe Type property defines the classification of the robot based on its functionality or purpose.\r\nIt is used to identify the operational role of the robot within a system or application.\r\n\n\nManual: https://docs.hal.guru/models/(halguru)-agent-type",
+          "description": "Represents a basic agent type within the system. This type is generally used for the default or simplest form of agent functionality.\n\nThe Type property defines the classification of the robot based on its functionality or purpose. It is used to identify the operational role of the robot within a system or application.\n\nManual: https://docs.hal.guru/models/(halguru)-agent-type",
           "enum": [
             "Basic"
           ]
@@ -76,7 +76,7 @@
         "Version": {
           "title": "Version of the Agent",
           "type": "string",
-          "description": "The version of the agent.\n\n\r\nThe Version property specifies the version of the agent's configuration or implementation.\r\nIt can be used to identify and differentiate between various iterations or releases of the agent.\r\nVersion should be in the format: Major.Minor[.Patch] or GitVersionInfo\r\nIt’s common practice to prefix your version names with the letter v.\r\nSome good tag names might be v1.0.0 or v2.3.4.\r\nIf the tag isn’t meant for production use, add a pre-release version after the version name.\r\nSome good pre-release versions might be v0.2.0-alpha or v5.9-beta.3.\r\n\n\nManual: https://docs.hal.guru/models/(halguru)-agent-version",
+          "description": "The version of the agent.\n\nThe Version property specifies the version of the agent's configuration or implementation. It can be used to identify and differentiate between various iterations or releases of the agent. Version should be in the format: Major.Minor[.Patch] or GitVersionInfo It’s common practice to prefix your version names with the letter v. Some good tag names might be v1.0.0 or v2.3.4. If the tag isn’t meant for production use, add a pre-release version after the version name. Some good pre-release versions might be v0.2.0-alpha or v5.9-beta.3.\n\nManual: https://docs.hal.guru/models/(halguru)-agent-version",
           "default": "1.0.0",
           "minLength": 1,
           "pattern": "v?\\d+\\.\\d+(\\.\\d+)?(-[a-zA-Z0-9\\.]+)?(\\+[a-zA-Z0-9\\.]+)?"
@@ -87,12 +87,12 @@
             "null",
             "string"
           ],
-          "description": "The description of the agent.\n\n\r\nThe Description property provides detailed information about the robot,\r\nincluding its purpose, functionality, or any additional metadata relevant\r\nto its usage and operational context.\r\n\n\nManual: https://docs.hal.guru/models/(halguru)-agent-description"
+          "description": "The description of the agent.\n\nThe Description property provides detailed information about the robot, including its purpose, functionality, or any additional metadata relevant to its usage and operational context.\n\nManual: https://docs.hal.guru/models/(halguru)-agent-description"
         },
         "Author": {
           "title": "Author of the Agent",
           "type": "object",
-          "description": "Represents an author entity with metadata about an individual or organization.\n\n\r\nThe Author property provides metadata about the creator or maintainer of the robot.\r\nIt includes details such as the author's name, email, URL, company, and copyright information.\r\nThis information can be used for tracking and attribution purposes.\r\n\n\nManual: https://docs.hal.guru/models/(halguru)-agent-author",
+          "description": "Represents an author entity with metadata about an individual or organization.\n\nThe Author property provides metadata about the creator or maintainer of the robot. It includes details such as the author's name, email, URL, company, and copyright information. This information can be used for tracking and attribution purposes.\n\nManual: https://docs.hal.guru/models/(halguru)-agent-author",
           "properties": {
             "Name": {
               "title": "Author Name",
@@ -100,7 +100,7 @@
                 "null",
                 "string"
               ],
-              "description": "The name of the author.\n\n\r\nThe name may represent the full name of an individual author or the name of an organization.\r\n\n\nManual: https://docs.hal.guru/models/(halguru)-agent-author-name"
+              "description": "The name of the author.\n\nThe name may represent the full name of an individual author or the name of an organization.\n\nManual: https://docs.hal.guru/models/(halguru)-agent-author-name"
             },
             "Email": {
               "title": "Contact Email",
@@ -108,7 +108,7 @@
                 "null",
                 "string"
               ],
-              "description": "The email address of the author.\n\n\r\nThe email address can be used for communication or identification purposes\r\nin various contexts related to the author's metadata.\r\n\n\nManual: https://docs.hal.guru/models/(halguru)-agent-author-email"
+              "description": "The email address of the author.\n\nThe email address can be used for communication or identification purposes in various contexts related to the author's metadata.\n\nManual: https://docs.hal.guru/models/(halguru)-agent-author-email"
             },
             "Url": {
               "title": "URL",
@@ -116,7 +116,7 @@
                 "null",
                 "string"
               ],
-              "description": "The URL associated with the author.\n\n\r\nThe URL may link to the author's personal website, portfolio, or other relevant online resource.\r\n\n\nManual: https://docs.hal.guru/models/(halguru)-agent-author-url"
+              "description": "The URL associated with the author.\n\nThe URL may link to the author's personal website, portfolio, or other relevant online resource.\n\nManual: https://docs.hal.guru/models/(halguru)-agent-author-url"
             },
             "Company": {
               "title": "Company",
@@ -124,7 +124,7 @@
                 "null",
                 "string"
               ],
-              "description": "The company associated with the author.\n\n\r\nThis property represents the name of the organization or business the author is affiliated with.\r\nIt may provide contextual information about the author's professional background or association.\r\n\n\nManual: https://docs.hal.guru/models/(halguru)-agent-author-company"
+              "description": "The company associated with the author.\n\nThis property represents the name of the organization or business the author is affiliated with. It may provide contextual information about the author's professional background or association.\n\nManual: https://docs.hal.guru/models/(halguru)-agent-author-company"
             },
             "Copyright": {
               "title": "Copyright",
@@ -132,14 +132,14 @@
                 "null",
                 "string"
               ],
-              "description": "The copyright information associated with the author or their works.\n\n\r\nThis property specifies the legal rights and protections claimed by the author or organization for their intellectual property.\r\nIt is typically represented by a notice specifying the year(s) of creation and the owner of the copyright.\r\n\n\nManual: https://docs.hal.guru/models/(halguru)-agent-author-copyright"
+              "description": "The copyright information associated with the author or their works.\n\nThis property specifies the legal rights and protections claimed by the author or organization for their intellectual property. It is typically represented by a notice specifying the year(s) of creation and the owner of the copyright.\n\nManual: https://docs.hal.guru/models/(halguru)-agent-author-copyright"
             }
           }
         },
         "Start": {
           "title": "Agent Start Configuration",
           "type": "object",
-          "description": "Represents the start configuration for a robot.\nThis class defines the initial setup or parameters required when the robot is initiated.\n\n\r\nThe Start property defines the initial execution parameters or actions\r\nthat the robot will perform. It includes details such as the connector,\r\ninitial prompt, or messages necessary to initialize the robot's operation.\r\n\n\nManual: https://docs.hal.guru/models/(halguru)-agent-start",
+          "description": "Represents the start configuration for a robot.\nThis class defines the initial setup or parameters required when the robot is initiated.\n\nThe Start property defines the initial execution parameters or actions that the robot will perform. It includes details such as the connector, initial prompt, or messages necessary to initialize the robot's operation.\n\nManual: https://docs.hal.guru/models/(halguru)-agent-start",
           "required": [
             "LlmConnectorName"
           ],
@@ -174,7 +174,7 @@
         "Themes": {
           "title": "Agent Themes",
           "type": "array",
-          "description": "The collection of themes and their associated designs for the agent.\n\n\r\nThe Themes property maps a to its corresponding .\r\nThis allows the agent to support multiple UI themes, such as Light and Dark, with customizable designs.\r\n\n\nManual: https://docs.hal.guru/models/(halguru)-agent-themes",
+          "description": "The collection of themes and their associated designs for the agent.\n\nThe Themes property maps a to its corresponding . This allows the agent to support multiple UI themes, such as Light and Dark, with customizable designs.\n\nManual: https://docs.hal.guru/models/(halguru)-agent-themes",
           "xml": {
             "wrapped": true
           },
@@ -192,7 +192,7 @@
               "Theme": {
                 "title": "Theme",
                 "type": "string",
-                "description": "Represents the theme options available for a robot's display or functionality settings.\nProvides a selection of predefined appearance modes, designed to meet various\nuser preferences and environment requirements.\n\n\r\nThis property defines the visual theme utilized in the application's interface, such as or .\r\nIt is integral for determining the aesthetic representation and adapting the user interface to different contexts or preferences.\r\n\n\nManual: https://docs.hal.guru/models/(halguru)-agent-themes-list-theme",
+                "description": "Represents the theme options available for a robot's display or functionality settings.\nProvides a selection of predefined appearance modes, designed to meet various\nuser preferences and environment requirements.\n\nThis property defines the visual theme utilized in the application's interface, such as or . It is integral for determining the aesthetic representation and adapting the user interface to different contexts or preferences.\n\nManual: https://docs.hal.guru/models/(halguru)-agent-themes-list-theme",
                 "default": 0,
                 "enum": [
                   "Light",
@@ -278,7 +278,7 @@
         "UI": {
           "title": "Agent User Interface",
           "type": "object",
-          "description": "Represents the design configuration for an agent's user interface.\n\n\r\nThe UserInterface property defines the visual interface design elements for the robot.\r\nIt specifies configurations such as button behavior and appearance,\r\nenabling customized user interactions based on the defined design settings.\r\n\n\nManual: https://docs.hal.guru/models/(halguru)-agent-ui",
+          "description": "Represents the design configuration for an agent's user interface.\n\nThe UserInterface property defines the visual interface design elements for the robot. It specifies configurations such as button behavior and appearance, enabling customized user interactions based on the defined design settings.\n\nManual: https://docs.hal.guru/models/(halguru)-agent-ui",
           "properties": {
             "DisableCloseButton": {
               "title": "Disable Close Button",
@@ -293,7 +293,7 @@
         "Features": {
           "title": "Agent Features",
           "type": "object",
-          "description": "Defines the configurable properties that determine how an agent operates during its execution.\n\n\r\nThe Features property defines the specific functional attributes and\r\noperational parameters of the robot. It encapsulates the settings that govern\r\nbehavior such as URL checks, validation logic, and retry attempts.\r\n\n\nManual: https://docs.hal.guru/models/(halguru)-agent-features",
+          "description": "Defines the configurable properties that determine how an agent operates during its execution.\n\nThe Features property defines the specific functional attributes and operational parameters of the robot. It encapsulates the settings that govern behavior such as URL checks, validation logic, and retry attempts.\n\nManual: https://docs.hal.guru/models/(halguru)-agent-features",
           "properties": {
             "CheckAllUrls": {
               "title": "Check all URLs",
@@ -358,19 +358,19 @@
         "Name": {
           "title": "Agent Name",
           "type": "string",
-          "description": "The name of the operator.\n\n\r\nThe Name property specifies the identifier for the operator, commonly used to label and distinguish\r\nthe operator within various operational and configuration contexts.\r\nThis property enforces constraints on the length of the name to ensure compliance with system requirements.\r\n\n\nManual: https://docs.hal.guru/models/(halguru)-operator-name",
+          "description": "The name of the operator.\n\nThe Name property specifies the identifier for the operator, commonly used to label and distinguish the operator within various operational and configuration contexts. This property enforces constraints on the length of the name to ensure compliance with system requirements.\n\nManual: https://docs.hal.guru/models/(halguru)-operator-name",
           "maxLength": 50,
           "minLength": 6
         },
         "UI": {
           "title": "Operator User Interface",
           "type": "object",
-          "description": "Defines the design configuration and personalized settings for an operator's user interface.\n\n\r\nThe UI property specifies the design and configuration settings\r\nrelated to the operator's user interface. This property facilitates\r\ndefining the operator's visual interaction elements, user experience customizations,\r\nand general UI-related features tailored to specific operational requirements.\r\n\n\nManual: https://docs.hal.guru/models/(halguru)-operator-ui"
+          "description": "Defines the design configuration and personalized settings for an operator's user interface.\n\nThe UI property specifies the design and configuration settings related to the operator's user interface. This property facilitates defining the operator's visual interaction elements, user experience customizations, and general UI-related features tailored to specific operational requirements.\n\nManual: https://docs.hal.guru/models/(halguru)-operator-ui"
         },
         "Features": {
           "title": "Operator Features",
           "type": "object",
-          "description": "Defines the configurable properties that determine how an operator operates during its execution.\n\n\r\nThe Features property represents the configurable attributes and functionalities\r\nof the operator. It defines the operator's behavior and operational characteristics\r\nduring execution, enabling customization for specific tasks or workflows.\r\n\n\nManual: https://docs.hal.guru/models/(halguru)-operator-features"
+          "description": "Defines the configurable properties that determine how an operator operates during its execution.\n\nThe Features property represents the configurable attributes and functionalities of the operator. It defines the operator's behavior and operational characteristics during execution, enabling customization for specific tasks or workflows.\n\nManual: https://docs.hal.guru/models/(halguru)-operator-features"
         }
       }
     },
@@ -452,7 +452,7 @@
         "properties": {
           "Name": {
             "type": "string",
-            "description": "Represents the name assigned to the LLM Connector configuration.\n\n\r\nThis property is used to identify the specific configuration instance,\r\nand can be utilized for organizational or reference purposes.\r\n\n\nManual: https://docs.hal.guru/models/(halguru)-llmconnectors-list-name"
+            "description": "Represents the name assigned to the LLM Connector configuration.\n\nThis property is used to identify the specific configuration instance, and can be utilized for organizational or reference purposes.\n\nManual: https://docs.hal.guru/models/(halguru)-llmconnectors-list-name"
           },
           "LlmProvider": {
             "type": "string",
@@ -501,18 +501,18 @@
               "null",
               "string"
             ],
-            "description": "Represents the API key used to authenticate with the LLM provider.\n\n\r\nThis property stores the authentication key required for accessing services provided by the\r\nspecified LLM provider. Ensure that this key is managed securely and complies with best practices\r\nfor sensitive information handling.\r\n\n\nManual: https://docs.hal.guru/models/(halguru)-llmconnectors-list-apikey"
+            "description": "Represents the API key used to authenticate with the LLM provider.\n\nThis property stores the authentication key required for accessing services provided by the specified LLM provider. Ensure that this key is managed securely and complies with best practices for sensitive information handling.\n\nManual: https://docs.hal.guru/models/(halguru)-llmconnectors-list-apikey"
           },
           "InstructionsPrompt": {
             "type": [
               "null",
               "string"
             ],
-            "description": "Specifies the custom instructions or contextual guidance provided to the LLM for tailoring its responses.\n\n\r\nThis property allows setting predefined prompts or guidelines that influence the behavior and tone of the LLM's output.\r\nIt can be used to define specific tasks, roles, or response formats for the model.\r\n\n\nManual: https://docs.hal.guru/models/(halguru)-llmconnectors-list-instructionsprompt"
+            "description": "Specifies the custom instructions or contextual guidance provided to the LLM for tailoring its responses.\n\nThis property allows setting predefined prompts or guidelines that influence the behavior and tone of the LLM's output. It can be used to define specific tasks, roles, or response formats for the model.\n\nManual: https://docs.hal.guru/models/(halguru)-llmconnectors-list-instructionsprompt"
           },
           "Tools": {
             "type": "array",
-            "description": "Represents a collection of tools or additional functionalities associated with the LLM connection.\n\n\r\nThis property holds a list of tool identifiers or names that extend or complement the capabilities\r\nof the LLM. These tools can be used to enhance interactions, provide additional processing, or\r\nimplement custom logic during the LLM's operation.\r\n\n\nManual: https://docs.hal.guru/models/(halguru)-llmconnectors-list-tools",
+            "description": "Represents a collection of tools or additional functionalities associated with the LLM connection.\n\nThis property holds a list of tool identifiers or names that extend or complement the capabilities of the LLM. These tools can be used to enhance interactions, provide additional processing, or implement custom logic during the LLM's operation.\n\nManual: https://docs.hal.guru/models/(halguru)-llmconnectors-list-tools",
             "xml": {
               "wrapped": true
             },
