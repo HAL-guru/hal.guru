@@ -2,7 +2,7 @@
   "$schema": "http://json-schema.org/draft-04/schema#",
   "title": "StateConfiguration",
   "type": "object",
-  "description": "Defines the operational state and associated metadata for a session of an agent.\n\nManual: https://docs.hal.guru/models/",
+  "description": "Defines the operational state and associated metadata for a session of an agent.\n\n**Summary**\n\r\nDefines the operational state and associated metadata for a session of an agent.\r\n\n\nManual: https://docs.hal.guru/models/(state)",
   "properties": {
     "Started": {
       "title": "Started",
@@ -10,7 +10,7 @@
         "null",
         "string"
       ],
-      "description": "The moment when the agent AI is initiated.\n\nManual: https://docs.hal.guru/models/",
+      "description": "The moment when the agent AI is initiated.\n\n**Summary**\n\r\nSpecifies the exact time when the agent was activated and its session began.\r\n\n\nManual: https://docs.hal.guru/models/(state)-started-list",
       "format": "date-time"
     },
     "LastAccess": {
@@ -19,7 +19,7 @@
         "null",
         "string"
       ],
-      "description": "Last access to the agent.\n\nManual: https://docs.hal.guru/models/",
+      "description": "Last access to the agent.\n\n**Summary**\n\r\nRepresents the most recent interaction time with the agent.\r\n\n\nManual: https://docs.hal.guru/models/(state)-lastaccess-list",
       "format": "date-time"
     },
     "IsStarted": {
@@ -28,7 +28,7 @@
         "boolean",
         "null"
       ],
-      "description": "Indicates whether the agent has been started.\n\nManual: https://docs.hal.guru/models/"
+      "description": "Indicates whether the agent has been started.\n\n**Summary**\n\r\nIndicates whether the agent has been started.\r\n\n\nManual: https://docs.hal.guru/models/(state)-isstarted-list"
     },
     "ThreadId": {
       "title": "Thread Id",
@@ -36,7 +36,7 @@
         "null",
         "string"
       ],
-      "description": "The identifier of the thread associated with the agent.\n\nManual: https://docs.hal.guru/models/"
+      "description": "The identifier of the thread associated with the agent.\n\n**Summary**\n\r\nRepresents the identifier of the thread associated with the agent.\r\n\n\nManual: https://docs.hal.guru/models/(state)-threadid"
     },
     "LlmConnectorName": {
       "title": "LLM Connector Name",
@@ -44,7 +44,7 @@
         "null",
         "string"
       ],
-      "description": "The name of the LLM connector associated with the agent.\n\nManual: https://docs.hal.guru/models/"
+      "description": "The name of the LLM connector associated with the agent.\n\n**Summary**\n\r\nRepresents the name of the LLM (Large Language Model) connector associated with the agent.\r\nDetermines which LLM connector is used for operations within the session.\r\n\n\nManual: https://docs.hal.guru/models/(state)-llmconnectorname"
     },
     "PromptName": {
       "title": "Prompt Name",
@@ -52,7 +52,7 @@
         "null",
         "string"
       ],
-      "description": "The name of the currently active prompt associated with the agent.\n\nManual: https://docs.hal.guru/models/"
+      "description": "The name of the currently active prompt associated with the agent.\n\n**Summary**\n\r\nStores the name of the currently active prompt associated with the agent.\r\n\n\nManual: https://docs.hal.guru/models/(state)-promptname"
     },
     "Url": {
       "title": "Url",
@@ -60,7 +60,7 @@
         "null",
         "string"
       ],
-      "description": "The URL associated with the agent state.\n\nManual: https://docs.hal.guru/models/"
+      "description": "The URL associated with the agent state.\n\n**Summary**\n\r\nRepresents the URL associated with the agent state.\r\n\n\nManual: https://docs.hal.guru/models/(state)-url"
     },
     "Language": {
       "title": "Language",
@@ -68,21 +68,21 @@
         "null",
         "string"
       ],
-      "description": "The language associated with the agent state.\n\nManual: https://docs.hal.guru/models/"
+      "description": "The language associated with the agent state.\n\n**Summary**\n\r\nSpecifies the language associated with the agent state:\r\nen, pl, etc.\r\n\n\nManual: https://docs.hal.guru/models/(state)-language"
     },
     "Description": {
       "type": [
         "null",
         "string"
       ],
-      "description": "A brief description or details regarding the agent state.\n\nManual: https://docs.hal.guru/models/"
+      "description": "A brief description or details regarding the agent state.\n\n**Summary**\n\r\nA brief description or details regarding the agent state.\r\n\n\nManual: https://docs.hal.guru/models/(state)-description"
     },
     "Variables": {
       "type": [
         "array",
         "null"
       ],
-      "description": "A collection of variables associated with the agent state.\n\nManual: https://docs.hal.guru/models/",
+      "description": "A collection of variables associated with the agent state.\n\n**Summary**\n\r\nRepresents a collection of variables associated with the agent state.\r\n\n\nManual: https://docs.hal.guru/models/(state)-variables-list",
       "xml": {
         "wrapped": true
       },
@@ -99,13 +99,13 @@
           "Name": {
             "title": "Variable Name",
             "type": "string",
-            "description": "The name of the variable.\n\nManual: https://docs.hal.guru/models/",
+            "description": "The name of the variable.\n\n**Summary**\n\r\nGets or sets the name of the variable.\r\n\n\nManual: https://docs.hal.guru/models/(state)-variables-list-name",
             "maxLength": 100,
             "minLength": 1
           },
           "Type": {
             "type": "string",
-            "description": "",
+            "description": "\n\n**Summary**\n\r\nGets or sets the data type of the variable.\r\n\n\nManual: https://docs.hal.guru/models/(state)-variables-list-type",
             "default": 7,
             "enum": [
               "Custom",
@@ -132,7 +132,7 @@
               "null",
               "string"
             ],
-            "description": "The value of the variable.\n\nManual: https://docs.hal.guru/models/"
+            "description": "The value of the variable.\n\n**Summary**\n\r\nGets or sets the value of the variable.\r\n\n\nManual: https://docs.hal.guru/models/(state)-variables-list-value"
           }
         }
       }
