@@ -2,25 +2,25 @@
   "$schema": "http://json-schema.org/draft-04/schema#",
   "title": "WebsiteConfiguration",
   "type": "object",
-  "description": "Represents the configuration settings for a website crawler or scraper.\nDefines parameters such as the name of the website, the starting URL,\nmaximum allowed levels and pages, specific URL patterns to process,\nand connectors required for linking external components like LLMs and file systems.\n\n**Summary**\n\r\nRepresents the configuration settings for a website crawler or scraper.\r\nDefines parameters such as the name of the website, the starting URL,\r\nmaximum allowed levels and pages, specific URL patterns to process,\r\nand connectors required for linking external components like LLMs and file systems.\r\n\n\nManual: https://docs.hal.guru/models/(website)",
+  "description": "Represents the configuration settings for a website crawler or scraper.\nDefines parameters such as the name of the website, the starting URL,\nmaximum allowed levels and pages, specific URL patterns to process,\nand connectors required for linking external components like LLMs and file systems.\n\nManual: https://docs.hal.guru/models/(website)",
   "properties": {
     "StartUrl": {
       "type": "string",
-      "description": "Gets or sets the starting URL for the website.\n\n**Summary**\n\r\nGets or sets the starting URL for the website.\r\n\n\nManual: https://docs.hal.guru/models/(website)-starturl"
+      "description": "Gets or sets the starting URL for the website.\n\nManual: https://docs.hal.guru/models/(website)-starturl"
     },
     "MaxLevel": {
       "type": "integer",
-      "description": "Gets or sets the maximum level allowed for processing or operations in the website.\n\n**Summary**\n\r\nGets or sets the maximum level allowed for processing or operations in the website.\r\n\n\nManual: https://docs.hal.guru/models/(website)-maxlevel",
+      "description": "Gets or sets the maximum level allowed for processing or operations in the website.\n\nManual: https://docs.hal.guru/models/(website)-maxlevel",
       "format": "int32"
     },
     "MaxPages": {
       "type": "integer",
-      "description": "Gets or sets the maximum number of pages to process for the website.\n\n**Summary**\n\r\nGets or sets the maximum number of pages to process for the website.\r\n\n\nManual: https://docs.hal.guru/models/(website)-maxpages",
+      "description": "Gets or sets the maximum number of pages to process for the website.\n\nManual: https://docs.hal.guru/models/(website)-maxpages",
       "format": "int32"
     },
     "Pages": {
       "type": "array",
-      "description": "Gets or sets the collection of website pages configuration.\n\n**Summary**\n\r\nGets or sets the collection of website pages configuration.\r\n\n\nManual: https://docs.hal.guru/models/(website)-pages-list",
+      "description": "Gets or sets the collection of website pages configuration.\n\nManual: https://docs.hal.guru/models/(website)-pages-list",
       "xml": {
         "wrapped": true
       },
@@ -34,67 +34,67 @@
         "properties": {
           "Name": {
             "type": "string",
-            "description": "Represents the name of the web page or a specific element within the web page.\n\n**Summary**\n\r\nRepresents the name of the web page or a specific element within the web page.\r\n\n\nManual: https://docs.hal.guru/models/(website)-pages-list-name"
+            "description": "Represents the name of the web page or a specific element within the web page.\n\nManual: https://docs.hal.guru/models/(website)-pages-list-name"
           },
           "TagName": {
             "type": "string",
-            "description": "Represents the tag name of an HTML element or feature within a website page.\n\n**Summary**\n\r\nRepresents the tag name of an HTML element or feature within a website page.\r\n\n\nManual: https://docs.hal.guru/models/(website)-pages-list-tagname"
+            "description": "Represents the tag name of an HTML element or feature within a website page.\n\nManual: https://docs.hal.guru/models/(website)-pages-list-tagname"
           },
           "Description": {
             "type": "string",
-            "description": "Provides details or information about the web page or a specific element within the web page.\n\n**Summary**\n\r\nProvides details or information about the web page or a specific element within the web page.\r\n\n\nManual: https://docs.hal.guru/models/(website)-pages-list-description"
+            "description": "Provides details or information about the web page or a specific element within the web page.\n\nManual: https://docs.hal.guru/models/(website)-pages-list-description"
           },
           "IncludeHtml": {
             "type": "boolean",
-            "description": "Indicates whether the HTML content of the web page should be included in the output during the web scraping process.\n\n**Summary**\n\r\nIndicates whether the HTML content of the web page should be included in the output during the web scraping process.\r\n\n\nManual: https://docs.hal.guru/models/(website)-pages-list-includehtml"
+            "description": "Indicates whether the HTML content of the web page should be included in the output during the web scraping process.\n\nManual: https://docs.hal.guru/models/(website)-pages-list-includehtml"
           },
           "IncludeText": {
             "type": "boolean",
-            "description": "Determines whether the textual content of a web page should be included during the web scraping process.\n\n**Summary**\n\r\nDetermines whether the textual content of a web page should be included during the web scraping process.\r\n\n\nManual: https://docs.hal.guru/models/(website)-pages-list-includetext"
+            "description": "Determines whether the textual content of a web page should be included during the web scraping process.\n\nManual: https://docs.hal.guru/models/(website)-pages-list-includetext"
           },
           "NormalizeWhitespaces": {
             "type": "boolean",
-            "description": "Indicates whether whitespaces should be normalized in the text content extracted from an HTML node.\nWhen enabled, consecutive whitespace characters are replaced with a single space.\n\n**Summary**\n\r\nIndicates whether whitespaces should be normalized in the text content extracted from an HTML node.\r\nWhen enabled, consecutive whitespace characters are replaced with a single space.\r\n\n\nManual: https://docs.hal.guru/models/(website)-pages-list-normalizewhitespaces"
+            "description": "Indicates whether whitespaces should be normalized in the text content extracted from an HTML node.\nWhen enabled, consecutive whitespace characters are replaced with a single space.\n\nManual: https://docs.hal.guru/models/(website)-pages-list-normalizewhitespaces"
           },
           "RemoveHtmlTags": {
             "type": "boolean",
-            "description": "Indicates whether HTML tags should be removed from the content of a web page during processing.\n\n**Summary**\n\r\nIndicates whether HTML tags should be removed from the content of a web page during processing.\r\n\n\nManual: https://docs.hal.guru/models/(website)-pages-list-removehtmltags"
+            "description": "Indicates whether HTML tags should be removed from the content of a web page during processing.\n\nManual: https://docs.hal.guru/models/(website)-pages-list-removehtmltags"
           },
           "RemoveHtmlAttributes": {
             "type": "boolean",
-            "description": "Indicates whether HTML attributes should be removed during the web scraping process.\n\n**Summary**\n\r\nIndicates whether HTML attributes should be removed during the web scraping process.\r\n\n\nManual: https://docs.hal.guru/models/(website)-pages-list-removehtmlattributes"
+            "description": "Indicates whether HTML attributes should be removed during the web scraping process.\n\nManual: https://docs.hal.guru/models/(website)-pages-list-removehtmlattributes"
           },
           "UrlContains": {
             "type": [
               "null",
               "string"
             ],
-            "description": "Filter to process only web pages whose URL contains the specified substring.\n            \n\n**Summary**\n\r\nFilter to process only web pages whose URL contains the specified substring.\r\n\n\nManual: https://docs.hal.guru/models/(website)-pages-list-urlcontains"
+            "description": "Filter to process only web pages whose URL contains the specified substring.\n            \n\nManual: https://docs.hal.guru/models/(website)-pages-list-urlcontains"
           },
           "ContainsText": {
             "type": [
               "null",
               "string"
             ],
-            "description": "Only wepage contains text will be processed.\n            \n\n**Summary**\n\r\nOnly wepage contains text will be processed.\r\n\n\nManual: https://docs.hal.guru/models/(website)-pages-list-containstext"
+            "description": "Only wepage contains text will be processed.\n            \n\nManual: https://docs.hal.guru/models/(website)-pages-list-containstext"
           },
           "ContainsXpath": {
             "type": [
               "null",
               "string"
             ],
-            "description": "If defined, ContainsText will be checked only in the xpath.\n            \n\n**Summary**\n\r\nIf defined, ContainsText will be checked only in the xpath.\r\n\n\nManual: https://docs.hal.guru/models/(website)-pages-list-containsxpath"
+            "description": "If defined, ContainsText will be checked only in the xpath.\n            \n\nManual: https://docs.hal.guru/models/(website)-pages-list-containsxpath"
           },
           "ContentXPath": {
             "type": [
               "null",
               "string"
             ],
-            "description": "Only html tags from this xpath. If not empty.\n            \n\n**Summary**\n\r\nOnly html tags from this xpath. If not empty.\r\n\n\nManual: https://docs.hal.guru/models/(website)-pages-list-contentxpath"
+            "description": "Only html tags from this xpath. If not empty.\n            \n\nManual: https://docs.hal.guru/models/(website)-pages-list-contentxpath"
           },
           "DisabledTags": {
             "type": "array",
-            "description": "List of HTML tags that should be disabled or ignored during processing.\n            \n\n**Summary**\n\r\nList of HTML tags that should be disabled or ignored during processing.\r\n\n\nManual: https://docs.hal.guru/models/(website)-pages-list-disabledtags",
+            "description": "List of HTML tags that should be disabled or ignored during processing.\n            \n\nManual: https://docs.hal.guru/models/(website)-pages-list-disabledtags",
             "xml": {
               "wrapped": true
             },
@@ -107,7 +107,7 @@
           },
           "Features": {
             "type": "array",
-            "description": "Represents a collection of features extracted or associated with a specific web page,\ndefining key elements or properties of interest within the page.\n\n**Summary**\n\r\nRepresents a specific feature of a website that can be targeted during web scraping.\r\nThis includes the ability to identify and extract corresponding data by configuring properties such as tag names,\r\nregex patterns, XPath expressions, and HTML-processing parameters.\r\n\n\nManual: https://docs.hal.guru/models/(website)-pages-list-features-list",
+            "description": "Represents a collection of features extracted or associated with a specific web page,\ndefining key elements or properties of interest within the page.\n\nManual: https://docs.hal.guru/models/(website)-pages-list-features-list",
             "xml": {
               "wrapped": true
             },
@@ -120,66 +120,66 @@
               "properties": {
                 "Name": {
                   "type": "string",
-                  "description": "Gets or sets the name of the website feature.\nRepresents a descriptive identifier for a given feature within the website scraping process.\n\n**Summary**\n\r\nGets or sets the name of the website feature.\r\nRepresents a descriptive identifier for a given feature within the website scraping process.\r\n\n\nManual: https://docs.hal.guru/models/(website)-pages-list-features-list-name"
+                  "description": "Gets or sets the name of the website feature.\nRepresents a descriptive identifier for a given feature within the website scraping process.\n\nManual: https://docs.hal.guru/models/(website)-pages-list-features-list-name"
                 },
                 "TagName": {
                   "type": "string",
-                  "description": "Gets or sets the tag name used to identify or categorize the website feature.\nRepresents an attribute or element type within the website structure, providing context for feature extraction or manipulation.\n\n**Summary**\n\r\nGets or sets the tag name used to identify or categorize the website feature.\r\nRepresents an attribute or element type within the website structure, providing context for feature extraction or manipulation.\r\n\n\nManual: https://docs.hal.guru/models/(website)-pages-list-features-list-tagname"
+                  "description": "Gets or sets the tag name used to identify or categorize the website feature.\nRepresents an attribute or element type within the website structure, providing context for feature extraction or manipulation.\n\nManual: https://docs.hal.guru/models/(website)-pages-list-features-list-tagname"
                 },
                 "NameRegex": {
                   "type": [
                     "null",
                     "string"
                   ],
-                  "description": "Gets or sets the regular expression pattern to identify the name component of a website feature.\nThis property allows for custom matching and extraction of specific name segments\nfrom a website's content during the scraping process.\n\n**Summary**\n\r\nGets or sets the regular expression pattern to identify the name component of a website feature.\r\nThis property allows for custom matching and extraction of specific name segments\r\nfrom a website's content during the scraping process.\r\n\n\nManual: https://docs.hal.guru/models/(website)-pages-list-features-list-nameregex"
+                  "description": "Gets or sets the regular expression pattern to identify the name component of a website feature.\nThis property allows for custom matching and extraction of specific name segments\nfrom a website's content during the scraping process.\n\nManual: https://docs.hal.guru/models/(website)-pages-list-features-list-nameregex"
                 },
                 "ValueRegex": {
                   "type": [
                     "null",
                     "string"
                   ],
-                  "description": "Gets or sets the regular expression used to extract specific value matches from the HTML content of a website.\nThis property allows for precise targeting of text or patterns within the scraped HTML data.\n\n**Summary**\n\r\nGets or sets the regular expression used to extract specific value matches from the HTML content of a website.\r\nThis property allows for precise targeting of text or patterns within the scraped HTML data.\r\n\n\nManual: https://docs.hal.guru/models/(website)-pages-list-features-list-valueregex"
+                  "description": "Gets or sets the regular expression used to extract specific value matches from the HTML content of a website.\nThis property allows for precise targeting of text or patterns within the scraped HTML data.\n\nManual: https://docs.hal.guru/models/(website)-pages-list-features-list-valueregex"
                 },
                 "NameXpath": {
                   "type": [
                     "null",
                     "string"
                   ],
-                  "description": "Gets or sets the XPath expression used to locate the name of a specific feature within the website content.\nRepresents a structured query for extracting the name's specific location in the HTML document.\n\n**Summary**\n\r\nGets or sets the XPath expression used to locate the name of a specific feature within the website content.\r\nRepresents a structured query for extracting the name's specific location in the HTML document.\r\n\n\nManual: https://docs.hal.guru/models/(website)-pages-list-features-list-namexpath"
+                  "description": "Gets or sets the XPath expression used to locate the name of a specific feature within the website content.\nRepresents a structured query for extracting the name's specific location in the HTML document.\n\nManual: https://docs.hal.guru/models/(website)-pages-list-features-list-namexpath"
                 },
                 "ValueXpath": {
                   "type": [
                     "null",
                     "string"
                   ],
-                  "description": "Gets or sets the XPath expression used to locate and extract the value of a specific feature within a website's HTML content.\nRepresents the path to the element containing the desired data.\n\n**Summary**\n\r\nGets or sets the XPath expression used to locate and extract the value of a specific feature within a website's HTML content.\r\nRepresents the path to the element containing the desired data.\r\n\n\nManual: https://docs.hal.guru/models/(website)-pages-list-features-list-valuexpath"
+                  "description": "Gets or sets the XPath expression used to locate and extract the value of a specific feature within a website's HTML content.\nRepresents the path to the element containing the desired data.\n\nManual: https://docs.hal.guru/models/(website)-pages-list-features-list-valuexpath"
                 },
                 "IncludeHtml": {
                   "type": "boolean",
-                  "description": "Gets or sets a value indicating whether the HTML content of the feature should be included in the output.\nDetermines if the raw HTML representation of a specific web feature is extracted and added to the feature's output during processing.\n\n**Summary**\n\r\nGets or sets a value indicating whether the HTML content of the feature should be included in the output.\r\nDetermines if the raw HTML representation of a specific web feature is extracted and added to the feature's output during processing.\r\n\n\nManual: https://docs.hal.guru/models/(website)-pages-list-features-list-includehtml"
+                  "description": "Gets or sets a value indicating whether the HTML content of the feature should be included in the output.\nDetermines if the raw HTML representation of a specific web feature is extracted and added to the feature's output during processing.\n\nManual: https://docs.hal.guru/models/(website)-pages-list-features-list-includehtml"
                 },
                 "IncludeText": {
                   "type": "boolean",
-                  "description": "Determines whether the text content of the website feature should be included in the output.\nControls whether the extracted plain text, processed via relevant scraping logic,\nis added to the resulting feature output.\n\n**Summary**\n\r\nDetermines whether the text content of the website feature should be included in the output.\r\nControls whether the extracted plain text, processed via relevant scraping logic,\r\nis added to the resulting feature output.\r\n\n\nManual: https://docs.hal.guru/models/(website)-pages-list-features-list-includetext"
+                  "description": "Determines whether the text content of the website feature should be included in the output.\nControls whether the extracted plain text, processed via relevant scraping logic,\nis added to the resulting feature output.\n\nManual: https://docs.hal.guru/models/(website)-pages-list-features-list-includetext"
                 },
                 "NormalizeWhitespaces": {
                   "type": "boolean",
-                  "description": "Gets or sets a value indicating whether whitespaces in the extracted content should be normalized.\nWhen enabled, consecutive whitespace characters are collapsed into a single space,\nfacilitating cleaner and more standardized output after web scraping.\n\n**Summary**\n\r\nGets or sets a value indicating whether whitespaces in the extracted content should be normalized.\r\nWhen enabled, consecutive whitespace characters are collapsed into a single space,\r\nfacilitating cleaner and more standardized output after web scraping.\r\n\n\nManual: https://docs.hal.guru/models/(website)-pages-list-features-list-normalizewhitespaces"
+                  "description": "Gets or sets a value indicating whether whitespaces in the extracted content should be normalized.\nWhen enabled, consecutive whitespace characters are collapsed into a single space,\nfacilitating cleaner and more standardized output after web scraping.\n\nManual: https://docs.hal.guru/models/(website)-pages-list-features-list-normalizewhitespaces"
                 },
                 "RemoveHtmlTags": {
                   "type": "boolean",
-                  "description": "Gets or sets a value indicating whether HTML tags should be removed from the content.\nDetermines if the raw HTML content will have tags stripped for plain text processing.\n\n**Summary**\n\r\nGets or sets a value indicating whether HTML tags should be removed from the content.\r\nDetermines if the raw HTML content will have tags stripped for plain text processing.\r\n\n\nManual: https://docs.hal.guru/models/(website)-pages-list-features-list-removehtmltags"
+                  "description": "Gets or sets a value indicating whether HTML tags should be removed from the content.\nDetermines if the raw HTML content will have tags stripped for plain text processing.\n\nManual: https://docs.hal.guru/models/(website)-pages-list-features-list-removehtmltags"
                 },
                 "RemoveHtmlAttributes": {
                   "type": "boolean",
-                  "description": "Gets or sets a value indicating whether HTML attributes should be removed during web scraping.\nThis property is primarily used to strip unnecessary attributes from HTML elements for cleaner and more optimized data extraction.\n\n**Summary**\n\r\nGets or sets a value indicating whether HTML attributes should be removed during web scraping.\r\nThis property is primarily used to strip unnecessary attributes from HTML elements for cleaner and more optimized data extraction.\r\n\n\nManual: https://docs.hal.guru/models/(website)-pages-list-features-list-removehtmlattributes"
+                  "description": "Gets or sets a value indicating whether HTML attributes should be removed during web scraping.\nThis property is primarily used to strip unnecessary attributes from HTML elements for cleaner and more optimized data extraction.\n\nManual: https://docs.hal.guru/models/(website)-pages-list-features-list-removehtmlattributes"
                 }
               }
             }
           },
           "Files": {
             "type": "array",
-            "description": "Represents a collection of files associated with the webpage for processing or extraction.\n\n**Summary**\n\r\nRepresents a file associated with a website page.\r\nThis class is annotated with the attribute, indicating its relationship within the hierarchical structure\r\nof website configurations and pages.\r\n\n\nManual: https://docs.hal.guru/models/(website)-pages-list-files-list",
+            "description": "Represents a collection of files associated with the webpage for processing or extraction.\n\nManual: https://docs.hal.guru/models/(website)-pages-list-files-list",
             "xml": {
               "wrapped": true
             },
@@ -192,39 +192,39 @@
               "properties": {
                 "Name": {
                   "type": "string",
-                  "description": "Gets or sets the name of the website feature.\nRepresents a descriptive identifier for a given feature within the website scraping process.\n\n**Summary**\n\r\nGets or sets the name of the website feature.\r\nRepresents a descriptive identifier for a given feature within the website scraping process.\r\n\n\nManual: https://docs.hal.guru/models/(website)-pages-list-files-list-name"
+                  "description": "Gets or sets the name of the website feature.\nRepresents a descriptive identifier for a given feature within the website scraping process.\n\nManual: https://docs.hal.guru/models/(website)-pages-list-files-list-name"
                 },
                 "TagName": {
                   "type": "string",
-                  "description": "Gets or sets the tag name used to identify or categorize the website feature.\nRepresents an attribute or element type within the website structure, providing context for feature extraction or manipulation.\n\n**Summary**\n\r\nGets or sets the tag name used to identify or categorize the website feature.\r\nRepresents an attribute or element type within the website structure, providing context for feature extraction or manipulation.\r\n\n\nManual: https://docs.hal.guru/models/(website)-pages-list-files-list-tagname"
+                  "description": "Gets or sets the tag name used to identify or categorize the website feature.\nRepresents an attribute or element type within the website structure, providing context for feature extraction or manipulation.\n\nManual: https://docs.hal.guru/models/(website)-pages-list-files-list-tagname"
                 },
                 "NameRegex": {
                   "type": [
                     "null",
                     "string"
                   ],
-                  "description": "Gets or sets the regular expression pattern to identify the name component of a website feature.\nThis property allows for custom matching and extraction of specific name segments\nfrom a website's content during the scraping process.\n\n**Summary**\n\r\nGets or sets the regular expression pattern to identify the name component of a website feature.\r\nThis property allows for custom matching and extraction of specific name segments\r\nfrom a website's content during the scraping process.\r\n\n\nManual: https://docs.hal.guru/models/(website)-pages-list-files-list-nameregex"
+                  "description": "Gets or sets the regular expression pattern to identify the name component of a website feature.\nThis property allows for custom matching and extraction of specific name segments\nfrom a website's content during the scraping process.\n\nManual: https://docs.hal.guru/models/(website)-pages-list-files-list-nameregex"
                 },
                 "UrlRegex": {
                   "type": [
                     "null",
                     "string"
                   ],
-                  "description": "Gets or sets the regular expression pattern for matching URLs associated with the website file.\nEnables filtering or identification of specific URLs based on defined patterns within the file context.\n\n**Summary**\n\r\nGets or sets the regular expression pattern for matching URLs associated with the website file.\r\nEnables filtering or identification of specific URLs based on defined patterns within the file context.\r\n\n\nManual: https://docs.hal.guru/models/(website)-pages-list-files-list-urlregex"
+                  "description": "Gets or sets the regular expression pattern for matching URLs associated with the website file.\nEnables filtering or identification of specific URLs based on defined patterns within the file context.\n\nManual: https://docs.hal.guru/models/(website)-pages-list-files-list-urlregex"
                 },
                 "NameXpath": {
                   "type": [
                     "null",
                     "string"
                   ],
-                  "description": "Gets or sets the XPath expression used to locate the name of a specific feature within the website content.\nRepresents a structured query for extracting the name's specific location in the HTML document.\n\n**Summary**\n\r\nGets or sets the XPath expression used to locate the name of a specific feature within the website content.\r\nRepresents a structured query for extracting the name's specific location in the HTML document.\r\n\n\nManual: https://docs.hal.guru/models/(website)-pages-list-files-list-namexpath"
+                  "description": "Gets or sets the XPath expression used to locate the name of a specific feature within the website content.\nRepresents a structured query for extracting the name's specific location in the HTML document.\n\nManual: https://docs.hal.guru/models/(website)-pages-list-files-list-namexpath"
                 },
                 "UrlXpath": {
                   "type": [
                     "null",
                     "string"
                   ],
-                  "description": "Gets or sets the XPath expression used to extract the URL from a website file's content.\nSpecifies the selector for identifying the relevant URL within the HTML structure of a page.\n\n**Summary**\n\r\nGets or sets the XPath expression used to extract the URL from a website file's content.\r\nSpecifies the selector for identifying the relevant URL within the HTML structure of a page.\r\n\n\nManual: https://docs.hal.guru/models/(website)-pages-list-files-list-urlxpath"
+                  "description": "Gets or sets the XPath expression used to extract the URL from a website file's content.\nSpecifies the selector for identifying the relevant URL within the HTML structure of a page.\n\nManual: https://docs.hal.guru/models/(website)-pages-list-files-list-urlxpath"
                 }
               }
             }
@@ -234,7 +234,7 @@
     },
     "UrlsStartWith": {
       "type": "array",
-      "description": "Gets or sets the collection of URL prefixes used to filter and process relevant URLs.\n\n**Summary**\n\r\nGets or sets the collection of URL prefixes used to filter and process relevant URLs.\r\n\n\nManual: https://docs.hal.guru/models/(website)-urlsstartwith-list",
+      "description": "Gets or sets the collection of URL prefixes used to filter and process relevant URLs.\n\nManual: https://docs.hal.guru/models/(website)-urlsstartwith-list",
       "xml": {
         "wrapped": true
       },
