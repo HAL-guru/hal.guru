@@ -109,6 +109,8 @@ nav:
               - 'CommentCurrentUrl': 'models/(halguru)-agent-features-commentcurrenturl.md'
               - 'PerChannelThreading': 'models/(halguru)-agent-features-perchannelthreading.md'
               - 'MaxRetryAttempts': 'models/(halguru)-agent-features-maxretryattempts.md'
+              - 'DisplayImagesForUrls': 'models/(halguru)-agent-features-displayimagesforurls.md'
+              - 'DisplayWebsiteForUrl': 'models/(halguru)-agent-features-displaywebsiteforurl.md'
       - 'Operator': 'models/(halguru)-operator.md'
       - '&nbsp;&nbsp;&nbsp;Properties':
         - 'Operator': 'models/(halguru)-operator.md'

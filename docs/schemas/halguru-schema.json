@@ -343,6 +343,22 @@
               ],
               "description": "Determines whether the robot should retry the check fails.\n\nManual: https://docs.hal.guru/models/(halguru)-agent-features-maxretryattempts\n\nIndicates whether the robot should retry the check fails.",
               "format": "int32"
+            },
+            "DisplayImagesForUrls": {
+              "title": "Display images for URLs",
+              "type": [
+                "boolean",
+                "null"
+              ],
+              "description": "Determines whether the robot should display images for URLs.\n\nManual: https://docs.hal.guru/models/(halguru)-agent-features-displayimagesforurls\n\nIndicates whether the robot should display images for URLs."
+            },
+            "DisplayWebsiteForUrl": {
+              "title": "Display website for URL",
+              "type": [
+                "boolean",
+                "null"
+              ],
+              "description": "Determines whether the agent should display the website for the URL.\n\nManual: https://docs.hal.guru/models/(halguru)-agent-features-displaywebsiteforurl\n\nDetermines whether the agent should display the website for the specified URL."
             }
           }
         }
