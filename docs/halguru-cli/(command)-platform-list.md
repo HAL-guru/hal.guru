@@ -4,7 +4,7 @@ List AI agents on the hal.guru platform.
 
 Usage:
 ~~~
-HalGuru.Robots.Models platform list [options]
+halguru platform list [options]
 ~~~
 
 | Options                | Default | Description                                                         |

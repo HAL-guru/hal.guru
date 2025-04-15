@@ -4,7 +4,7 @@ Delete a file from the AI Agent.
 
 Usage:
 ~~~
-HalGuru.Robots.Models files delete [options]
+halguru files delete [options]
 ~~~
 
 | Options               | Default                  | Description                                                                                  |

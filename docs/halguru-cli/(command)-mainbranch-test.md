@@ -4,7 +4,7 @@ Execute tests for the AI agent.
 
 Usage:
 ~~~
-HalGuru.Robots.Models test [options]
+halguru test [options]
 ~~~
 
 | Options          | Default | Description                                                         |

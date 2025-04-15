@@ -4,7 +4,7 @@ Create a new AI Agent from a template.
 
 Usage:
 ~~~
-HalGuru.Robots.Models create [options]
+halguru create [options]
 ~~~
 
 | Options             | Default            | Description                                                           |

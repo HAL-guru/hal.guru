@@ -4,7 +4,7 @@ Check AI agents published on the Hal.guru platform.
 
 Usage:
 ~~~
-HalGuru.Robots.Models platform check [options]
+halguru platform check [options]
 ~~~
 
 | Options                 | Default | Description                                                         |

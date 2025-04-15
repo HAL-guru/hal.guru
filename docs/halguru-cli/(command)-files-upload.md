@@ -4,7 +4,7 @@ Upload files to the AI Agent.
 
 Usage:
 ~~~
-HalGuru.Robots.Models files upload [options]
+halguru files upload [options]
 ~~~
 
 | Options               | Default                  | Description                                                               |

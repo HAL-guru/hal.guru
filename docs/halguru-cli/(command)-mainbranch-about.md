@@ -4,7 +4,7 @@ Information about the program.
 
 Usage:
 ~~~
-HalGuru.Robots.Models about [options]
+halguru about [options]
 ~~~
 
 | Options       | Default | Description                               |

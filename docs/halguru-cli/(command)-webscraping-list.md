@@ -4,7 +4,7 @@ List available templates.
 
 Usage:
 ~~~
-HalGuru.Robots.Models webscraping list [options]
+halguru webscraping list [options]
 ~~~
 
 | Options       | Default | Description                                                         |

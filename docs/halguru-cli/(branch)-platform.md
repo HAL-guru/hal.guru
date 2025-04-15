@@ -8,7 +8,7 @@ Publish an AI Agent to the hal.guru platform.
 
 Usage:
 ~~~
-HalGuru.Robots.Models platform publish [options]
+halguru platform publish [options]
 ~~~
 
 | Options          | Default | Description                                                         |
@@ -129,7 +129,7 @@ List AI agents on the hal.guru platform.
 
 Usage:
 ~~~
-HalGuru.Robots.Models platform list [options]
+halguru platform list [options]
 ~~~
 
 | Options                | Default | Description                                                         |
@@ -256,7 +256,7 @@ Download the AI agent from the hal.guru platform.
 
 Usage:
 ~~~
-HalGuru.Robots.Models platform download [options]
+halguru platform download [options]
 ~~~
 
 | Options              | Default            | Description                                                         |
@@ -427,7 +427,7 @@ Check AI agents published on the Hal.guru platform.
 
 Usage:
 ~~~
-HalGuru.Robots.Models platform check [options]
+halguru platform check [options]
 ~~~
 
 | Options                 | Default | Description                                                         |

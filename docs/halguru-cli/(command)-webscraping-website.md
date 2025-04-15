@@ -4,7 +4,7 @@ Scrape a website and save the content to a file.
 
 Usage:
 ~~~
-HalGuru.Robots.Models webscraping website [options]
+halguru webscraping website [options]
 ~~~
 
 | Options                          | Default                      | Description                                                          |

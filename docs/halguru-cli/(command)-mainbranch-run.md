@@ -4,7 +4,7 @@ Start a conversation with the AI Agent in interactive mode.
 
 Usage:
 ~~~
-HalGuru.Robots.Models run [options]
+halguru run [options]
 ~~~
 
 | Options                     | Default                  | Description                                                           |

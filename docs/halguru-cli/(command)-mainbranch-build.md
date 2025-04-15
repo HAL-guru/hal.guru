@@ -4,7 +4,7 @@ Build an AI Agent from a YAML file.
 
 Usage:
 ~~~
-HalGuru.Robots.Models build [options]
+halguru build [options]
 ~~~
 
 | Options          | Default | Description                                                         |

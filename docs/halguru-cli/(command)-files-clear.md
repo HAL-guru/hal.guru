@@ -4,7 +4,7 @@ Remove all files from the AI Agent.
 
 Usage:
 ~~~
-HalGuru.Robots.Models files clear [options]
+halguru files clear [options]
 ~~~
 
 | Options             | Default            | Description                                                         |

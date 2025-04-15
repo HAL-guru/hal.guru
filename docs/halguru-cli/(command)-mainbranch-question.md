@@ -4,7 +4,7 @@ Get an answer to a question.
 
 Usage:
 ~~~
-HalGuru.Robots.Models question [options]
+halguru question [options]
 ~~~
 
 | Options                     | Default                  | Description                                                                      |

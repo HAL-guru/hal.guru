@@ -8,7 +8,7 @@ Upload files to the AI Agent.
 
 Usage:
 ~~~
-HalGuru.Robots.Models files upload [options]
+halguru files upload [options]
 ~~~
 
 | Options               | Default                  | Description                                                               |
@@ -158,7 +158,7 @@ Download file from the AI Agent.
 
 Usage:
 ~~~
-HalGuru.Robots.Models files download [options]
+halguru files download [options]
 ~~~
 
 | Options               | Default                  | Description                                                                                    |
@@ -319,7 +319,7 @@ Delete a file from the AI Agent.
 
 Usage:
 ~~~
-HalGuru.Robots.Models files delete [options]
+halguru files delete [options]
 ~~~
 
 | Options               | Default                  | Description                                                                                  |
@@ -463,7 +463,7 @@ List files stored by the AI Agent.
 
 Usage:
 ~~~
-HalGuru.Robots.Models files list [options]
+halguru files list [options]
 ~~~
 
 | Options             | Default | Description                                                         |
@@ -567,7 +567,7 @@ Remove all files from the AI Agent.
 
 Usage:
 ~~~
-HalGuru.Robots.Models files clear [options]
+halguru files clear [options]
 ~~~
 
 | Options             | Default            | Description                                                         |

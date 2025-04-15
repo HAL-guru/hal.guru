@@ -4,7 +4,7 @@ Download file from the AI Agent.
 
 Usage:
 ~~~
-HalGuru.Robots.Models files download [options]
+halguru files download [options]
 ~~~
 
 | Options               | Default                  | Description                                                                                    |

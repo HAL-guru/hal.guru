@@ -4,7 +4,7 @@ List files stored by the AI Agent.
 
 Usage:
 ~~~
-HalGuru.Robots.Models files list [options]
+halguru files list [options]
 ~~~
 
 | Options             | Default | Description                                                         |

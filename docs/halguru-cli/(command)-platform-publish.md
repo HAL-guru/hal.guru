@@ -4,7 +4,7 @@ Publish an AI Agent to the hal.guru platform.
 
 Usage:
 ~~~
-HalGuru.Robots.Models platform publish [options]
+halguru platform publish [options]
 ~~~
 
 | Options          | Default | Description                                                         |

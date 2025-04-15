@@ -4,7 +4,7 @@ Installs the halguru CLI program in the current environment.
 
 Usage:
 ~~~
-HalGuru.Robots.Models install [options]
+halguru install [options]
 ~~~
 
 | Options       | Default | Description                                                         |

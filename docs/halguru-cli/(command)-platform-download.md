@@ -4,7 +4,7 @@ Download the AI agent from the hal.guru platform.
 
 Usage:
 ~~~
-HalGuru.Robots.Models platform download [options]
+halguru platform download [options]
 ~~~
 
 | Options              | Default            | Description                                                         |

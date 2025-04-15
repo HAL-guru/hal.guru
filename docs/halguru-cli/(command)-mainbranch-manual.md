@@ -4,7 +4,7 @@ Displays and generates the manual for the halguru program.
 
 Usage:
 ~~~
-HalGuru.Robots.Models manual [options]
+halguru manual [options]
 ~~~
 
 | Options                          | Default | Description                                                                 |

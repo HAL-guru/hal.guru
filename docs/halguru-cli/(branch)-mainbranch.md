@@ -8,7 +8,7 @@ Information about the program.
 
 Usage:
 ~~~
-HalGuru.Robots.Models about [options]
+halguru about [options]
 ~~~
 
 | Options       | Default | Description                               |
@@ -93,7 +93,7 @@ Create a new AI Agent from a template.
 
 Usage:
 ~~~
-HalGuru.Robots.Models create [options]
+halguru create [options]
 ~~~
 
 | Options             | Default            | Description                                                           |
@@ -270,7 +270,7 @@ Build an AI Agent from a YAML file.
 
 Usage:
 ~~~
-HalGuru.Robots.Models build [options]
+halguru build [options]
 ~~~
 
 | Options          | Default | Description                                                         |
@@ -353,7 +353,7 @@ Execute tests for the AI agent.
 
 Usage:
 ~~~
-HalGuru.Robots.Models test [options]
+halguru test [options]
 ~~~
 
 | Options          | Default | Description                                                         |
@@ -436,7 +436,7 @@ Publish an AI Agent to the hal.guru platform.
 
 Usage:
 ~~~
-HalGuru.Robots.Models configure [options]
+halguru configure [options]
 ~~~
 
 | Options               | Default | Description                                                                     |
@@ -611,7 +611,7 @@ Get an answer to a question.
 
 Usage:
 ~~~
-HalGuru.Robots.Models question [options]
+halguru question [options]
 ~~~
 
 | Options                     | Default                  | Description                                                                      |
@@ -826,7 +826,7 @@ Start a conversation with the AI Agent in interactive mode.
 
 Usage:
 ~~~
-HalGuru.Robots.Models run [options]
+halguru run [options]
 ~~~
 
 | Options                     | Default                  | Description                                                           |
@@ -964,7 +964,7 @@ Displays and generates the manual for the halguru program.
 
 Usage:
 ~~~
-HalGuru.Robots.Models manual [options]
+halguru manual [options]
 ~~~
 
 | Options                          | Default | Description                                                                 |
@@ -1208,7 +1208,7 @@ Installs the halguru CLI program in the current environment.
 
 Usage:
 ~~~
-HalGuru.Robots.Models install [options]
+halguru install [options]
 ~~~
 
 | Options       | Default | Description                                                         |
