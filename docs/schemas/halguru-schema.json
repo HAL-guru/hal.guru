@@ -68,7 +68,7 @@
         "Type": {
           "title": "Type of the Agent",
           "type": "string",
-          "description": "Represents a basic agent type within the system. This type is generally used for the default or simplest form of agent functionality.\n\nManual: https://docs.hal.guru/models/(halguru)-agent-type\n\nGets or sets the type of the robot.\n\nThe Type property defines the classification of the robot based on its functionality or purpose. It is used to identify the operational role of the robot within a system or application.",
+          "description": "\n\nManual: https://docs.hal.guru/models/(halguru)-agent-type\n\nGets or sets the type of the robot.\n\nThe Type property defines the classification of the robot based on its functionality or purpose. It is used to identify the operational role of the robot within a system or application.",
           "enum": [
             "Basic"
           ]
@@ -92,7 +92,7 @@
         "Author": {
           "title": "Author of the Agent",
           "type": "object",
-          "description": "Represents an author entity with metadata about an individual or organization.\n\nManual: https://docs.hal.guru/models/(halguru)-agent-author\n\nGets or sets the author information of the robot.\n\nThe Author property provides metadata about the creator or maintainer of the robot. It includes details such as the author's name, email, URL, company, and copyright information. This information can be used for tracking and attribution purposes.",
+          "description": "The author information of the agent.\n\nManual: https://docs.hal.guru/models/(halguru)-agent-author\n\nGets or sets the author information of the robot.\n\nThe Author property provides metadata about the creator or maintainer of the robot. It includes details such as the author's name, email, URL, company, and copyright information. This information can be used for tracking and attribution purposes.",
           "properties": {
             "Name": {
               "title": "Author Name",
@@ -139,7 +139,7 @@
         "Start": {
           "title": "Agent Start Configuration",
           "type": "object",
-          "description": "Represents the start configuration for a robot.\nThis class defines the initial setup or parameters required when the robot is initiated.\n\nManual: https://docs.hal.guru/models/(halguru)-agent-start\n\nGets or sets the starting configuration for the robot.\n\nThe Start property defines the initial execution parameters or actions that the robot will perform. It includes details such as the connector, initial prompt, or messages necessary to initialize the robot's operation.",
+          "description": "The starting configuration for the agent.\n\nManual: https://docs.hal.guru/models/(halguru)-agent-start\n\nGets or sets the starting configuration for the robot.\n\nThe Start property defines the initial execution parameters or actions that the robot will perform. It includes details such as the connector, initial prompt, or messages necessary to initialize the robot's operation.",
           "required": [
             "LlmConnectorName"
           ],
@@ -180,7 +180,6 @@
           },
           "items": {
             "type": "object",
-            "description": "Represents a design configuration for a specific theme,\nwhich may include settings related to chat appearance or other customizable elements.",
             "xml": {
               "name": "ThemeDesign"
             },
@@ -192,7 +191,7 @@
               "Theme": {
                 "title": "Theme",
                 "type": "string",
-                "description": "Represents the theme options available for a robot's display or functionality settings.\nProvides a selection of predefined appearance modes, designed to meet various\nuser preferences and environment requirements.\n\nManual: https://docs.hal.guru/models/(halguru)-agent-themes-list-theme\n\nSpecifies the active theme for the design configuration, indicating the appearance mode being applied.\n\nThis property defines the visual theme utilized in the application's interface, such as or . It is integral for determining the aesthetic representation and adapting the user interface to different contexts or preferences.",
+                "description": "\n\nManual: https://docs.hal.guru/models/(halguru)-agent-themes-list-theme\n\nSpecifies the active theme for the design configuration, indicating the appearance mode being applied.\n\nThis property defines the visual theme utilized in the application's interface, such as or . It is integral for determining the aesthetic representation and adapting the user interface to different contexts or preferences.",
                 "default": 0,
                 "enum": [
                   "Light",
@@ -208,7 +207,6 @@
                 },
                 "items": {
                   "type": "object",
-                  "description": "Represents the visual theme for a chat message, including settings for icon appearance\nand text or background colors. This class defines customization properties that control\nthe overall design of individual chat messages.",
                   "xml": {
                     "name": "ChatMessageTheme"
                   },
@@ -219,7 +217,7 @@
                     "MessageType": {
                       "title": "Message Type",
                       "type": "string",
-                      "description": "Represents the type of a chat message in the system.\nUsed to categorize messages based on their source or purpose.\n\nManual: https://docs.hal.guru/models/(halguru)-agent-themes-list-messages-list-messagetype\n\nGets or sets the type of the chat message. Represents the category of the message, such as User, Agent, System, Busy, Error, or Owner. Determines the specific role or source associated with the message.",
+                      "description": "\n\nManual: https://docs.hal.guru/models/(halguru)-agent-themes-list-messages-list-messagetype\n\nGets or sets the type of the chat message. Represents the category of the message, such as User, Agent, System, Busy, Error, or Owner. Determines the specific role or source associated with the message.",
                       "enum": [
                         "User",
                         "Agent",
@@ -278,7 +276,7 @@
         "UI": {
           "title": "Agent User Interface",
           "type": "object",
-          "description": "Represents the design configuration for an agent's user interface.\n\nManual: https://docs.hal.guru/models/(halguru)-agent-ui\n\nGets or sets the user interface design configuration for the robot.\n\nThe UserInterface property defines the visual interface design elements for the robot. It specifies configurations such as button behavior and appearance, enabling customized user interactions based on the defined design settings.",
+          "description": "The user interface design configuration for the agent.\n\nManual: https://docs.hal.guru/models/(halguru)-agent-ui\n\nGets or sets the user interface design configuration for the robot.\n\nThe UserInterface property defines the visual interface design elements for the robot. It specifies configurations such as button behavior and appearance, enabling customized user interactions based on the defined design settings.",
           "properties": {
             "DisableCloseButton": {
               "title": "Disable Close Button",
@@ -381,7 +379,7 @@
         "UI": {
           "title": "Operator User Interface",
           "type": "object",
-          "description": "Defines the design configuration and personalized settings for an operator's user interface.\n\nManual: https://docs.hal.guru/models/(halguru)-operator-ui\n\nGets or sets the user interface design configuration for the operator.\n\nThe UI property specifies the design and configuration settings related to the operator's user interface. This property facilitates defining the operator's visual interaction elements, user experience customizations, and general UI-related features tailored to specific operational requirements."
+          "description": "The user interface design configuration for the agent.\n\nManual: https://docs.hal.guru/models/(halguru)-operator-ui\n\nGets or sets the user interface design configuration for the operator.\n\nThe UI property specifies the design and configuration settings related to the operator's user interface. This property facilitates defining the operator's visual interaction elements, user experience customizations, and general UI-related features tailored to specific operational requirements."
         },
         "Features": {
           "title": "Operator Features",
@@ -398,7 +396,6 @@
       },
       "items": {
         "type": "object",
-        "description": "Defines a static message and its associated metadata for an agent.",
         "xml": {
           "name": "AgentStaticMessage"
         },
@@ -430,7 +427,6 @@
       },
       "items": {
         "type": "object",
-        "description": "Represents a prompt model containing a name and the associated prompt text.",
         "xml": {
           "name": "AgentPrompt"
         },
@@ -461,18 +457,17 @@
       },
       "items": {
         "type": "object",
-        "description": "Represents a configuration object for connecting to a Large Language Model (LLM) provider.",
         "xml": {
           "name": "LlmConnector"
         },
         "properties": {
           "Name": {
             "type": "string",
-            "description": "Represents the name assigned to the LLM Connector configuration.\n\nManual: https://docs.hal.guru/models/(halguru)-llmconnectors-list-name\n\nRepresents the name assigned to the LLM Connector configuration.\n\nThis property is used to identify the specific configuration instance, and can be utilized for organizational or reference purposes."
+            "description": "\n\nManual: https://docs.hal.guru/models/(halguru)-llmconnectors-list-name\n\nRepresents the name assigned to the LLM Connector configuration.\n\nThis property is used to identify the specific configuration instance, and can be utilized for organizational or reference purposes."
           },
           "LlmProvider": {
             "type": "string",
-            "description": "Represents an enum value for the DeepSeek provider in the LlmProvider enumeration.\n\nManual: https://docs.hal.guru/models/(halguru)-llmconnectors-list-llmprovider\n\nSpecifies the large language model (LLM) provider to be used by the LLM Connector.",
+            "description": "\n\nManual: https://docs.hal.guru/models/(halguru)-llmconnectors-list-llmprovider\n\nSpecifies the large language model (LLM) provider to be used by the LLM Connector.",
             "enum": [
               "Echo",
               "OpenAIChat",
@@ -486,16 +481,16 @@
           },
           "Model": {
             "type": "string",
-            "description": "Specifies the model identifier to use within the LLM Connector instance.\n\nManual: https://docs.hal.guru/models/(halguru)-llmconnectors-list-model\n\nSpecifies the model identifier to use within the LLM Connector instance."
+            "description": "\n\nManual: https://docs.hal.guru/models/(halguru)-llmconnectors-list-model\n\nSpecifies the model identifier to use within the LLM Connector instance."
           },
           "Temperature": {
             "type": "number",
-            "description": "Specifies the randomness of responses generated by the language model,\nwith lower values resulting in less random outputs and higher\nvalues increasing creativity and variability.\n\nManual: https://docs.hal.guru/models/(halguru)-llmconnectors-list-temperature\n\nSpecifies the randomness of responses generated by the language model, with lower values resulting in less random outputs and higher values increasing creativity and variability.",
+            "description": "\n\nManual: https://docs.hal.guru/models/(halguru)-llmconnectors-list-temperature\n\nSpecifies the randomness of responses generated by the language model, with lower values resulting in less random outputs and higher values increasing creativity and variability.",
             "format": "double"
           },
           "MaxTokens": {
             "type": "integer",
-            "description": "Specifies the maximum number of tokens the model will generate in its response.\n\nManual: https://docs.hal.guru/models/(halguru)-llmconnectors-list-maxtokens\n\nSpecifies the maximum number of tokens the model will generate in its response.",
+            "description": "\n\nManual: https://docs.hal.guru/models/(halguru)-llmconnectors-list-maxtokens\n\nSpecifies the maximum number of tokens the model will generate in its response.",
             "format": "int32"
           },
           "AssistantId": {
@@ -503,32 +498,32 @@
               "null",
               "string"
             ],
-            "description": "Identifies the specific assistant model or instance used within the LLM connection.\n\nManual: https://docs.hal.guru/models/(halguru)-llmconnectors-list-assistantid\n\nIdentifies the specific assistant model or instance used within the LLM connection."
+            "description": "\n\nManual: https://docs.hal.guru/models/(halguru)-llmconnectors-list-assistantid\n\nIdentifies the specific assistant model or instance used within the LLM connection."
           },
           "VectorStoreId": {
             "type": [
               "null",
               "string"
             ],
-            "description": "Identifier for the associated vector store.\n\nManual: https://docs.hal.guru/models/(halguru)-llmconnectors-list-vectorstoreid\n\nIdentifier for the associated vector store."
+            "description": "\n\nManual: https://docs.hal.guru/models/(halguru)-llmconnectors-list-vectorstoreid\n\nIdentifier for the associated vector store."
           },
           "ApiKey": {
             "type": [
               "null",
               "string"
             ],
-            "description": "Represents the API key used to authenticate with the LLM provider.\n\nManual: https://docs.hal.guru/models/(halguru)-llmconnectors-list-apikey\n\nRepresents the API key used to authenticate with the LLM provider.\n\nThis property stores the authentication key required for accessing services provided by the specified LLM provider. Ensure that this key is managed securely and complies with best practices for sensitive information handling."
+            "description": "\n\nManual: https://docs.hal.guru/models/(halguru)-llmconnectors-list-apikey\n\nRepresents the API key used to authenticate with the LLM provider.\n\nThis property stores the authentication key required for accessing services provided by the specified LLM provider. Ensure that this key is managed securely and complies with best practices for sensitive information handling."
           },
           "InstructionsPrompt": {
             "type": [
               "null",
               "string"
             ],
-            "description": "Specifies the custom instructions or contextual guidance provided to the LLM for tailoring its responses.\n\nManual: https://docs.hal.guru/models/(halguru)-llmconnectors-list-instructionsprompt\n\nSpecifies the custom instructions or contextual guidance provided to the LLM for tailoring its responses.\n\nThis property allows setting predefined prompts or guidelines that influence the behavior and tone of the LLM's output. It can be used to define specific tasks, roles, or response formats for the model."
+            "description": "\n\nManual: https://docs.hal.guru/models/(halguru)-llmconnectors-list-instructionsprompt\n\nSpecifies the custom instructions or contextual guidance provided to the LLM for tailoring its responses.\n\nThis property allows setting predefined prompts or guidelines that influence the behavior and tone of the LLM's output. It can be used to define specific tasks, roles, or response formats for the model."
           },
           "Tools": {
             "type": "array",
-            "description": "Represents a collection of tools or additional functionalities associated with the LLM connection.\n\nManual: https://docs.hal.guru/models/(halguru)-llmconnectors-list-tools\n\nRepresents a collection of tools or additional functionalities associated with the LLM connection.\n\nThis property holds a list of tool identifiers or names that extend or complement the capabilities of the LLM. These tools can be used to enhance interactions, provide additional processing, or implement custom logic during the LLM's operation.",
+            "description": "\n\nManual: https://docs.hal.guru/models/(halguru)-llmconnectors-list-tools\n\nRepresents a collection of tools or additional functionalities associated with the LLM connection.\n\nThis property holds a list of tool identifiers or names that extend or complement the capabilities of the LLM. These tools can be used to enhance interactions, provide additional processing, or implement custom logic during the LLM's operation.",
             "xml": {
               "wrapped": true
             },
@@ -544,7 +539,7 @@
               "null",
               "string"
             ],
-            "description": "Represents the base URL of the API used to connect to the Large Language Model (LLM) provider.\n\nManual: https://docs.hal.guru/models/(halguru)-llmconnectors-list-apiurl\n\nRepresents the base URL of the API used to connect to the Large Language Model (LLM) provider."
+            "description": "\n\nManual: https://docs.hal.guru/models/(halguru)-llmconnectors-list-apiurl\n\nRepresents the base URL of the API used to connect to the Large Language Model (LLM) provider."
           }
         }
       }
@@ -557,7 +552,6 @@
       },
       "items": {
         "type": "object",
-        "description": "Represents a key-value pair used for storing sensitive information in an agent's configuration.",
         "xml": {
           "name": "AgentSecret"
         },
@@ -737,7 +731,6 @@
       },
       "items": {
         "type": "object",
-        "description": "Represents a test case for validating an agent's response to a given input.",
         "xml": {
           "name": "AgentTestCase"
         },
@@ -794,18 +787,17 @@
       },
       "items": {
         "type": "object",
-        "description": "Represents an example message used for interactions by a robot.",
         "xml": {
           "name": "AgentExampleMessage"
         },
         "properties": {
           "Input": {
             "type": "string",
-            "description": "Gets or sets the message provided as input by the user.\n\nManual: https://docs.hal.guru/models/(halguru)-examplemessages-list-input\n\nGets or sets the message provided as input by the user."
+            "description": "\n\nManual: https://docs.hal.guru/models/(halguru)-examplemessages-list-input\n\nGets or sets the message provided as input by the user."
           },
           "Output": {
             "type": "string",
-            "description": "Gets or sets the response message generated by the service.\n\nManual: https://docs.hal.guru/models/(halguru)-examplemessages-list-output\n\nGets or sets the response message generated by the service."
+            "description": "\n\nManual: https://docs.hal.guru/models/(halguru)-examplemessages-list-output\n\nGets or sets the response message generated by the service."
           }
         }
       }
