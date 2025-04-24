@@ -173,99 +173,772 @@
         },
         "Themes": {
           "title": "Agent Themes",
-          "type": "array",
-          "description": "The collection of themes and their associated designs for the agent.\n\nManual: https://docs.hal.guru/models/(halguru)-agent-themes\n\nGets or sets the collection of themes and their associated designs for the agent.\n\nThe Themes property maps a to its corresponding . This allows the agent to support multiple UI themes, such as Light and Dark, with customizable designs.",
-          "xml": {
-            "wrapped": true
-          },
-          "items": {
-            "type": "object",
-            "xml": {
-              "name": "ThemeDesign"
-            },
-            "required": [
-              "Theme",
-              "Messages"
-            ],
-            "properties": {
-              "Theme": {
-                "title": "Theme",
-                "type": "string",
-                "description": "\n\nManual: https://docs.hal.guru/models/(halguru)-agent-themes-list-theme\n\nSpecifies the active theme for the design configuration, indicating the appearance mode being applied.\n\nThis property defines the visual theme utilized in the application's interface, such as or . It is integral for determining the aesthetic representation and adapting the user interface to different contexts or preferences.",
-                "default": 0,
-                "enum": [
-                  "Light",
-                  "Dark"
-                ]
-              },
-              "Messages": {
-                "title": "Messages (Theme Design)",
-                "type": "array",
-                "description": "Chat message themes associated with the theme design.\n\nManual: https://docs.hal.guru/models/(halguru)-messages-list\n\nRepresents a collection of static messages associated with an agent, used for quick access within the system.",
-                "xml": {
-                  "wrapped": true
+          "type": "object",
+          "description": "Themes with their respective designs available for an AI agent\n\nManual: https://docs.hal.guru/models/(halguru)-agent-themes\n\nGets or sets the collection of themes and their associated designs for the agent.\n\nThe Themes property represents a collection of different themes, each comprising specific designs, that can be utilized by the agent. This allows for customization and adaptability of the agent's appearance or behavior to suit various contexts or user preferences.",
+          "properties": {
+            "Light": {
+              "type": "object",
+              "description": "Light theme design settings for the agent\n\nManual: https://docs.hal.guru/models/(halguru)-agent-themes-light\n\nRepresents a design configuration for a specific theme, which may include settings related to chat appearance or other customizable elements.",
+              "required": [
+                "Theme",
+                "Messages"
+              ],
+              "properties": {
+                "Theme": {
+                  "title": "Theme",
+                  "type": "string",
+                  "description": "\n\nManual: https://docs.hal.guru/models/(halguru)-agent-themes-light-theme\n\nSpecifies the active theme for the design configuration, indicating the appearance mode being applied.\n\nThis property defines the visual theme utilized in the application's interface, such as or . It is integral for determining the aesthetic representation and adapting the user interface to different contexts or preferences.",
+                  "default": 0,
+                  "enum": [
+                    "Light",
+                    "Dark"
+                  ]
                 },
-                "items": {
+                "Messages": {
+                  "title": "Messages (Theme Design)",
                   "type": "object",
-                  "xml": {
-                    "name": "ChatMessageTheme"
-                  },
-                  "required": [
-                    "MessageType"
-                  ],
+                  "description": "design messages for the light theme in the context of an agent configuration\n\nManual: https://docs.hal.guru/models/(halguru)-messages-list\n\nRepresents a collection of static messages associated with an agent, used for quick access within the system.",
                   "properties": {
-                    "MessageType": {
-                      "title": "Message Type",
-                      "type": "string",
-                      "description": "\n\nManual: https://docs.hal.guru/models/(halguru)-agent-themes-list-messages-list-messagetype\n\nGets or sets the type of the chat message. Represents the category of the message, such as User, Agent, System, Busy, Error, or Owner. Determines the specific role or source associated with the message.",
-                      "enum": [
-                        "User",
-                        "Agent",
-                        "System",
-                        "Busy",
-                        "Error",
-                        "Owner"
-                      ]
+                    "User": {
+                      "type": "object",
+                      "description": "User message theme specific to the light theme\n\nManual: https://docs.hal.guru/models/(halguru)-agent-themes-light-messages-user\n\nGets or sets the user message theme specific to the light theme.\n\nThis property represents the appearance and behavior settings for user messages within the light theme of an agent configuration.",
+                      "properties": {
+                        "MessageType": {
+                          "title": "Message Type",
+                          "type": "string",
+                          "description": "\n\nManual: https://docs.hal.guru/models/(halguru)-agent-themes-list-messages-list-messagetype\n\nRepresents the type of a chat message in the system. Used to categorize messages based on their source or purpose.",
+                          "enum": [
+                            "User",
+                            "Agent",
+                            "System",
+                            "Busy",
+                            "Error",
+                            "Owner"
+                          ]
+                        },
+                        "IconCssClass": {
+                          "title": "Icon CSS Class",
+                          "type": [
+                            "null",
+                            "string"
+                          ],
+                          "description": "The CSS class for the icon displayed in the user interface.\n\nManual: https://docs.hal.guru/models/(halguru)-agent-themes-light-messages-user-iconcssclass\n\nGets or sets the CSS class for the icon displayed in the user interface. This property is typically used to specify the appearance or styling of the icon for the light theme. See: https://fontawesome.com/icons"
+                        },
+                        "IconColor": {
+                          "title": "Icon Color",
+                          "type": [
+                            "null",
+                            "string"
+                          ],
+                          "description": "The color for the icon displayed in the user interface.\n\nManual: https://docs.hal.guru/models/(halguru)-agent-themes-light-messages-user-iconcolor\n\nGets or sets the color for the icon displayed in the user interface. This property is typically used to define the color of the icon for the light theme."
+                        },
+                        "IconUrl": {
+                          "title": "Icon URL",
+                          "type": [
+                            "null",
+                            "string"
+                          ],
+                          "description": "The URL for the icon displayed in the user interface.\n\nManual: https://docs.hal.guru/models/(halguru)-agent-themes-light-messages-user-iconurl\n\nGets or sets the URL for the icon displayed in the user interface. This property is typically used to define the path to the icon image resource for the light theme."
+                        },
+                        "BackgroundColor": {
+                          "title": "Background Color",
+                          "type": [
+                            "null",
+                            "string"
+                          ],
+                          "description": "The background color for the user interface.\n\nManual: https://docs.hal.guru/models/(halguru)-agent-themes-light-messages-user-backgroundcolor\n\nGets or sets the background color for the user interface. This property is typically used to define the primary background color for the light theme within the application."
+                        },
+                        "TextColor": {
+                          "title": "Text Color",
+                          "type": [
+                            "null",
+                            "string"
+                          ],
+                          "description": "The text color displayed in the user interface.\n\nManual: https://docs.hal.guru/models/(halguru)-agent-themes-light-messages-user-textcolor\n\nGets or sets the text color displayed in the user interface. This property is typically used to define the color of text elements for the light theme."
+                        }
+                      }
                     },
-                    "IconCssClass": {
-                      "title": "Icon CSS Class",
-                      "type": [
-                        "null",
-                        "string"
+                    "Agent": {
+                      "type": "object",
+                      "description": "Agent message theme specific to the light theme\n\nManual: https://docs.hal.guru/models/(halguru)-agent-themes-light-messages-agent\n\nRepresents the visual theme for a chat message, including settings for icon appearance and text or background colors. This class defines customization properties that control the overall design of individual chat messages.\n\nThe class allows configuration of: - Icons via CSS classes, colors, or URLs. - Background and text colors for enhanced customization. Setting these properties helps ensure that chat messages conform to the desired visual styling.",
+                      "required": [
+                        "MessageType"
                       ],
-                      "description": "The CSS class for the icon displayed in the user interface.\n\nManual: https://docs.hal.guru/models/(halguru)-agent-themes-list-messages-list-iconcssclass\n\nGets or sets the CSS class for the icon displayed in the user interface. This property is typically used to specify the appearance or styling of the icon for the light theme. See: https://fontawesome.com/icons"
+                      "properties": {
+                        "MessageType": {
+                          "title": "Message Type",
+                          "type": "string",
+                          "description": "\n\nManual: https://docs.hal.guru/models/(halguru)-agent-themes-light-messages-agent-messagetype\n\nGets or sets the type of the chat message. Represents the category of the message, such as User, Agent, System, Busy, Error, or Owner. Determines the specific role or source associated with the message.",
+                          "enum": [
+                            "User",
+                            "Agent",
+                            "System",
+                            "Busy",
+                            "Error",
+                            "Owner"
+                          ]
+                        },
+                        "IconCssClass": {
+                          "title": "Icon CSS Class",
+                          "type": [
+                            "null",
+                            "string"
+                          ],
+                          "description": "The CSS class for the icon displayed in the user interface.\n\nManual: https://docs.hal.guru/models/(halguru)-agent-themes-light-messages-agent-iconcssclass\n\nGets or sets the CSS class for the icon displayed in the user interface. This property is typically used to specify the appearance or styling of the icon for the light theme. See: https://fontawesome.com/icons"
+                        },
+                        "IconColor": {
+                          "title": "Icon Color",
+                          "type": [
+                            "null",
+                            "string"
+                          ],
+                          "description": "The color for the icon displayed in the user interface.\n\nManual: https://docs.hal.guru/models/(halguru)-agent-themes-light-messages-agent-iconcolor\n\nGets or sets the color for the icon displayed in the user interface. This property is typically used to define the color of the icon for the light theme."
+                        },
+                        "IconUrl": {
+                          "title": "Icon URL",
+                          "type": [
+                            "null",
+                            "string"
+                          ],
+                          "description": "The URL for the icon displayed in the user interface.\n\nManual: https://docs.hal.guru/models/(halguru)-agent-themes-light-messages-agent-iconurl\n\nGets or sets the URL for the icon displayed in the user interface. This property is typically used to define the path to the icon image resource for the light theme."
+                        },
+                        "BackgroundColor": {
+                          "title": "Background Color",
+                          "type": [
+                            "null",
+                            "string"
+                          ],
+                          "description": "The background color for the user interface.\n\nManual: https://docs.hal.guru/models/(halguru)-agent-themes-light-messages-agent-backgroundcolor\n\nGets or sets the background color for the user interface. This property is typically used to define the primary background color for the light theme within the application."
+                        },
+                        "TextColor": {
+                          "title": "Text Color",
+                          "type": [
+                            "null",
+                            "string"
+                          ],
+                          "description": "The text color displayed in the user interface.\n\nManual: https://docs.hal.guru/models/(halguru)-agent-themes-light-messages-agent-textcolor\n\nGets or sets the text color displayed in the user interface. This property is typically used to define the color of text elements for the light theme."
+                        }
+                      }
                     },
-                    "IconColor": {
-                      "title": "Icon Color",
-                      "type": [
-                        "null",
-                        "string"
-                      ],
-                      "description": "The color for the icon displayed in the user interface.\n\nManual: https://docs.hal.guru/models/(halguru)-agent-themes-list-messages-list-iconcolor\n\nGets or sets the color for the icon displayed in the user interface. This property is typically used to define the color of the icon for the light theme."
+                    "System": {
+                      "type": "object",
+                      "description": "System message theme specific to the light theme\n\nManual: https://docs.hal.guru/models/(halguru)-agent-themes-light-messages-system\n\nGets or sets the system message theme specific to the light theme.\n\nThis property represents the appearance and behavior settings for system messages within the light theme of an agent configuration.",
+                      "properties": {
+                        "MessageType": {
+                          "title": "Message Type",
+                          "type": "string",
+                          "description": "\n\nManual: https://docs.hal.guru/models/(halguru)-agent-themes-light-messages-system-messagetype\n\nGets or sets the type of the chat message. Represents the category of the message, such as User, Agent, System, Busy, Error, or Owner. Determines the specific role or source associated with the message.",
+                          "enum": [
+                            "User",
+                            "Agent",
+                            "System",
+                            "Busy",
+                            "Error",
+                            "Owner"
+                          ]
+                        },
+                        "IconCssClass": {
+                          "title": "Icon CSS Class",
+                          "type": [
+                            "null",
+                            "string"
+                          ],
+                          "description": "The CSS class for the icon displayed in the user interface.\n\nManual: https://docs.hal.guru/models/(halguru)-agent-themes-light-messages-system-iconcssclass\n\nGets or sets the CSS class for the icon displayed in the user interface. This property is typically used to specify the appearance or styling of the icon for the light theme. See: https://fontawesome.com/icons"
+                        },
+                        "IconColor": {
+                          "title": "Icon Color",
+                          "type": [
+                            "null",
+                            "string"
+                          ],
+                          "description": "The color for the icon displayed in the user interface.\n\nManual: https://docs.hal.guru/models/(halguru)-agent-themes-light-messages-system-iconcolor\n\nGets or sets the color for the icon displayed in the user interface. This property is typically used to define the color of the icon for the light theme."
+                        },
+                        "IconUrl": {
+                          "title": "Icon URL",
+                          "type": [
+                            "null",
+                            "string"
+                          ],
+                          "description": "The URL for the icon displayed in the user interface.\n\nManual: https://docs.hal.guru/models/(halguru)-agent-themes-light-messages-system-iconurl\n\nGets or sets the URL for the icon displayed in the user interface. This property is typically used to define the path to the icon image resource for the light theme."
+                        },
+                        "BackgroundColor": {
+                          "title": "Background Color",
+                          "type": [
+                            "null",
+                            "string"
+                          ],
+                          "description": "The background color for the user interface.\n\nManual: https://docs.hal.guru/models/(halguru)-agent-themes-light-messages-system-backgroundcolor\n\nGets or sets the background color for the user interface. This property is typically used to define the primary background color for the light theme within the application."
+                        },
+                        "TextColor": {
+                          "title": "Text Color",
+                          "type": [
+                            "null",
+                            "string"
+                          ],
+                          "description": "The text color displayed in the user interface.\n\nManual: https://docs.hal.guru/models/(halguru)-agent-themes-light-messages-system-textcolor\n\nGets or sets the text color displayed in the user interface. This property is typically used to define the color of text elements for the light theme."
+                        }
+                      }
                     },
-                    "IconUrl": {
-                      "title": "Icon URL",
-                      "type": [
-                        "null",
-                        "string"
-                      ],
-                      "description": "The URL for the icon displayed in the user interface.\n\nManual: https://docs.hal.guru/models/(halguru)-agent-themes-list-messages-list-iconurl\n\nGets or sets the URL for the icon displayed in the user interface. This property is typically used to define the path to the icon image resource for the light theme."
+                    "Busy": {
+                      "type": "object",
+                      "description": "Busy message theme specific to the light theme\n\nManual: https://docs.hal.guru/models/(halguru)-agent-themes-light-messages-busy\n\nRepresents the visual theme for a chat message, including settings for icon appearance and text or background colors. This class defines customization properties that control the overall design of individual chat messages.\n\nThe class allows configuration of: - Icons via CSS classes, colors, or URLs. - Background and text colors for enhanced customization. Setting these properties helps ensure that chat messages conform to the desired visual styling.",
+                      "properties": {
+                        "MessageType": {
+                          "title": "Message Type",
+                          "type": "string",
+                          "description": "\n\nManual: https://docs.hal.guru/models/(halguru)-agent-themes-light-messages-busy-messagetype\n\nGets or sets the type of the chat message. Represents the category of the message, such as User, Agent, System, Busy, Error, or Owner. Determines the specific role or source associated with the message.",
+                          "enum": [
+                            "User",
+                            "Agent",
+                            "System",
+                            "Busy",
+                            "Error",
+                            "Owner"
+                          ]
+                        },
+                        "IconCssClass": {
+                          "title": "Icon CSS Class",
+                          "type": [
+                            "null",
+                            "string"
+                          ],
+                          "description": "The CSS class for the icon displayed in the user interface.\n\nManual: https://docs.hal.guru/models/(halguru)-agent-themes-light-messages-busy-iconcssclass\n\nGets or sets the CSS class for the icon displayed in the user interface. This property is typically used to specify the appearance or styling of the icon for the light theme. See: https://fontawesome.com/icons"
+                        },
+                        "IconColor": {
+                          "title": "Icon Color",
+                          "type": [
+                            "null",
+                            "string"
+                          ],
+                          "description": "The color for the icon displayed in the user interface.\n\nManual: https://docs.hal.guru/models/(halguru)-agent-themes-light-messages-busy-iconcolor\n\nGets or sets the color for the icon displayed in the user interface. This property is typically used to define the color of the icon for the light theme."
+                        },
+                        "IconUrl": {
+                          "title": "Icon URL",
+                          "type": [
+                            "null",
+                            "string"
+                          ],
+                          "description": "The URL for the icon displayed in the user interface.\n\nManual: https://docs.hal.guru/models/(halguru)-agent-themes-light-messages-busy-iconurl\n\nGets or sets the URL for the icon displayed in the user interface. This property is typically used to define the path to the icon image resource for the light theme."
+                        },
+                        "BackgroundColor": {
+                          "title": "Background Color",
+                          "type": [
+                            "null",
+                            "string"
+                          ],
+                          "description": "The background color for the user interface.\n\nManual: https://docs.hal.guru/models/(halguru)-agent-themes-light-messages-busy-backgroundcolor\n\nGets or sets the background color for the user interface. This property is typically used to define the primary background color for the light theme within the application."
+                        },
+                        "TextColor": {
+                          "title": "Text Color",
+                          "type": [
+                            "null",
+                            "string"
+                          ],
+                          "description": "The text color displayed in the user interface.\n\nManual: https://docs.hal.guru/models/(halguru)-agent-themes-light-messages-busy-textcolor\n\nGets or sets the text color displayed in the user interface. This property is typically used to define the color of text elements for the light theme."
+                        }
+                      }
                     },
-                    "BackgroundColor": {
-                      "title": "Background Color",
-                      "type": [
-                        "null",
-                        "string"
-                      ],
-                      "description": "The background color for the user interface.\n\nManual: https://docs.hal.guru/models/(halguru)-agent-themes-list-messages-list-backgroundcolor\n\nGets or sets the background color for the user interface. This property is typically used to define the primary background color for the light theme within the application."
+                    "Error": {
+                      "type": "object",
+                      "description": "Error message theme specific to the light theme\n\nManual: https://docs.hal.guru/models/(halguru)-agent-themes-light-messages-error\n\nRepresents the visual theme for a chat message, including settings for icon appearance and text or background colors. This class defines customization properties that control the overall design of individual chat messages.\n\nThe class allows configuration of: - Icons via CSS classes, colors, or URLs. - Background and text colors for enhanced customization. Setting these properties helps ensure that chat messages conform to the desired visual styling.",
+                      "properties": {
+                        "MessageType": {
+                          "title": "Message Type",
+                          "type": "string",
+                          "description": "\n\nManual: https://docs.hal.guru/models/(halguru)-agent-themes-light-messages-error-messagetype\n\nGets or sets the type of the chat message. Represents the category of the message, such as User, Agent, System, Busy, Error, or Owner. Determines the specific role or source associated with the message.",
+                          "enum": [
+                            "User",
+                            "Agent",
+                            "System",
+                            "Busy",
+                            "Error",
+                            "Owner"
+                          ]
+                        },
+                        "IconCssClass": {
+                          "title": "Icon CSS Class",
+                          "type": [
+                            "null",
+                            "string"
+                          ],
+                          "description": "The CSS class for the icon displayed in the user interface.\n\nManual: https://docs.hal.guru/models/(halguru)-agent-themes-light-messages-error-iconcssclass\n\nGets or sets the CSS class for the icon displayed in the user interface. This property is typically used to specify the appearance or styling of the icon for the light theme. See: https://fontawesome.com/icons"
+                        },
+                        "IconColor": {
+                          "title": "Icon Color",
+                          "type": [
+                            "null",
+                            "string"
+                          ],
+                          "description": "The color for the icon displayed in the user interface.\n\nManual: https://docs.hal.guru/models/(halguru)-agent-themes-light-messages-error-iconcolor\n\nGets or sets the color for the icon displayed in the user interface. This property is typically used to define the color of the icon for the light theme."
+                        },
+                        "IconUrl": {
+                          "title": "Icon URL",
+                          "type": [
+                            "null",
+                            "string"
+                          ],
+                          "description": "The URL for the icon displayed in the user interface.\n\nManual: https://docs.hal.guru/models/(halguru)-agent-themes-light-messages-error-iconurl\n\nGets or sets the URL for the icon displayed in the user interface. This property is typically used to define the path to the icon image resource for the light theme."
+                        },
+                        "BackgroundColor": {
+                          "title": "Background Color",
+                          "type": [
+                            "null",
+                            "string"
+                          ],
+                          "description": "The background color for the user interface.\n\nManual: https://docs.hal.guru/models/(halguru)-agent-themes-light-messages-error-backgroundcolor\n\nGets or sets the background color for the user interface. This property is typically used to define the primary background color for the light theme within the application."
+                        },
+                        "TextColor": {
+                          "title": "Text Color",
+                          "type": [
+                            "null",
+                            "string"
+                          ],
+                          "description": "The text color displayed in the user interface.\n\nManual: https://docs.hal.guru/models/(halguru)-agent-themes-light-messages-error-textcolor\n\nGets or sets the text color displayed in the user interface. This property is typically used to define the color of text elements for the light theme."
+                        }
+                      }
                     },
-                    "TextColor": {
-                      "title": "Text Color",
-                      "type": [
-                        "null",
-                        "string"
+                    "Owner": {
+                      "type": "object",
+                      "description": "Owner message theme specific to the light theme\n\nManual: https://docs.hal.guru/models/(halguru)-agent-themes-light-messages-owner\n\nGets or sets the owner message theme specific to the light theme.\n\nThis property represents the appearance and behavior settings for owner messages within the light theme of an agent configuration.",
+                      "properties": {
+                        "MessageType": {
+                          "title": "Message Type",
+                          "type": "string",
+                          "description": "\n\nManual: https://docs.hal.guru/models/(halguru)-agent-themes-light-messages-owner-messagetype\n\nGets or sets the type of the chat message. Represents the category of the message, such as User, Agent, System, Busy, Error, or Owner. Determines the specific role or source associated with the message.",
+                          "enum": [
+                            "User",
+                            "Agent",
+                            "System",
+                            "Busy",
+                            "Error",
+                            "Owner"
+                          ]
+                        },
+                        "IconCssClass": {
+                          "title": "Icon CSS Class",
+                          "type": [
+                            "null",
+                            "string"
+                          ],
+                          "description": "The CSS class for the icon displayed in the user interface.\n\nManual: https://docs.hal.guru/models/(halguru)-agent-themes-light-messages-owner-iconcssclass\n\nGets or sets the CSS class for the icon displayed in the user interface. This property is typically used to specify the appearance or styling of the icon for the light theme. See: https://fontawesome.com/icons"
+                        },
+                        "IconColor": {
+                          "title": "Icon Color",
+                          "type": [
+                            "null",
+                            "string"
+                          ],
+                          "description": "The color for the icon displayed in the user interface.\n\nManual: https://docs.hal.guru/models/(halguru)-agent-themes-light-messages-owner-iconcolor\n\nGets or sets the color for the icon displayed in the user interface. This property is typically used to define the color of the icon for the light theme."
+                        },
+                        "IconUrl": {
+                          "title": "Icon URL",
+                          "type": [
+                            "null",
+                            "string"
+                          ],
+                          "description": "The URL for the icon displayed in the user interface.\n\nManual: https://docs.hal.guru/models/(halguru)-agent-themes-light-messages-owner-iconurl\n\nGets or sets the URL for the icon displayed in the user interface. This property is typically used to define the path to the icon image resource for the light theme."
+                        },
+                        "BackgroundColor": {
+                          "title": "Background Color",
+                          "type": [
+                            "null",
+                            "string"
+                          ],
+                          "description": "The background color for the user interface.\n\nManual: https://docs.hal.guru/models/(halguru)-agent-themes-light-messages-owner-backgroundcolor\n\nGets or sets the background color for the user interface. This property is typically used to define the primary background color for the light theme within the application."
+                        },
+                        "TextColor": {
+                          "title": "Text Color",
+                          "type": [
+                            "null",
+                            "string"
+                          ],
+                          "description": "The text color displayed in the user interface.\n\nManual: https://docs.hal.guru/models/(halguru)-agent-themes-light-messages-owner-textcolor\n\nGets or sets the text color displayed in the user interface. This property is typically used to define the color of text elements for the light theme."
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            },
+            "Dark": {
+              "type": "object",
+              "description": "Dark theme design settings for the agent\n\nManual: https://docs.hal.guru/models/(halguru)-agent-themes-dark\n\nRepresents a design configuration for a specific theme, which may include settings related to chat appearance or other customizable elements.",
+              "required": [
+                "Theme",
+                "Messages"
+              ],
+              "properties": {
+                "Theme": {
+                  "title": "Theme",
+                  "type": "string",
+                  "description": "\n\nManual: https://docs.hal.guru/models/(halguru)-agent-themes-dark-theme\n\nSpecifies the active theme for the design configuration, indicating the appearance mode being applied.\n\nThis property defines the visual theme utilized in the application's interface, such as or . It is integral for determining the aesthetic representation and adapting the user interface to different contexts or preferences.",
+                  "default": 1,
+                  "enum": [
+                    "Light",
+                    "Dark"
+                  ]
+                },
+                "Messages": {
+                  "title": "Messages (Theme Design)",
+                  "type": "object",
+                  "description": "design messages for the dark theme in the context of an agent configuration\n\nManual: https://docs.hal.guru/models/(halguru)-agent-themes-dark-messages\n\nDefines the collection of chat message themes related to the theme design, specifying visual and stylistic attributes for different message types.\n\nThis property stores a list of objects, each representing the configuration for a specific type of chat message, such as agent messages, user messages, or system notifications. It encompasses customizable details like icon properties and background color, enabling granular control over the presentation of messages within the theme.",
+                  "properties": {
+                    "User": {
+                      "type": "object",
+                      "description": "User message theme specific to the dark theme\n\nManual: https://docs.hal.guru/models/(halguru)-agent-themes-dark-messages-user\n\nGets or sets the user message theme specific to the dark theme.\n\nThis property represents the appearance and behavior settings for user messages within the dark theme of an agent configuration.",
+                      "properties": {
+                        "MessageType": {
+                          "title": "Message Type",
+                          "type": "string",
+                          "description": "\n\nManual: https://docs.hal.guru/models/(halguru)-agent-themes-dark-messages-user-messagetype\n\nGets or sets the type of the chat message. Represents the category of the message, such as User, Agent, System, Busy, Error, or Owner. Determines the specific role or source associated with the message.",
+                          "enum": [
+                            "User",
+                            "Agent",
+                            "System",
+                            "Busy",
+                            "Error",
+                            "Owner"
+                          ]
+                        },
+                        "IconCssClass": {
+                          "title": "Icon CSS Class",
+                          "type": [
+                            "null",
+                            "string"
+                          ],
+                          "description": "The CSS class for the icon displayed in the user interface.\n\nManual: https://docs.hal.guru/models/(halguru)-agent-themes-dark-messages-user-iconcssclass\n\nGets or sets the CSS class for the icon displayed in the user interface. This property is typically used to specify the appearance or styling of the icon for the light theme. See: https://fontawesome.com/icons"
+                        },
+                        "IconColor": {
+                          "title": "Icon Color",
+                          "type": [
+                            "null",
+                            "string"
+                          ],
+                          "description": "The color for the icon displayed in the user interface.\n\nManual: https://docs.hal.guru/models/(halguru)-agent-themes-dark-messages-user-iconcolor\n\nGets or sets the color for the icon displayed in the user interface. This property is typically used to define the color of the icon for the light theme."
+                        },
+                        "IconUrl": {
+                          "title": "Icon URL",
+                          "type": [
+                            "null",
+                            "string"
+                          ],
+                          "description": "The URL for the icon displayed in the user interface.\n\nManual: https://docs.hal.guru/models/(halguru)-agent-themes-dark-messages-user-iconurl\n\nGets or sets the URL for the icon displayed in the user interface. This property is typically used to define the path to the icon image resource for the light theme."
+                        },
+                        "BackgroundColor": {
+                          "title": "Background Color",
+                          "type": [
+                            "null",
+                            "string"
+                          ],
+                          "description": "The background color for the user interface.\n\nManual: https://docs.hal.guru/models/(halguru)-agent-themes-dark-messages-user-backgroundcolor\n\nGets or sets the background color for the user interface. This property is typically used to define the primary background color for the light theme within the application."
+                        },
+                        "TextColor": {
+                          "title": "Text Color",
+                          "type": [
+                            "null",
+                            "string"
+                          ],
+                          "description": "The text color displayed in the user interface.\n\nManual: https://docs.hal.guru/models/(halguru)-agent-themes-dark-messages-user-textcolor\n\nGets or sets the text color displayed in the user interface. This property is typically used to define the color of text elements for the light theme."
+                        }
+                      }
+                    },
+                    "Agent": {
+                      "type": "object",
+                      "description": "Agent message theme specific to the dark theme\n\nManual: https://docs.hal.guru/models/(halguru)-agent-themes-dark-messages-agent\n\nRepresents the visual theme for a chat message, including settings for icon appearance and text or background colors. This class defines customization properties that control the overall design of individual chat messages.\n\nThe class allows configuration of: - Icons via CSS classes, colors, or URLs. - Background and text colors for enhanced customization. Setting these properties helps ensure that chat messages conform to the desired visual styling.",
+                      "required": [
+                        "MessageType"
                       ],
-                      "description": "The text color displayed in the user interface.\n\nManual: https://docs.hal.guru/models/(halguru)-agent-themes-list-messages-list-textcolor\n\nGets or sets the text color displayed in the user interface. This property is typically used to define the color of text elements for the light theme."
+                      "properties": {
+                        "MessageType": {
+                          "title": "Message Type",
+                          "type": "string",
+                          "description": "\n\nManual: https://docs.hal.guru/models/(halguru)-agent-themes-dark-messages-agent-messagetype\n\nGets or sets the type of the chat message. Represents the category of the message, such as User, Agent, System, Busy, Error, or Owner. Determines the specific role or source associated with the message.",
+                          "enum": [
+                            "User",
+                            "Agent",
+                            "System",
+                            "Busy",
+                            "Error",
+                            "Owner"
+                          ]
+                        },
+                        "IconCssClass": {
+                          "title": "Icon CSS Class",
+                          "type": [
+                            "null",
+                            "string"
+                          ],
+                          "description": "The CSS class for the icon displayed in the user interface.\n\nManual: https://docs.hal.guru/models/(halguru)-agent-themes-dark-messages-agent-iconcssclass\n\nGets or sets the CSS class for the icon displayed in the user interface. This property is typically used to specify the appearance or styling of the icon for the light theme. See: https://fontawesome.com/icons"
+                        },
+                        "IconColor": {
+                          "title": "Icon Color",
+                          "type": [
+                            "null",
+                            "string"
+                          ],
+                          "description": "The color for the icon displayed in the user interface.\n\nManual: https://docs.hal.guru/models/(halguru)-agent-themes-dark-messages-agent-iconcolor\n\nGets or sets the color for the icon displayed in the user interface. This property is typically used to define the color of the icon for the light theme."
+                        },
+                        "IconUrl": {
+                          "title": "Icon URL",
+                          "type": [
+                            "null",
+                            "string"
+                          ],
+                          "description": "The URL for the icon displayed in the user interface.\n\nManual: https://docs.hal.guru/models/(halguru)-agent-themes-dark-messages-agent-iconurl\n\nGets or sets the URL for the icon displayed in the user interface. This property is typically used to define the path to the icon image resource for the light theme."
+                        },
+                        "BackgroundColor": {
+                          "title": "Background Color",
+                          "type": [
+                            "null",
+                            "string"
+                          ],
+                          "description": "The background color for the user interface.\n\nManual: https://docs.hal.guru/models/(halguru)-agent-themes-dark-messages-agent-backgroundcolor\n\nGets or sets the background color for the user interface. This property is typically used to define the primary background color for the light theme within the application."
+                        },
+                        "TextColor": {
+                          "title": "Text Color",
+                          "type": [
+                            "null",
+                            "string"
+                          ],
+                          "description": "The text color displayed in the user interface.\n\nManual: https://docs.hal.guru/models/(halguru)-agent-themes-dark-messages-agent-textcolor\n\nGets or sets the text color displayed in the user interface. This property is typically used to define the color of text elements for the light theme."
+                        }
+                      }
+                    },
+                    "System": {
+                      "type": "object",
+                      "description": "System message theme specific to the dark theme\n\nManual: https://docs.hal.guru/models/(halguru)-agent-themes-dark-messages-system\n\nGets or sets the system message theme specific to the dark theme.\n\nThis property represents the appearance and behavior settings for system messages within the dark theme of an agent configuration.",
+                      "properties": {
+                        "MessageType": {
+                          "title": "Message Type",
+                          "type": "string",
+                          "description": "\n\nManual: https://docs.hal.guru/models/(halguru)-agent-themes-dark-messages-system-messagetype\n\nGets or sets the type of the chat message. Represents the category of the message, such as User, Agent, System, Busy, Error, or Owner. Determines the specific role or source associated with the message.",
+                          "enum": [
+                            "User",
+                            "Agent",
+                            "System",
+                            "Busy",
+                            "Error",
+                            "Owner"
+                          ]
+                        },
+                        "IconCssClass": {
+                          "title": "Icon CSS Class",
+                          "type": [
+                            "null",
+                            "string"
+                          ],
+                          "description": "The CSS class for the icon displayed in the user interface.\n\nManual: https://docs.hal.guru/models/(halguru)-agent-themes-dark-messages-system-iconcssclass\n\nGets or sets the CSS class for the icon displayed in the user interface. This property is typically used to specify the appearance or styling of the icon for the light theme. See: https://fontawesome.com/icons"
+                        },
+                        "IconColor": {
+                          "title": "Icon Color",
+                          "type": [
+                            "null",
+                            "string"
+                          ],
+                          "description": "The color for the icon displayed in the user interface.\n\nManual: https://docs.hal.guru/models/(halguru)-agent-themes-dark-messages-system-iconcolor\n\nGets or sets the color for the icon displayed in the user interface. This property is typically used to define the color of the icon for the light theme."
+                        },
+                        "IconUrl": {
+                          "title": "Icon URL",
+                          "type": [
+                            "null",
+                            "string"
+                          ],
+                          "description": "The URL for the icon displayed in the user interface.\n\nManual: https://docs.hal.guru/models/(halguru)-agent-themes-dark-messages-system-iconurl\n\nGets or sets the URL for the icon displayed in the user interface. This property is typically used to define the path to the icon image resource for the light theme."
+                        },
+                        "BackgroundColor": {
+                          "title": "Background Color",
+                          "type": [
+                            "null",
+                            "string"
+                          ],
+                          "description": "The background color for the user interface.\n\nManual: https://docs.hal.guru/models/(halguru)-agent-themes-dark-messages-system-backgroundcolor\n\nGets or sets the background color for the user interface. This property is typically used to define the primary background color for the light theme within the application."
+                        },
+                        "TextColor": {
+                          "title": "Text Color",
+                          "type": [
+                            "null",
+                            "string"
+                          ],
+                          "description": "The text color displayed in the user interface.\n\nManual: https://docs.hal.guru/models/(halguru)-agent-themes-dark-messages-system-textcolor\n\nGets or sets the text color displayed in the user interface. This property is typically used to define the color of text elements for the light theme."
+                        }
+                      }
+                    },
+                    "Busy": {
+                      "type": "object",
+                      "description": "Busy message theme specific to the dark theme\n\nManual: https://docs.hal.guru/models/(halguru)-agent-themes-dark-messages-busy\n\nRepresents the visual theme for a chat message, including settings for icon appearance and text or background colors. This class defines customization properties that control the overall design of individual chat messages.\n\nThe class allows configuration of: - Icons via CSS classes, colors, or URLs. - Background and text colors for enhanced customization. Setting these properties helps ensure that chat messages conform to the desired visual styling.",
+                      "properties": {
+                        "MessageType": {
+                          "title": "Message Type",
+                          "type": "string",
+                          "description": "\n\nManual: https://docs.hal.guru/models/(halguru)-agent-themes-dark-messages-busy-messagetype\n\nGets or sets the type of the chat message. Represents the category of the message, such as User, Agent, System, Busy, Error, or Owner. Determines the specific role or source associated with the message.",
+                          "enum": [
+                            "User",
+                            "Agent",
+                            "System",
+                            "Busy",
+                            "Error",
+                            "Owner"
+                          ]
+                        },
+                        "IconCssClass": {
+                          "title": "Icon CSS Class",
+                          "type": [
+                            "null",
+                            "string"
+                          ],
+                          "description": "The CSS class for the icon displayed in the user interface.\n\nManual: https://docs.hal.guru/models/(halguru)-agent-themes-dark-messages-busy-iconcssclass\n\nGets or sets the CSS class for the icon displayed in the user interface. This property is typically used to specify the appearance or styling of the icon for the light theme. See: https://fontawesome.com/icons"
+                        },
+                        "IconColor": {
+                          "title": "Icon Color",
+                          "type": [
+                            "null",
+                            "string"
+                          ],
+                          "description": "The color for the icon displayed in the user interface.\n\nManual: https://docs.hal.guru/models/(halguru)-agent-themes-dark-messages-busy-iconcolor\n\nGets or sets the color for the icon displayed in the user interface. This property is typically used to define the color of the icon for the light theme."
+                        },
+                        "IconUrl": {
+                          "title": "Icon URL",
+                          "type": [
+                            "null",
+                            "string"
+                          ],
+                          "description": "The URL for the icon displayed in the user interface.\n\nManual: https://docs.hal.guru/models/(halguru)-agent-themes-dark-messages-busy-iconurl\n\nGets or sets the URL for the icon displayed in the user interface. This property is typically used to define the path to the icon image resource for the light theme."
+                        },
+                        "BackgroundColor": {
+                          "title": "Background Color",
+                          "type": [
+                            "null",
+                            "string"
+                          ],
+                          "description": "The background color for the user interface.\n\nManual: https://docs.hal.guru/models/(halguru)-agent-themes-dark-messages-busy-backgroundcolor\n\nGets or sets the background color for the user interface. This property is typically used to define the primary background color for the light theme within the application."
+                        },
+                        "TextColor": {
+                          "title": "Text Color",
+                          "type": [
+                            "null",
+                            "string"
+                          ],
+                          "description": "The text color displayed in the user interface.\n\nManual: https://docs.hal.guru/models/(halguru)-agent-themes-dark-messages-busy-textcolor\n\nGets or sets the text color displayed in the user interface. This property is typically used to define the color of text elements for the light theme."
+                        }
+                      }
+                    },
+                    "Error": {
+                      "type": "object",
+                      "description": "Error message theme specific to the dark theme\n\nManual: https://docs.hal.guru/models/(halguru)-agent-themes-dark-messages-error\n\nRepresents the visual theme for a chat message, including settings for icon appearance and text or background colors. This class defines customization properties that control the overall design of individual chat messages.\n\nThe class allows configuration of: - Icons via CSS classes, colors, or URLs. - Background and text colors for enhanced customization. Setting these properties helps ensure that chat messages conform to the desired visual styling.",
+                      "properties": {
+                        "MessageType": {
+                          "title": "Message Type",
+                          "type": "string",
+                          "description": "\n\nManual: https://docs.hal.guru/models/(halguru)-agent-themes-dark-messages-error-messagetype\n\nGets or sets the type of the chat message. Represents the category of the message, such as User, Agent, System, Busy, Error, or Owner. Determines the specific role or source associated with the message.",
+                          "enum": [
+                            "User",
+                            "Agent",
+                            "System",
+                            "Busy",
+                            "Error",
+                            "Owner"
+                          ]
+                        },
+                        "IconCssClass": {
+                          "title": "Icon CSS Class",
+                          "type": [
+                            "null",
+                            "string"
+                          ],
+                          "description": "The CSS class for the icon displayed in the user interface.\n\nManual: https://docs.hal.guru/models/(halguru)-agent-themes-dark-messages-error-iconcssclass\n\nGets or sets the CSS class for the icon displayed in the user interface. This property is typically used to specify the appearance or styling of the icon for the light theme. See: https://fontawesome.com/icons"
+                        },
+                        "IconColor": {
+                          "title": "Icon Color",
+                          "type": [
+                            "null",
+                            "string"
+                          ],
+                          "description": "The color for the icon displayed in the user interface.\n\nManual: https://docs.hal.guru/models/(halguru)-agent-themes-dark-messages-error-iconcolor\n\nGets or sets the color for the icon displayed in the user interface. This property is typically used to define the color of the icon for the light theme."
+                        },
+                        "IconUrl": {
+                          "title": "Icon URL",
+                          "type": [
+                            "null",
+                            "string"
+                          ],
+                          "description": "The URL for the icon displayed in the user interface.\n\nManual: https://docs.hal.guru/models/(halguru)-agent-themes-dark-messages-error-iconurl\n\nGets or sets the URL for the icon displayed in the user interface. This property is typically used to define the path to the icon image resource for the light theme."
+                        },
+                        "BackgroundColor": {
+                          "title": "Background Color",
+                          "type": [
+                            "null",
+                            "string"
+                          ],
+                          "description": "The background color for the user interface.\n\nManual: https://docs.hal.guru/models/(halguru)-agent-themes-dark-messages-error-backgroundcolor\n\nGets or sets the background color for the user interface. This property is typically used to define the primary background color for the light theme within the application."
+                        },
+                        "TextColor": {
+                          "title": "Text Color",
+                          "type": [
+                            "null",
+                            "string"
+                          ],
+                          "description": "The text color displayed in the user interface.\n\nManual: https://docs.hal.guru/models/(halguru)-agent-themes-dark-messages-error-textcolor\n\nGets or sets the text color displayed in the user interface. This property is typically used to define the color of text elements for the light theme."
+                        }
+                      }
+                    },
+                    "Owner": {
+                      "type": "object",
+                      "description": "Owner message theme specific to the dark theme\n\nManual: https://docs.hal.guru/models/(halguru)-agent-themes-dark-messages-owner\n\nGets or sets the owner message theme specific to the dark theme.\n\nThis property represents the appearance and behavior settings for owner messages within the dark theme of an agent configuration.",
+                      "properties": {
+                        "MessageType": {
+                          "title": "Message Type",
+                          "type": "string",
+                          "description": "\n\nManual: https://docs.hal.guru/models/(halguru)-agent-themes-dark-messages-owner-messagetype\n\nGets or sets the type of the chat message. Represents the category of the message, such as User, Agent, System, Busy, Error, or Owner. Determines the specific role or source associated with the message.",
+                          "enum": [
+                            "User",
+                            "Agent",
+                            "System",
+                            "Busy",
+                            "Error",
+                            "Owner"
+                          ]
+                        },
+                        "IconCssClass": {
+                          "title": "Icon CSS Class",
+                          "type": [
+                            "null",
+                            "string"
+                          ],
+                          "description": "The CSS class for the icon displayed in the user interface.\n\nManual: https://docs.hal.guru/models/(halguru)-agent-themes-dark-messages-owner-iconcssclass\n\nGets or sets the CSS class for the icon displayed in the user interface. This property is typically used to specify the appearance or styling of the icon for the light theme. See: https://fontawesome.com/icons"
+                        },
+                        "IconColor": {
+                          "title": "Icon Color",
+                          "type": [
+                            "null",
+                            "string"
+                          ],
+                          "description": "The color for the icon displayed in the user interface.\n\nManual: https://docs.hal.guru/models/(halguru)-agent-themes-dark-messages-owner-iconcolor\n\nGets or sets the color for the icon displayed in the user interface. This property is typically used to define the color of the icon for the light theme."
+                        },
+                        "IconUrl": {
+                          "title": "Icon URL",
+                          "type": [
+                            "null",
+                            "string"
+                          ],
+                          "description": "The URL for the icon displayed in the user interface.\n\nManual: https://docs.hal.guru/models/(halguru)-agent-themes-dark-messages-owner-iconurl\n\nGets or sets the URL for the icon displayed in the user interface. This property is typically used to define the path to the icon image resource for the light theme."
+                        },
+                        "BackgroundColor": {
+                          "title": "Background Color",
+                          "type": [
+                            "null",
+                            "string"
+                          ],
+                          "description": "The background color for the user interface.\n\nManual: https://docs.hal.guru/models/(halguru)-agent-themes-dark-messages-owner-backgroundcolor\n\nGets or sets the background color for the user interface. This property is typically used to define the primary background color for the light theme within the application."
+                        },
+                        "TextColor": {
+                          "title": "Text Color",
+                          "type": [
+                            "null",
+                            "string"
+                          ],
+                          "description": "The text color displayed in the user interface.\n\nManual: https://docs.hal.guru/models/(halguru)-agent-themes-dark-messages-owner-textcolor\n\nGets or sets the text color displayed in the user interface. This property is typically used to define the color of text elements for the light theme."
+                        }
+                      }
                     }
                   }
                 }
@@ -586,13 +1259,70 @@
           "type": "object",
           "description": "Defines the operational state and associated metadata for a session of an agent.",
           "properties": {
+            "UserType": {
+              "type": "string",
+              "description": "",
+              "enum": [
+                "Paid",
+                "Registered",
+                "Anonymous"
+              ]
+            },
+            "MessagesCount": {
+              "type": [
+                "integer",
+                "null"
+              ],
+              "description": "The count of messages associated with the AI Agent",
+              "format": "int32"
+            },
+            "LastMonthMessagesCount": {
+              "type": [
+                "integer",
+                "null"
+              ],
+              "description": "The total number of messages exchanged during the last calendar month.",
+              "format": "int32"
+            },
+            "LastDayMessagesCount": {
+              "type": [
+                "integer",
+                "null"
+              ],
+              "description": "The count of messages sent or received by the agent in the last day.",
+              "format": "int32"
+            },
+            "MessageWordsCount": {
+              "type": [
+                "integer",
+                "null"
+              ],
+              "description": "The count of words associated with the AI Agent",
+              "format": "int32"
+            },
+            "LastMonthMessagesWordsCount": {
+              "type": [
+                "integer",
+                "null"
+              ],
+              "description": "The total number of messages words exchanged during the last calendar month.",
+              "format": "int32"
+            },
+            "LastDayMessagesWordsCount": {
+              "type": [
+                "integer",
+                "null"
+              ],
+              "description": "The count of messages words sent or received by the agent in the last day.",
+              "format": "int32"
+            },
             "Started": {
               "title": "Started",
               "type": [
                 "null",
                 "string"
               ],
-              "description": "The moment when the agent AI is initiated.",
+              "description": "The moment when the agent AI is initiated",
               "format": "date-time"
             },
             "LastAccess": {
@@ -798,6 +1528,85 @@
           "Output": {
             "type": "string",
             "description": "\n\nManual: https://docs.hal.guru/models/(halguru)-examplemessages-list-output\n\nGets or sets the response message generated by the service."
+          }
+        }
+      }
+    },
+    "Channels": {
+      "type": "array",
+      "description": "The communication channels that are available to the agent.\n\nManual: https://docs.hal.guru/models/(halguru)-channels-list\n\nRepresents a communication channel within an agent configuration. Contains metadata and properties to describe and manage the channel.",
+      "xml": {
+        "wrapped": true
+      },
+      "items": {
+        "type": "object",
+        "xml": {
+          "name": "AgentChannel"
+        },
+        "required": [
+          "Name",
+          "Source",
+          "Active"
+        ],
+        "properties": {
+          "Name": {
+            "title": "Channel Name",
+            "type": "string",
+            "description": "The name of the channel.\n\nManual: https://docs.hal.guru/models/(halguru)-channels-list-name\n\nThe name of the channel.",
+            "maxLength": 50,
+            "minLength": 1
+          },
+          "Description": {
+            "type": [
+              "null",
+              "string"
+            ],
+            "description": "A description of the channel.\n\nManual: https://docs.hal.guru/models/(halguru)-channels-list-description\n\nA description of the channel [Optional].",
+            "maxLength": 200
+          },
+          "Source": {
+            "type": "string",
+            "description": "\n\nManual: https://docs.hal.guru/models/(halguru)-channels-list-source\n\nThe source of the information for the channel.",
+            "default": 0,
+            "enum": [
+              "Test",
+              "Sms",
+              "VoicePhone",
+              "WhatsApp",
+              "FacebookMessenger",
+              "Instagram",
+              "GoogleBusinessMessages",
+              "iOS",
+              "Android",
+              "Mac",
+              "Windows",
+              "Email",
+              "Api",
+              "ChatApp",
+              "Website"
+            ]
+          },
+          "ReferenceId": {
+            "type": [
+              "null",
+              "string"
+            ],
+            "description": "The unique identifier for the channel for external use.\n\nManual: https://docs.hal.guru/models/(halguru)-channels-list-referenceid\n\nThe unique identifier for the channel for external use. For sources like Sms, VoicePhone, WhatsApp, this is the phone number. For sources like FacebookMessenger, Instagram this is the username. For sources like GoogleBusinessMessages, this is the business id. For sources like iOS, Android, Mac, Windows should be empty. For sources like Email, this is the email. For sources like ChatApp, should be empty. For sources like Website, this is the website.",
+            "maxLength": 50
+          },
+          "Active": {
+            "type": "boolean",
+            "description": "Whether the channel is active or not.\n\nManual: https://docs.hal.guru/models/(halguru)-channels-list-active\n\nWhether the channel is active or not. Default is true.",
+            "default": true
+          },
+          "UserType": {
+            "type": "string",
+            "description": "\n\nManual: https://docs.hal.guru/models/(halguru)-channels-list-usertype\n\nDetermines the level of access granted to the user for the agent channel.",
+            "enum": [
+              "Paid",
+              "Registered",
+              "Anonymous"
+            ]
           }
         }
       }

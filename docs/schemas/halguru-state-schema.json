@@ -4,13 +4,70 @@
   "type": "object",
   "description": "Defines the operational state and associated metadata for a session of an agent.\n\nManual: https://docs.hal.guru/models/(state)\n\nDefines the operational state and associated metadata for a session of an agent.",
   "properties": {
+    "UserType": {
+      "type": "string",
+      "description": "\n\nManual: https://docs.hal.guru/models/(state)-usertype\n\nRepresents the type of user associated with the agent's current session.",
+      "enum": [
+        "Paid",
+        "Registered",
+        "Anonymous"
+      ]
+    },
+    "MessagesCount": {
+      "type": [
+        "integer",
+        "null"
+      ],
+      "description": "The count of messages associated with the AI Agent\n\nManual: https://docs.hal.guru/models/(state)-messagescount-list\n\nRepresents the count of messages associated with the AI Agent.",
+      "format": "int32"
+    },
+    "LastMonthMessagesCount": {
+      "type": [
+        "integer",
+        "null"
+      ],
+      "description": "The total number of messages exchanged during the last calendar month.\n\nManual: https://docs.hal.guru/models/(state)-lastmonthmessagescount-list\n\nRepresents the total number of messages exchanged during the last calendar month.",
+      "format": "int32"
+    },
+    "LastDayMessagesCount": {
+      "type": [
+        "integer",
+        "null"
+      ],
+      "description": "The count of messages sent or received by the agent in the last day.\n\nManual: https://docs.hal.guru/models/(state)-lastdaymessagescount-list\n\nRepresents the count of messages sent or received by the agent in the last day.",
+      "format": "int32"
+    },
+    "MessageWordsCount": {
+      "type": [
+        "integer",
+        "null"
+      ],
+      "description": "The count of words associated with the AI Agent\n\nManual: https://docs.hal.guru/models/(state)-messagewordscount-list\n\nRepresents the count of messages associated with the AI Agent.",
+      "format": "int32"
+    },
+    "LastMonthMessagesWordsCount": {
+      "type": [
+        "integer",
+        "null"
+      ],
+      "description": "The total number of messages words exchanged during the last calendar month.\n\nManual: https://docs.hal.guru/models/(state)-lastmonthmessageswordscount-list\n\nRepresents the total number of messages words exchanged during the last calendar month.",
+      "format": "int32"
+    },
+    "LastDayMessagesWordsCount": {
+      "type": [
+        "integer",
+        "null"
+      ],
+      "description": "The count of messages words sent or received by the agent in the last day.\n\nManual: https://docs.hal.guru/models/(state)-lastdaymessageswordscount-list\n\nRepresents the count of messages sent or received by the agent in the last day.",
+      "format": "int32"
+    },
     "Started": {
       "title": "Started",
       "type": [
         "null",
         "string"
       ],
-      "description": "The moment when the agent AI is initiated.\n\nManual: https://docs.hal.guru/models/(state)-started-list\n\nSpecifies the exact time when the agent was activated and its session began.",
+      "description": "The moment when the agent AI is initiated\n\nManual: https://docs.hal.guru/models/(state)-started-list\n\nSpecifies the exact time when the agent was activated and its session began.",
       "format": "date-time"
     },
     "LastAccess": {

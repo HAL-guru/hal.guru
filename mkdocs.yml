@@ -94,6 +94,171 @@ nav:
               - 'PromptName': 'models/(halguru)-agent-start-promptname.md'
               - 'Url': 'models/(halguru)-agent-start-url.md'
           - 'Themes': 'models/(halguru)-agent-themes.md'
+          - '&nbsp;&nbsp;&nbsp;Properties':
+            - 'Themes': 'models/(halguru)-agent-themes.md'
+            - '&nbsp;&nbsp;&nbsp;Properties':
+              - 'Light': 'models/(halguru)-agent-themes-light.md'
+              - '&nbsp;&nbsp;&nbsp;Properties':
+                - 'Light': 'models/(halguru)-agent-themes-light.md'
+                - '&nbsp;&nbsp;&nbsp;Properties':
+                  - 'Theme': 'models/(halguru)-agent-themes-light-theme.md'
+                  - 'Messages': 'models/(halguru)-agent-themes-light-messages.md'
+                  - '&nbsp;&nbsp;&nbsp;Properties':
+                    - 'Messages': 'models/(halguru)-agent-themes-light-messages.md'
+                    - '&nbsp;&nbsp;&nbsp;Properties':
+                      - 'User': 'models/(halguru)-agent-themes-light-messages-user.md'
+                      - '&nbsp;&nbsp;&nbsp;Properties':
+                        - 'User': 'models/(halguru)-agent-themes-light-messages-user.md'
+                        - '&nbsp;&nbsp;&nbsp;Properties':
+                          - 'MessageType': 'models/(halguru)-agent-themes-light-messages-user-messagetype.md'
+                          - '&nbsp;&nbsp;&nbsp;Properties':
+                            - 'MessageType': 'models/(halguru)-agent-themes-list-messages-list-messagetype.md'
+                          - 'IconCssClass': 'models/(halguru)-agent-themes-light-messages-user-iconcssclass.md'
+                          - 'IconColor': 'models/(halguru)-agent-themes-light-messages-user-iconcolor.md'
+                          - 'IconUrl': 'models/(halguru)-agent-themes-light-messages-user-iconurl.md'
+                          - 'BackgroundColor': 'models/(halguru)-agent-themes-light-messages-user-backgroundcolor.md'
+                          - 'TextColor': 'models/(halguru)-agent-themes-light-messages-user-textcolor.md'
+                      - 'Agent': 'models/(halguru)-agent-themes-light-messages-agent.md'
+                      - '&nbsp;&nbsp;&nbsp;Properties':
+                        - 'Agent': 'models/(halguru)-agent-themes-light-messages-agent.md'
+                        - '&nbsp;&nbsp;&nbsp;Properties':
+                          - 'MessageType': 'models/(halguru)-agent-themes-light-messages-agent-messagetype.md'
+                          - '&nbsp;&nbsp;&nbsp;Properties':
+                            - 'MessageType': 'models/(halguru)-agent-themes-list-messages-list-messagetype.md'
+                          - 'IconCssClass': 'models/(halguru)-agent-themes-light-messages-agent-iconcssclass.md'
+                          - 'IconColor': 'models/(halguru)-agent-themes-light-messages-agent-iconcolor.md'
+                          - 'IconUrl': 'models/(halguru)-agent-themes-light-messages-agent-iconurl.md'
+                          - 'BackgroundColor': 'models/(halguru)-agent-themes-light-messages-agent-backgroundcolor.md'
+                          - 'TextColor': 'models/(halguru)-agent-themes-light-messages-agent-textcolor.md'
+                      - 'System': 'models/(halguru)-agent-themes-light-messages-system.md'
+                      - '&nbsp;&nbsp;&nbsp;Properties':
+                        - 'System': 'models/(halguru)-agent-themes-light-messages-system.md'
+                        - '&nbsp;&nbsp;&nbsp;Properties':
+                          - 'MessageType': 'models/(halguru)-agent-themes-light-messages-system-messagetype.md'
+                          - '&nbsp;&nbsp;&nbsp;Properties':
+                            - 'MessageType': 'models/(halguru)-agent-themes-list-messages-list-messagetype.md'
+                          - 'IconCssClass': 'models/(halguru)-agent-themes-light-messages-system-iconcssclass.md'
+                          - 'IconColor': 'models/(halguru)-agent-themes-light-messages-system-iconcolor.md'
+                          - 'IconUrl': 'models/(halguru)-agent-themes-light-messages-system-iconurl.md'
+                          - 'BackgroundColor': 'models/(halguru)-agent-themes-light-messages-system-backgroundcolor.md'
+                          - 'TextColor': 'models/(halguru)-agent-themes-light-messages-system-textcolor.md'
+                      - 'Busy': 'models/(halguru)-agent-themes-light-messages-busy.md'
+                      - '&nbsp;&nbsp;&nbsp;Properties':
+                        - 'Busy': 'models/(halguru)-agent-themes-light-messages-busy.md'
+                        - '&nbsp;&nbsp;&nbsp;Properties':
+                          - 'MessageType': 'models/(halguru)-agent-themes-light-messages-busy-messagetype.md'
+                          - '&nbsp;&nbsp;&nbsp;Properties':
+                            - 'MessageType': 'models/(halguru)-agent-themes-list-messages-list-messagetype.md'
+                          - 'IconCssClass': 'models/(halguru)-agent-themes-light-messages-busy-iconcssclass.md'
+                          - 'IconColor': 'models/(halguru)-agent-themes-light-messages-busy-iconcolor.md'
+                          - 'IconUrl': 'models/(halguru)-agent-themes-light-messages-busy-iconurl.md'
+                          - 'BackgroundColor': 'models/(halguru)-agent-themes-light-messages-busy-backgroundcolor.md'
+                          - 'TextColor': 'models/(halguru)-agent-themes-light-messages-busy-textcolor.md'
+                      - 'Error': 'models/(halguru)-agent-themes-light-messages-error.md'
+                      - '&nbsp;&nbsp;&nbsp;Properties':
+                        - 'Error': 'models/(halguru)-agent-themes-light-messages-error.md'
+                        - '&nbsp;&nbsp;&nbsp;Properties':
+                          - 'MessageType': 'models/(halguru)-agent-themes-light-messages-error-messagetype.md'
+                          - '&nbsp;&nbsp;&nbsp;Properties':
+                            - 'MessageType': 'models/(halguru)-agent-themes-list-messages-list-messagetype.md'
+                          - 'IconCssClass': 'models/(halguru)-agent-themes-light-messages-error-iconcssclass.md'
+                          - 'IconColor': 'models/(halguru)-agent-themes-light-messages-error-iconcolor.md'
+                          - 'IconUrl': 'models/(halguru)-agent-themes-light-messages-error-iconurl.md'
+                          - 'BackgroundColor': 'models/(halguru)-agent-themes-light-messages-error-backgroundcolor.md'
+                          - 'TextColor': 'models/(halguru)-agent-themes-light-messages-error-textcolor.md'
+                      - 'Owner': 'models/(halguru)-agent-themes-light-messages-owner.md'
+                      - '&nbsp;&nbsp;&nbsp;Properties':
+                        - 'User': 'models/(halguru)-agent-themes-light-messages-user.md'
+                        - '&nbsp;&nbsp;&nbsp;Properties':
+                          - 'MessageType': 'models/(halguru)-agent-themes-light-messages-user-messagetype.md'
+                          - '&nbsp;&nbsp;&nbsp;Properties':
+                            - 'MessageType': 'models/(halguru)-agent-themes-list-messages-list-messagetype.md'
+                          - 'IconCssClass': 'models/(halguru)-agent-themes-light-messages-user-iconcssclass.md'
+                          - 'IconColor': 'models/(halguru)-agent-themes-light-messages-user-iconcolor.md'
+                          - 'IconUrl': 'models/(halguru)-agent-themes-light-messages-user-iconurl.md'
+                          - 'BackgroundColor': 'models/(halguru)-agent-themes-light-messages-user-backgroundcolor.md'
+                          - 'TextColor': 'models/(halguru)-agent-themes-light-messages-user-textcolor.md'
+              - 'Dark': 'models/(halguru)-agent-themes-dark.md'
+              - '&nbsp;&nbsp;&nbsp;Properties':
+                - 'Dark': 'models/(halguru)-agent-themes-dark.md'
+                - '&nbsp;&nbsp;&nbsp;Properties':
+                  - 'Theme': 'models/(halguru)-agent-themes-dark-theme.md'
+                  - 'Messages': 'models/(halguru)-agent-themes-dark-messages.md'
+                  - '&nbsp;&nbsp;&nbsp;Properties':
+                    - 'Messages': 'models/(halguru)-agent-themes-dark-messages.md'
+                    - '&nbsp;&nbsp;&nbsp;Properties':
+                      - 'User': 'models/(halguru)-agent-themes-dark-messages-user.md'
+                      - '&nbsp;&nbsp;&nbsp;Properties':
+                        - 'User': 'models/(halguru)-agent-themes-dark-messages-user.md'
+                        - '&nbsp;&nbsp;&nbsp;Properties':
+                          - 'MessageType': 'models/(halguru)-agent-themes-dark-messages-user-messagetype.md'
+                          - '&nbsp;&nbsp;&nbsp;Properties':
+                            - 'MessageType': 'models/(halguru)-agent-themes-list-messages-list-messagetype.md'
+                          - 'IconCssClass': 'models/(halguru)-agent-themes-dark-messages-user-iconcssclass.md'
+                          - 'IconColor': 'models/(halguru)-agent-themes-dark-messages-user-iconcolor.md'
+                          - 'IconUrl': 'models/(halguru)-agent-themes-dark-messages-user-iconurl.md'
+                          - 'BackgroundColor': 'models/(halguru)-agent-themes-dark-messages-user-backgroundcolor.md'
+                          - 'TextColor': 'models/(halguru)-agent-themes-dark-messages-user-textcolor.md'
+                      - 'Agent': 'models/(halguru)-agent-themes-dark-messages-agent.md'
+                      - '&nbsp;&nbsp;&nbsp;Properties':
+                        - 'Agent': 'models/(halguru)-agent-themes-dark-messages-agent.md'
+                        - '&nbsp;&nbsp;&nbsp;Properties':
+                          - 'MessageType': 'models/(halguru)-agent-themes-dark-messages-agent-messagetype.md'
+                          - '&nbsp;&nbsp;&nbsp;Properties':
+                            - 'MessageType': 'models/(halguru)-agent-themes-list-messages-list-messagetype.md'
+                          - 'IconCssClass': 'models/(halguru)-agent-themes-dark-messages-agent-iconcssclass.md'
+                          - 'IconColor': 'models/(halguru)-agent-themes-dark-messages-agent-iconcolor.md'
+                          - 'IconUrl': 'models/(halguru)-agent-themes-dark-messages-agent-iconurl.md'
+                          - 'BackgroundColor': 'models/(halguru)-agent-themes-dark-messages-agent-backgroundcolor.md'
+                          - 'TextColor': 'models/(halguru)-agent-themes-dark-messages-agent-textcolor.md'
+                      - 'System': 'models/(halguru)-agent-themes-dark-messages-system.md'
+                      - '&nbsp;&nbsp;&nbsp;Properties':
+                        - 'System': 'models/(halguru)-agent-themes-dark-messages-system.md'
+                        - '&nbsp;&nbsp;&nbsp;Properties':
+                          - 'MessageType': 'models/(halguru)-agent-themes-dark-messages-system-messagetype.md'
+                          - '&nbsp;&nbsp;&nbsp;Properties':
+                            - 'MessageType': 'models/(halguru)-agent-themes-list-messages-list-messagetype.md'
+                          - 'IconCssClass': 'models/(halguru)-agent-themes-dark-messages-system-iconcssclass.md'
+                          - 'IconColor': 'models/(halguru)-agent-themes-dark-messages-system-iconcolor.md'
+                          - 'IconUrl': 'models/(halguru)-agent-themes-dark-messages-system-iconurl.md'
+                          - 'BackgroundColor': 'models/(halguru)-agent-themes-dark-messages-system-backgroundcolor.md'
+                          - 'TextColor': 'models/(halguru)-agent-themes-dark-messages-system-textcolor.md'
+                      - 'Busy': 'models/(halguru)-agent-themes-dark-messages-busy.md'
+                      - '&nbsp;&nbsp;&nbsp;Properties':
+                        - 'Busy': 'models/(halguru)-agent-themes-dark-messages-busy.md'
+                        - '&nbsp;&nbsp;&nbsp;Properties':
+                          - 'MessageType': 'models/(halguru)-agent-themes-dark-messages-busy-messagetype.md'
+                          - '&nbsp;&nbsp;&nbsp;Properties':
+                            - 'MessageType': 'models/(halguru)-agent-themes-list-messages-list-messagetype.md'
+                          - 'IconCssClass': 'models/(halguru)-agent-themes-dark-messages-busy-iconcssclass.md'
+                          - 'IconColor': 'models/(halguru)-agent-themes-dark-messages-busy-iconcolor.md'
+                          - 'IconUrl': 'models/(halguru)-agent-themes-dark-messages-busy-iconurl.md'
+                          - 'BackgroundColor': 'models/(halguru)-agent-themes-dark-messages-busy-backgroundcolor.md'
+                          - 'TextColor': 'models/(halguru)-agent-themes-dark-messages-busy-textcolor.md'
+                      - 'Error': 'models/(halguru)-agent-themes-dark-messages-error.md'
+                      - '&nbsp;&nbsp;&nbsp;Properties':
+                        - 'Error': 'models/(halguru)-agent-themes-dark-messages-error.md'
+                        - '&nbsp;&nbsp;&nbsp;Properties':
+                          - 'MessageType': 'models/(halguru)-agent-themes-dark-messages-error-messagetype.md'
+                          - '&nbsp;&nbsp;&nbsp;Properties':
+                            - 'MessageType': 'models/(halguru)-agent-themes-list-messages-list-messagetype.md'
+                          - 'IconCssClass': 'models/(halguru)-agent-themes-dark-messages-error-iconcssclass.md'
+                          - 'IconColor': 'models/(halguru)-agent-themes-dark-messages-error-iconcolor.md'
+                          - 'IconUrl': 'models/(halguru)-agent-themes-dark-messages-error-iconurl.md'
+                          - 'BackgroundColor': 'models/(halguru)-agent-themes-dark-messages-error-backgroundcolor.md'
+                          - 'TextColor': 'models/(halguru)-agent-themes-dark-messages-error-textcolor.md'
+                      - 'Owner': 'models/(halguru)-agent-themes-dark-messages-owner.md'
+                      - '&nbsp;&nbsp;&nbsp;Properties':
+                        - 'User': 'models/(halguru)-agent-themes-dark-messages-user.md'
+                        - '&nbsp;&nbsp;&nbsp;Properties':
+                          - 'MessageType': 'models/(halguru)-agent-themes-dark-messages-user-messagetype.md'
+                          - '&nbsp;&nbsp;&nbsp;Properties':
+                            - 'MessageType': 'models/(halguru)-agent-themes-list-messages-list-messagetype.md'
+                          - 'IconCssClass': 'models/(halguru)-agent-themes-dark-messages-user-iconcssclass.md'
+                          - 'IconColor': 'models/(halguru)-agent-themes-dark-messages-user-iconcolor.md'
+                          - 'IconUrl': 'models/(halguru)-agent-themes-dark-messages-user-iconurl.md'
+                          - 'BackgroundColor': 'models/(halguru)-agent-themes-dark-messages-user-backgroundcolor.md'
+                          - 'TextColor': 'models/(halguru)-agent-themes-dark-messages-user-textcolor.md'
           - 'UI': 'models/(halguru)-agent-ui.md'
           - '&nbsp;&nbsp;&nbsp;Properties':
             - 'UI': 'models/(halguru)-agent-ui.md'
@@ -130,6 +295,13 @@ nav:
       - '&nbsp;&nbsp;&nbsp;Properties':
         - '.halguru-state.yaml': 'models/(state).md'
         - '&nbsp;&nbsp;&nbsp;Properties':
+          - 'UserType': 'models/(state)-usertype.md'
+          - 'MessagesCount': 'models/(state)-messagescount-list.md'
+          - 'LastMonthMessagesCount': 'models/(state)-lastmonthmessagescount-list.md'
+          - 'LastDayMessagesCount': 'models/(state)-lastdaymessagescount-list.md'
+          - 'MessageWordsCount': 'models/(state)-messagewordscount-list.md'
+          - 'LastMonthMessagesWordsCount': 'models/(state)-lastmonthmessageswordscount-list.md'
+          - 'LastDayMessagesWordsCount': 'models/(state)-lastdaymessageswordscount-list.md'
           - 'Started': 'models/(state)-started-list.md'
           - 'LastAccess': 'models/(state)-lastaccess-list.md'
           - 'IsStarted': 'models/(state)-isstarted-list.md'
@@ -142,10 +314,19 @@ nav:
           - 'Variables': 'models/(state)-variables-list.md'
       - 'TestCases': 'models/(halguru)-testcases-list.md'
       - 'ExampleMessages': 'models/(halguru)-examplemessages-list.md'
+      - 'Channels': 'models/(halguru)-channels-list.md'
+      - 'UserLimits': 'models/(halguru)-userlimits.md'
 # Autogenerated AgentConfiguration End
 # Autogenerated StateConfiguration Begin
     - '.halguru-state.yaml': 'models/(state).md'
     - '&nbsp;&nbsp;&nbsp;Properties':
+      - 'UserType': 'models/(state)-usertype.md'
+      - 'MessagesCount': 'models/(state)-messagescount-list.md'
+      - 'LastMonthMessagesCount': 'models/(state)-lastmonthmessagescount-list.md'
+      - 'LastDayMessagesCount': 'models/(state)-lastdaymessagescount-list.md'
+      - 'MessageWordsCount': 'models/(state)-messagewordscount-list.md'
+      - 'LastMonthMessagesWordsCount': 'models/(state)-lastmonthmessageswordscount-list.md'
+      - 'LastDayMessagesWordsCount': 'models/(state)-lastdaymessageswordscount-list.md'
       - 'Started': 'models/(state)-started-list.md'
       - 'LastAccess': 'models/(state)-lastaccess-list.md'
       - 'IsStarted': 'models/(state)-isstarted-list.md'
@@ -204,7 +385,6 @@ nav:
   - 'halguru CLI':
     - 'Introduction': 'halguru-cli/index.md'
 # Autogenerated CLI Commands Begin
-    - 'Commands': ''
     - '&nbsp;&nbsp;&nbsp;Commands':
       - 'about': 'halguru-cli/(command)-mainbranch-about.md'
       - 'create': 'halguru-cli/(command)-mainbranch-create.md'
