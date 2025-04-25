@@ -180,7 +180,6 @@
               "type": "object",
               "description": "Light theme design settings for the agent\n\nManual: https://docs.hal.guru/models/(halguru)-agent-themes-light\n\nRepresents a design configuration for a specific theme, which may include settings related to chat appearance or other customizable elements.",
               "required": [
-                "Theme",
                 "Messages"
               ],
               "properties": {
@@ -261,14 +260,11 @@
                     "Agent": {
                       "type": "object",
                       "description": "Agent message theme specific to the light theme\n\nManual: https://docs.hal.guru/models/(halguru)-agent-themes-light-messages-agent\n\nRepresents the visual theme for a chat message, including settings for icon appearance and text or background colors. This class defines customization properties that control the overall design of individual chat messages.\n\nThe class allows configuration of: - Icons via CSS classes, colors, or URLs. - Background and text colors for enhanced customization. Setting these properties helps ensure that chat messages conform to the desired visual styling.",
-                      "required": [
-                        "MessageType"
-                      ],
                       "properties": {
                         "MessageType": {
                           "title": "Message Type",
                           "type": "string",
-                          "description": "\n\nManual: https://docs.hal.guru/models/(halguru)-agent-themes-light-messages-agent-messagetype\n\nGets or sets the type of the chat message. Represents the category of the message, such as User, Agent, System, Busy, Error, or Owner. Determines the specific role or source associated with the message.",
+                          "description": "\n\nManual: https://docs.hal.guru/models/(halguru)-agent-themes-light-messages-agent-messagetype\n\nRepresents the type of the chat message associated with the theme. Indicates the specific designation of the message (e.g., User, Agent, System, etc.) used to apply corresponding visual or functional elements in the theme.",
                           "enum": [
                             "User",
                             "Agent",
@@ -564,7 +560,6 @@
               "type": "object",
               "description": "Dark theme design settings for the agent\n\nManual: https://docs.hal.guru/models/(halguru)-agent-themes-dark\n\nRepresents a design configuration for a specific theme, which may include settings related to chat appearance or other customizable elements.",
               "required": [
-                "Theme",
                 "Messages"
               ],
               "properties": {
@@ -645,9 +640,6 @@
                     "Agent": {
                       "type": "object",
                       "description": "Agent message theme specific to the dark theme\n\nManual: https://docs.hal.guru/models/(halguru)-agent-themes-dark-messages-agent\n\nRepresents the visual theme for a chat message, including settings for icon appearance and text or background colors. This class defines customization properties that control the overall design of individual chat messages.\n\nThe class allows configuration of: - Icons via CSS classes, colors, or URLs. - Background and text colors for enhanced customization. Setting these properties helps ensure that chat messages conform to the desired visual styling.",
-                      "required": [
-                        "MessageType"
-                      ],
                       "properties": {
                         "MessageType": {
                           "title": "Message Type",
