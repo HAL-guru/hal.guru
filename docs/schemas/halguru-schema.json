@@ -183,16 +183,6 @@
                 "Messages"
               ],
               "properties": {
-                "Theme": {
-                  "title": "Theme",
-                  "type": "string",
-                  "description": "\n\nManual: https://docs.hal.guru/models/(halguru)-agent-themes-light-theme\n\nSpecifies the active theme for the design configuration, indicating the appearance mode being applied.\n\nThis property defines the visual theme utilized in the application's interface, such as or . It is integral for determining the aesthetic representation and adapting the user interface to different contexts or preferences.",
-                  "default": 0,
-                  "enum": [
-                    "Light",
-                    "Dark"
-                  ]
-                },
                 "Messages": {
                   "title": "Messages (Theme Design)",
                   "type": "object",
@@ -485,16 +475,6 @@
                 "Messages"
               ],
               "properties": {
-                "Theme": {
-                  "title": "Theme",
-                  "type": "string",
-                  "description": "\n\nManual: https://docs.hal.guru/models/(halguru)-agent-themes-dark-theme\n\nSpecifies the active theme for the design configuration, indicating the appearance mode being applied.\n\nThis property defines the visual theme utilized in the application's interface, such as or . It is integral for determining the aesthetic representation and adapting the user interface to different contexts or preferences.",
-                  "default": 1,
-                  "enum": [
-                    "Light",
-                    "Dark"
-                  ]
-                },
                 "Messages": {
                   "title": "Messages (Theme Design)",
                   "type": "object",
