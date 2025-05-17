@@ -141,8 +141,9 @@ main() {
         log_error 9 "Cannot change directory to $HOME"
         exit 9
     }
-    mkdir -p "$INSTALL_DIR_NAME" || {
-      log_error 16 "Cannot create directory $INSTALL_DIR_NAME"
+
+    mkdir -p "$INSTALL_DIR" || {
+      log_error 16 "Cannot create directory $INSTALL_DIR"
       exit 16
     }
     touch "$LOG_FILE" || {
