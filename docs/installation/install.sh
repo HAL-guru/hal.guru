@@ -157,8 +157,6 @@ main() {
     OS=$(get_os)
     ARCH=$(get_arch)
 
-    log_info "OS: $OS, Arch: $ARCH"
-
     VERSION=$(get_latest_version)
 
     log_info "Creating directory $INSTALL_DIR"
