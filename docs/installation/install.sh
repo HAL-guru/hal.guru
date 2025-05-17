@@ -7,6 +7,7 @@ REPO_NAME="hal.guru"
 INSTALL_DIR_NAME=".halguru"
 INSTALL_DIR="$HOME/$INSTALL_DIR_NAME"
 LOG_FILE="$INSTALL_DIR/install.log"
+FILENAME=""
 
 log_error() {
     local code="$1"
@@ -139,14 +140,14 @@ download_file() {
 }
 
 cleanup() {
-    local temp_file="$1"
-    if [ -f "$temp_file" ]; then
+    local temp_file="${1:-}"
+    if [ -n "$temp_file" ] && [ -f "$temp_file" ]; then
         rm -f "$temp_file"
     fi
 }
 
 main() {
-    trap 'cleanup "$INSTALL_DIR/$FILENAME"' EXIT
+    trap cleanup EXIT
 
     log_info "Starting installation halguru"
 
@@ -181,6 +182,8 @@ main() {
     FILENAME="halguru-$OS-$ARCH-$VERSION.zip"
     UNPACK_DIR="$INSTALL_DIR/halguru-$OS-$ARCH-$VERSION"
     DOWNLOAD_URL="https://github.com/$REPO_OWNER/$REPO_NAME/releases/download/$VERSION/$FILENAME"
+
+    trap 'cleanup "$INSTALL_DIR/$FILENAME"' EXIT
 
     log_info "Downloading $DOWNLOAD_URL"
 
