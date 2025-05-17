@@ -1,6 +1,6 @@
 #!/bin/bash
 
-set -e  # Stop script on first error
+set -eu -o pipefail
 
 REPO_OWNER="HAL-guru"
 REPO_NAME="hal.guru"
@@ -11,17 +11,38 @@ LOG_FILE="$INSTALL_DIR/install.log"
 log_error() {
     local code="$1"
     local message="$2"
-    echo "Error $code: $message" | tee -a "$LOG_FILE" >&2
+    echo "Error $code: $message"
+    log_file "$message"
 }
 
 log_info() {
     local message="$1"
-    echo "$message" | tee -a "$LOG_FILE"
+    echo "$message"
+    log_file "$message"
 }
 
 log_success() {
     local message="$1"
-    echo "$message" | tee -a "$LOG_FILE"
+    echo "$message"
+    log_file "$message"
+}
+
+log_file() {
+    local message="$1"
+    local log_dir="$(dirname "$LOG_FILE")"
+
+    if [ ! -d "$log_dir" ]; then
+        mkdir -p "$log_dir" 2>/dev/null || return 1
+    fi
+
+    if [ ! -f "$LOG_FILE" ]; then
+        touch "$LOG_FILE" 2>/dev/null || return 1
+    elif [ ! -w "$LOG_FILE" ]; then
+        return 1
+    fi
+
+    echo "[$(date '+%Y-%m-%d %H:%M:%S')] $message" >> "$LOG_FILE"
+
 }
 
 check_prerequisites() {
@@ -146,6 +167,7 @@ main() {
       log_error 16 "Cannot create directory $INSTALL_DIR"
       exit 16
     }
+
     touch "$LOG_FILE" || {
       log_error 17 "Cannot create log file $LOG_FILE"
       exit 17
