@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # debug option
-# set -x
+set -x
 
 trap 'echo "❌ Script error in the line $LINENO. Command: $BASH_COMMAND"' ERR
 
