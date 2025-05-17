@@ -1,6 +1,11 @@
 #!/bin/bash
 
-set -eu -o pipefail
+# debug option
+# set -x
+
+trap 'echo "❌ Script error in the line $LINENO. Command: $BASH_COMMAND"' ERR
+
+set -e
 
 REPO_OWNER="HAL-guru"
 REPO_NAME="hal.guru"
@@ -13,19 +18,19 @@ log_error() {
     local code="$1"
     local message="$2"
     echo "Error $code: $message"
-    log_file "$message"
+    log_file "$message" || echo "Unable to write to log" >&2
 }
 
 log_info() {
     local message="$1"
     echo "$message"
-    log_file "$message"
+    log_file "$message" || true
 }
 
 log_success() {
     local message="$1"
     echo "$message"
-    log_file "$message"
+    log_file "$message" || true
 }
 
 log_file() {
@@ -42,8 +47,7 @@ log_file() {
         return 1
     fi
 
-    echo "[$(date '+%Y-%m-%d %H:%M:%S')] $message" >> "$LOG_FILE"
-
+    echo "[$(date '+%Y-%m-%d %H:%M:%S')] $message" >> "$LOG_FILE" 2>/dev/null || return 1
 }
 
 check_prerequisites() {
