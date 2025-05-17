@@ -207,6 +207,18 @@ main() {
         exit 13
     fi
 
+    if [ ! -d "/usr/local/bin" ]; then
+        echo "Directory /usr/local/bin doesn't exists, creating..."
+        if ! sudo mkdir -p /usr/local/bin; then
+            log_error 14 "Unable to create directory /usr/local/bin"
+            exit 14
+        fi
+        if ! sudo chmod 755 /usr/local/bin; then
+            log_error 14 "Unable to setup directory /usr/local/bin"
+            exit 14
+        fi
+    fi
+
     if ! sudo ln -sf "$INSTALL_DIR/halguru" /usr/local/bin/halguru; then
         log_error 14 "Failed to create symbolic link"
         exit 14
