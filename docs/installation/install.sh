@@ -1,14 +1,11 @@
 #!/bin/bash
 
-# debug option
-set -x
-
 trap 'echo "❌ Script error in the line $LINENO. Command: $BASH_COMMAND"' ERR
 
 set -e
 
 REPO_OWNER="HAL-guru"
-REPO_NAME="hal.guru"
+REPO_NAME="hal.guru-docs"
 INSTALL_DIR_NAME=".halguru"
 INSTALL_DIR="$HOME/$INSTALL_DIR_NAME"
 LOG_FILE="$INSTALL_DIR/install.log"
@@ -159,6 +156,9 @@ main() {
 
     OS=$(get_os)
     ARCH=$(get_arch)
+
+    log_info "OS: $OS, Arch: $ARCH"
+
     VERSION=$(get_latest_version)
 
     log_info "Creating directory $INSTALL_DIR"

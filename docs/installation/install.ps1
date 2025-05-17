@@ -1,5 +1,5 @@
 $RepoOwner = "HAL-guru"
-$RepoName = "hal.guru"
+$RepoName = "hal.guru-docs"
 $InstallDir = "$env:USERPROFILE\.halguru"
 
 function Write-Error {
