@@ -103,7 +103,6 @@ jobs:
           fi
           echo "Success! All downloaded files are larger than 1KB."
 
-
       - name: Create/Update Release
         id: create_release
         uses: softprops/action-gh-release@v1
@@ -115,3 +114,56 @@ jobs:
           files: assets/*
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+
+      - name: Update releases in destination repository
+        run: |
+          TAGS=$(curl -s -H "Authorization: token ${{ secrets.GITHUB_TOKEN }}" \
+            "https://api.github.com/repos/${{ github.repository }}/tags" | jq -r '.[].name')
+
+          if [ -z "$TAGS" ]; then
+            echo "::error::No tags found in the destination repository."
+            exit 1
+          fi
+
+          echo "Found tags in destination repository:"
+          echo "$TAGS"
+
+          for TAG_NAME in $TAGS; do
+            echo "Processing tag: $TAG_NAME"
+
+            SOURCE_RELEASE_INFO=$(curl -s -H "Authorization: token ${{ secrets.PAT_TOKEN }}" \
+              "https://api.github.com/repos/HAL-guru/hal.guru-robots-core/releases/tags/$TAG_NAME")
+
+            if [ "$(echo "$SOURCE_RELEASE_INFO" | jq -r '.message')" == "Not Found" ]; then
+              echo "::warning::Release not found for tag $TAG_NAME in source repository."
+              continue
+            fi
+
+            TITLE=$(echo "$SOURCE_RELEASE_INFO" | jq -r '.name')
+            DESCRIPTION=$(echo "$SOURCE_RELEASE_INFO" | jq -r '.body')
+
+            if [ -z "$TITLE" ] || [ -z "$DESCRIPTION" ]; then
+              echo "::warning::Title or description is missing for tag $TAG_NAME."
+              continue
+            fi
+
+            echo "Title: $TITLE"
+            echo "Description: $DESCRIPTION"
+
+            DEST_RELEASE_INFO=$(curl -s -H "Authorization: token ${{ secrets.GITHUB_TOKEN }}" \
+              "https://api.github.com/repos/${{ github.repository }}/releases/tags/$TAG_NAME")
+
+            if [ "$(echo "$DEST_RELEASE_INFO" | jq -r '.message')" == "Not Found" ]; then
+              echo "::warning::Release not found for tag $TAG_NAME in destination repository. Skipping."
+              continue
+            fi
+
+            DEST_RELEASE_ID=$(echo "$DEST_RELEASE_INFO" | jq -r '.id')
+
+            curl -s -X PATCH -H "Authorization: token ${{ secrets.GITHUB_TOKEN }}" \
+              -H "Content-Type: application/json" \
+              -d "$(jq -n --arg title "$TITLE" --arg body "$DESCRIPTION" '{"name":$title, "body":$body}')" \
+              "https://api.github.com/repos/${{ github.repository }}/releases/$DEST_RELEASE_ID"
+
+            echo "Successfully updated release for tag $TAG_NAME in destination repository."
+          done
